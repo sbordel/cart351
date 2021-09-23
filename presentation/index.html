@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>CART 351 | Web Audio API</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+
+    <link rel="shortcut icon" href="assets/icons/computer-3.png" type="image/png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <!-- SONG VOCALS: stream record/playback -->
+    <div>
+        <button data-playing="false" role="switch" aria-checked="false">
+            <span>Play/Pause</span>
+        </button>
+
+
+        <audio src="assets/sound/aroundtheworld_sample.mp3"></audio>
+        <!--
+    <source src="assets/sound/aroundtheworld_sample.mp3" type="audio/mpeg"> 
+    <source src="assets/sound/aroundtheworld_sample.ogg" type="audio/ogg">
+-->
+    </div>
+
+    <!--SONG VERSE: oscillator-->
+    <div class="container">
+        <div class="keyboard"></div>
+    </div>
+
+    <div class="settingsBar">
+        <div class="left">
+            <span>Volume: </span>
+            <input type="range" min="0.0" max="1.0" step="0.01" value="0.5" list="volumes" name="volume">
+            <datalist id="volumes">
+                <option value="0.0" label="Mute">
+                <option value="1.0" label="100%">
+            </datalist>
+        </div>
+    </div>
+
+    <!-- SONG CHORUS: sample playback -->
+    <script src="script.js"></script>
+</body>
+
+</html>
