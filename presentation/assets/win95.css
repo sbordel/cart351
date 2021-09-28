@@ -72,6 +72,18 @@ header .container {
   position: relative;
   z-index: 2;
 }
+/* added this for api example */
+#example {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#example2 {
+    display: block;
+    top: 50%;
+}
 /*
 
 Scrollbar (only chrome & safari)
@@ -363,16 +375,16 @@ FOOTER
     display: inline-block;
     border: 1px outset #fff;
     padding: 0 0 0 0;
+    margin: 2px; /* <== ADDED MARGIN */
     box-shadow: 1px 1px #000;
     margin-bottom: 0px;
     font-size: 14px;
 }
 .taskbar .time {
     color:#212529;
-    /* margin-top: 2px; */
-   
+    margin-top: 2px;
     text-align: right;
-    font-size: 14px;
+    font-size: 12px; /* <== CHANGED FONT SIZE FROM 14 TO 12px */
     margin-right: 0px;
 }
 #page-content {
@@ -434,7 +446,6 @@ input[type="radio"],input[type="checkbox"] {
 .form-check-label{
     margin-left: 6px;
 }
-
 
 input[type="radio"] + .form-check-label::before,
 input[type="radio"] + .form-check-label::after {
@@ -625,3 +636,94 @@ TABLES
     vertical-align: top;
     border-top: 1px solid #c0c0c0;
 }
+ 
+/* CODE FROM MOZILLA -- ADDED FROM SYNTH KEYBOARD */ 
+.keyboard {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .key {
+    cursor: pointer;
+    font: 16px "Open Sans", "Lucida Grande", "Arial", sans-serif;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 30px;
+    height: 80px;
+    text-align: center;
+    box-shadow: 2px 2px darkgray;
+    display: inline-block;
+    position: relative;
+    margin-right: 3px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  .key div {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+  }
+  
+  .key div sub {
+    font-size: 10px;
+    pointer-events: none;
+  }
+  
+  .key:hover {
+    background-color: #eef;
+  }
+  
+  .key:active {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .octave {
+    display: inline-block;
+    padding: 0 6px 0 0;
+  }
+  
+  .settingsBar {
+    padding-top: 8px;
+    font: 14px "Open Sans", "Lucida Grande", "Arial", sans-serif;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+    height: 30px;
+  }
+  
+  .left {
+    width: 50%;
+    position: absolute;
+    left: 0;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .left span, .left input {
+    vertical-align: middle;
+  }
+  
+  .right {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .right span {
+    vertical-align: middle;
+  }
+  
+  .right input {
+    vertical-align: baseline;
+  }
+  

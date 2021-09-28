@@ -1,42 +1,480 @@
+/*
+
+    WIN95.CSS
+    https://github.com/AlexBSoft/win95.css
+    Author: Alex B (alex-b.me)
+    License: MIT
+
+    Version: 1.2.0
+    06.12.2020
+
+*/
+html {
+  position: relative;
+  min-height: 100%;
+}
+/*
+Body styles
+*/
+body {
+    font-family: "MS Sans Serif",Tahoma,Verdana,Segoe,sans-serif; 
+    background: teal;
+    color: white;
+    padding-bottom: 0px;
+}
+.bg-cloud{
+    background-image: url(1973.png);
+    color:#212529;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+/*
+Link color
+*/
+a {
+    color:#2d49eb;
+}
+
+/*
+window
+*/
 .container {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    width: 660px;
-    height: 110px;
-    white-space: nowrap;
-    margin: 10px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    z-index: 2;
   }
-  
-  .keyboard {
+.section{
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    border: inset 3px silver;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(197, 197, 197);
+}
+h1{
+    color: #000000;
+    width: 45%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(221, 217, 155);
+    border: solid 1px black;
+    font-weight: normal; 
+    text-align: center;
+}
+.section h4{
+    font-size: 16px;
+    font-weight: bold; 
+}
+.section h5{
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+/* AUDIO RECORDER/PLAYER */
+
+#audioPlayer{
+    position: relative;
+    display: inline;
+    padding: 10px;
+}
+/*
+Scrollbar (only chrome & safari)
+*/
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-button:end:increment,::-webkit-scrollbar-button:start:decrement {
+    display: block
+}
+::-webkit-scrollbar-button:vertical:end:decrement,::-webkit-scrollbar-button:vertical:start:increment {
+    display: none
+}
+::-webkit-scrollbar-button:vertical:increment {
+    width: 18px;
+    background: silver url(combo.png) no-repeat 50%;
+    height: 18px;
+    margin: 1px 1px 1px 10px;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+    border: 1px outset #fff;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+    width: 11px;
+    background: silver url(comboup.png) no-repeat 50%;
+    height: 16px;
+    margin: 1px 1px 1px 10px;
+    transform: rotateX(180deg);
+    -webkit-transform: rotateY(180deg);
+    border: 1px outset #fff;
+}
+::-webkit-scrollbar-track{
+    background-image: url(background.bmp)
+}
+::-webkit-scrollbar-thumb:vertical {
+    border: 1px outset #fff;
+    height: 40px;
+    background-color: silver
+}
+::-webkit-scrollbar-corner:vertical {
+    background-color: #000
+}
+:-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+    display: block
+}
+::-webkit-scrollbar-button:horizontal:end:decrement,::-webkit-scrollbar-button:horizontal:start:increment {
+    display: none
+}
+::-webkit-scrollbar-button:horizontal:increment {
+    background: silver url(comboright.png) no-repeat 50%;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg)
+}
+::-webkit-scrollbar-button:horizontal:decrement,::-webkit-scrollbar-button:horizontal:increment {
+    width: 18px;
+    height: 18px;
+    margin: 1px 1px 1px 10px;
+    border: 1px outset #fff;
+}
+::-webkit-scrollbar-button:horizontal:decrement {
+    background: silver url(comboleft.png) no-repeat 50%;
+    transform: rotateX(180deg);
+    -webkit-transform: rotateY(180deg)
+}
+::-webkit-scrollbar-track-piece {
+    margin: 1px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    border: 1px outset #fff;
+    height: 40px;
+    background-color: silver
+}
+
+/*
+    Button styles
+*/
+.btn{
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    background: silver;
+    color: black;
+    padding: 0 0 4px;
+    border-radius: 1px;
+}
+#recordButton{
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    background: silver;
+    color: black;
+    padding: 0 0 4px;
+    border-radius: 1px;
+    width:100px;
+}
+.btn:hover {
+    border: 2px inset #fff;
+    background: silver;
+    color: #424242;
+    box-shadow: -1px -1px #000;
+}
+.btn:focus {
+    border: 2px inset #fff !important;
+    background: silver;
+    color: #424242;
+    box-shadow: -1px -1px #000 !important;
+    outline: 0 !important;
+    background: url(background.bmp);
+}
+.btn:active {
+    border: 2px inset #fff !important;
+    color: #424242;
+    box-shadow: -1px -1px #000 !important;
+    outline: 0 !important;
+    background: url(background.bmp);
+}
+
+.btn-primary{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+button:focus{
+    outline: 1px dotted;
+}
+.btn.disabled,.btn:disabled{
+    cursor: default;
+    background-color: silver;
+    border-style: outset;
+    border-color: buttonface;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    color: grey;
+    text-shadow: 1px 1px #fff;
+}
+
+/*
+CARDS
+*/
+.card{
+    display: flex;
+    border: solid;
+    border-width: 2px;
+    border-bottom-color: #424242;
+    border-right-color: #424242;
+    border-left-color: #fff;
+    border-top-color: #fff;
+    background: silver;
+    color:#212529;
+    width: 100%;
+}
+.card.square{
+    border-radius: 0px;
+}
+.card.square .card-header{
+    border-radius: 0px;
+}
+.card.w95 .card-header{
+    background: #08216b;
+    /* OR #000082 is better?*/
+}
+.card-header{
+    background: -webkit-linear-gradient(left,#08216b,#a5cef7);
+    color: #fff;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    text-align: left;
+}
+.card-header.icon{
+    padding-left: 4px;
+}
+.header-inactive{
+    background: gray !important;
+}
+
+/*
+NAVBAR
+*/
+.navbar-95{
+    background: silver;
+    margin: 0;
+    border: 1px outset #fff;
+    min-height: 40px;
+    /* padding: 0 10px; */
+    padding: 0 0;
+    color:#212529;
+}
+.navbar-brand{
+    color:#212529;
+    padding: 0 6px;
+}
+.nav-link{
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 9px;
+    color:#212529;
+}
+.dropdown-menu{
+    display: none;
+    min-width: 119px;
+    padding: 0 0 2px;
+    margin-left: 12px;
+    font-size: 12px;
+    list-style-type: none;
+    background: silver;
+    border: 1.8px outset #fff;
+    border-radius: 0;
+    -webkit-box-shadow: 1.5px 1.5px #000;
+    box-shadow: 1.5px 1.5px #000;
+}
+.dropdown-item{
+    padding: 1px 0 1px 2px;
+}
+.dropdown-item:hover{
+    color:#08216b;
+}
+.navbar-light .navbar-toggler.collapsed .navbar-toggler-icon {
+    width: 32px;
+    background: url(icons/directory_closed_cool-5.png);
+}
+.navbar-light .navbar-toggler .navbar-toggler-icon {
+    width: 32px;
+    background: url(icons/directory_open_cool-5.png);
+}
+.navbar-toggler{
+    width: auto;
+}
+
+/*
+FOOTER
+*/
+.taskbar{
+    cursor: default;
+    background-color: silver;
+    margin: 0 0 0 0;
+    padding: 0 0;
+    position: static;
+    bottom: 0;
+    /* border-top: 0px outset #fff; */
+    z-index: 228;
+    width: 100%;
+    margin-right: 0px;
+    position: absolute;
+    bottom: 0;
+}
+.taskbar .start-button {
+    cursor: default;
+    display: inline-block;
+    border: 1px outset #fff;
+    padding: 0 0 0 0;
+    margin: 2px; /* <== ADDED MARGIN */
+    box-shadow: 1px 1px #000;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+.taskbar .time {
+    color:#212529;
+    margin-top: 2px;
+    text-align: right;
+    font-size: 12px; /* <== CHANGED FONT SIZE FROM 14 TO 12px */
+    margin-right: 0px;
+}
+#page-content {
+    flex: 1 0 auto;
+}
+
+/*
+ICONS
+*/
+.icon-16{
+    margin-bottom: 2px;
+    max-height: 16px;
+}
+.icon-16-4{
+    margin-bottom:4px;
+    max-height: 16px;
+}
+
+/*
+TABS
+*/
+.tab-content {
+    background: silver;
+    border: solid;
+    border-width: 2px;
+    border-bottom-color: #424242;
+    border-right-color: #424242;
+    border-left-color: #fff;
+    border-top-color: silver;
+    padding: 1rem 1.4rem;
+}
+.nav-tabs {
+    border-bottom: 2px solid white;
+}
+.nav-tabs .nav-item {
+    position: relative;
+    margin-bottom: 0;
+    background: #c0c0c0;
+    color: black;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-right: 1px solid #5A5A5A;
+    box-sizing: border-box;
+}
+.nav-tabs .nav-item .nav-link {
+    color: black;
+    padding: .2rem 1.8rem;
+    box-sizing: border-box;
+    transform: none;
+}
+.nav-tabs .nav-item .nav-link.active {
+    position: relative;
+    background: #c0c0c0;
+}
+.nav-tabs .nav-item:not(:first-child) .nav-link.active {
+    border-left: 1px solid #5A5A5A;
+}
+.nav-tabs .nav-item:first-child{
+    border-left: 2px solid white;
+}
+.nav-tabs .nav-item .nav-link.active:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    background: #c0c0c0;
+}
+.nav-tabs .nav-link {
+    border: 0;
+    padding: 1rem 1rem;
+}
+
+/* OSCILLATOR: SYNTH KEYBOARD (code taken from Mozilla ****) */ 
+.keyboard {
     width: auto;
     padding: 0;
     margin: 0;
+    text-align: center;
   }
-  
+/*
   .key {
     cursor: pointer;
     font: 16px "Open Sans", "Lucida Grande", "Arial", sans-serif;
     border: 1px solid black;
     border-radius: 5px;
-    width: 20px;
+    width: 30px;
     height: 80px;
     text-align: center;
     box-shadow: 2px 2px darkgray;
     display: inline-block;
     position: relative;
-    margin-right: 3px;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-  }
-  
-  .key div {
-    position: absolute;
-    bottom: 0;
+  }*/
+  .key{
+    display: inline-block;
+    font: 16px "Open Sans", "Lucida Grande", "Arial", sans-serif;
+    width: 30px;
+    height: 50px;
     text-align: center;
-    width: 100%;
-    pointer-events: none;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+    background: silver;
+    color: black;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
   }
   
   .key div sub {
@@ -49,49 +487,22 @@
   }
   
   .key:active {
-    background-color: #000;
+    background-color: #424242;
     color: #fff;
   }
   
   .octave {
     display: inline-block;
-    padding: 0 6px 0 0;
+    padding: 2px 6px 0 0;
   }
   
   .settingsBar {
-    padding-top: 8px;
-    font: 14px "Open Sans", "Lucida Grande", "Arial", sans-serif;
     position: relative;
+    padding-top: 8px;
+    padding-bottom: 30px;
+    font: 10px "Open Sans", "Lucida Grande", "Arial", sans-serif;
     vertical-align: middle;
-    width: 100%;
-    height: 30px;
-  }
-  
-  .left {
     width: 50%;
-    position: absolute;
-    left: 0;
-    display: table-cell;
-    vertical-align: middle;
+    height: 10px;
   }
-  
-  .left span, .left input {
-    vertical-align: middle;
-  }
-  
-  .right {
-    width: 50%;
-    position: absolute;
-    right: 0;
-    display: table-cell;
-    vertical-align: middle;
-  }
-  
-  .right span {
-    vertical-align: middle;
-  }
-  
-  .right input {
-    vertical-align: baseline;
-  }
-  
+ 

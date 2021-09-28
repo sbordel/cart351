@@ -15,6 +15,10 @@ let playButton = document.querySelector('button');
 
 track.connect(audioContext2.destination);
 
+let recorder, gumStream;
+let recordButton = document.getElementById("recordButton");
+recordButton.addEventListener("click", toggleRecording);
+
 
 //OSCILLATOR: song verse
 function createNoteTable() {
@@ -142,8 +146,43 @@ playButton.addEventListener('click', function() {
     if (this.dataset.playing === 'false') {
         audioElement.play();
         this.dataset.playing = 'true';
+        audioElement.loop = 'true';
     } else if (this.dataset.playing === 'true') {
         audioElement.pause();
         this.dataset.playing = 'false';
+        audioElement.loop = 'false';
     }
 }, false);
+
+
+/*
+MICROPHONE (MEDIA RECORDER): vocals 
+original code by Octavian Naicu - taken from https://codepen.io/naicuoctavian/pen/GRgzqBg
+*/
+function toggleRecording() {
+    if (recorder && recorder.state == "recording") {
+        recorder.stop();
+        gumStream.getAudioTracks()[0].stop();
+    } else {
+        navigator.mediaDevices.getUserMedia({
+            audio: true
+        }).then(function(stream) {
+            gumStream = stream;
+            recorder = new MediaRecorder(stream);
+            recorder.ondataavailable = function(e) {
+                var url = URL.createObjectURL(e.data);
+                var preview = document.createElement('audio');
+                preview.setAttribute('id', 'audioPlayer');
+                preview.controls = true;
+                preview.src = url;
+                document.getElementById('three').appendChild(preview);
+            };
+            recorder.start();
+        });
+    }
+}
+
+/* 
+SOUND EFFECTS
+original code by Neil McCallion - taken from https://codepen.io/njmcode/pen/PwvgLv
+*/
