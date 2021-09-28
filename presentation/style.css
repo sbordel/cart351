@@ -46,9 +46,11 @@ window
     margin-bottom: 2%;
     z-index: 2;
   }
-#four{
-  margin-top: -4.5%;
-  margin-bottom: 5%;
+.bottomContainer{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
 }
 .section{
     display: inline-flex;
@@ -69,8 +71,12 @@ window
   padding: 20px;
   width: auto;
 }
-#widget{
-  margin-bottom: 5%;
+#schematicTwo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+  width: auto;
 }
 h1{
     color: #000000;
@@ -98,6 +104,14 @@ h1{
 /* AUDIO PLAYER*/
 .trackPlayer{
   padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.trackPlayerTwo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* AUDIO RECORDER/STREAM PLAYBACK */
 #audioPlayer{
