@@ -79,6 +79,9 @@ main img{
   width: 15vw;
   padding: 30px;
 }
+main img:hover{
+  filter: drop-shadow(10px 15px 4px rgba(6, 1, 83, 0.5));
+}
 .presentation{
   top: 0;
   left: 0;
@@ -86,4 +89,12 @@ main img{
 .reflection{
   top: 0;
   right: -900px;
+}
+.project{
+  bottom: -900px;
+  right: -900px;
+}
+.exercise{
+  bottom: -900px;
+  left: 0;
 }
