@@ -17,13 +17,13 @@ html {
 Body styles
 */
 body {
-    font-family: "MS Sans Serif",Tahoma,Verdana,Segoe,sans-serif; 
+    font-family: "MS Sans Serif",Tahoma,Verdana,Segoe,sans-serif;
     background: teal;
     color: white;
     padding-bottom: 0px;
 }
 .bg-cloud{
-    background-image: url(1973.png);
+    background-image: url(assets/background.png);
     color:#212529;
     background-position: center;
     background-repeat: repeat;
@@ -35,7 +35,6 @@ Link color
 a {
     color:#2d49eb;
 }
-
 /*
 window
 */
@@ -43,9 +42,14 @@ window
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1%;
+    margin-top: 2%;
+    margin-bottom: 2%;
     z-index: 2;
   }
+#four{
+  margin-top: -4.5%;
+  margin-bottom: 5%;
+}
 .section{
     display: inline-flex;
     justify-content: center;
@@ -57,6 +61,16 @@ window
     padding: 10px;
     margin: 10px;
     background-color: rgb(197, 197, 197);
+}
+#schematic{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: auto;
+}
+#widget{
+  margin-bottom: 5%;
 }
 h1{
     color: #000000;
@@ -70,23 +84,24 @@ h1{
     padding-bottom: 20px;
     background-color: rgb(221, 217, 155);
     border: solid 1px black;
-    font-weight: normal; 
+    font-weight: normal;
     text-align: center;
 }
 .section h4{
     font-size: 16px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 .section h5{
     font-size: 14px;
     padding-bottom: 10px;
 }
-/* AUDIO RECORDER/PLAYER */
-
+/* AUDIO PLAYER*/
+.trackPlayer{
+  padding: 10px;
+}
+/* AUDIO RECORDER/STREAM PLAYBACK */
 #audioPlayer{
-    position: relative;
-    display: inline;
-    padding: 10px;
+    margin-top: 10px;
 }
 /*
 Scrollbar (only chrome & safari)
@@ -272,7 +287,6 @@ CARDS
 .header-inactive{
     background: gray !important;
 }
-
 /*
 NAVBAR
 */
@@ -433,7 +447,7 @@ TABS
     padding: 1rem 1rem;
 }
 
-/* OSCILLATOR: SYNTH KEYBOARD (code taken from Mozilla ****) */ 
+/* OSCILLATOR: SYNTH KEYBOARD (code taken from Mozilla ****) */
 .keyboard {
     width: auto;
     padding: 0;
@@ -461,7 +475,7 @@ TABS
     display: inline-block;
     font: 16px "Open Sans", "Lucida Grande", "Arial", sans-serif;
     width: 30px;
-    height: 50px;
+    height: 40px;
     text-align: center;
     border-width: 2px;
     border-style: outset;
@@ -476,26 +490,26 @@ TABS
     -webkit-user-select: none;
     -ms-user-select: none;
   }
-  
+
   .key div sub {
     font-size: 10px;
     pointer-events: none;
   }
-  
+
   .key:hover {
     background-color: #eef;
   }
-  
+
   .key:active {
     background-color: #424242;
     color: #fff;
   }
-  
+
   .octave {
     display: inline-block;
     padding: 2px 6px 0 0;
   }
-  
+
   .settingsBar {
     position: relative;
     padding-top: 8px;
@@ -505,4 +519,3 @@ TABS
     width: 50%;
     height: 10px;
   }
- 

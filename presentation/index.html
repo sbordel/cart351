@@ -53,8 +53,8 @@
 
 <div class="container">
   <div class="card mb-4">
-    <div class="card-body">
-      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+    <div class="card-body" id="schematic">
+    <img src="assets/API_schematic.png" alt="API schematic">
     </div>
   </div>
 </div>
@@ -64,14 +64,14 @@
       <div class="card-header icon">
         <h4 class="my-0 font-weight-normal">Using the Web Audio API</h4>
       </div>
-      <div class="card-body">
+      <div class="card-body widget">
         <!-- ** SONG CHORUS: sample playback ** -->
         <div class="section" id="one">
         <h4>AUDIO FILE PLAYBACK</h4>
         <h5>=> chorus</h5>
-    
+
         <!-- audio content: mp3/ogg files-->
-        <audio controls="">
+        <audio controls="" class="trackPlayer">
           <source src="assets/sound/aroundtheworld_sample.mp3" type="audio/mpeg">
           <source src="assets/sound/aroundtheworld_sample.ogg" type="audio/ogg">
         </audio>
@@ -99,9 +99,24 @@
           <h4>AUDIO RECORDING/PLAYBACK</h4>
            <h5>=> vocals</h5>
           <button id="recordButton">record/stop</button>
+
+          <!-- modified audio content created using Voice-O-matic via https://github.com/mdn/voice-change-o-matic -->
+          <audio controls="" style="padding-top:10px">
+            <source src="assets/sound/aroundtheworld_voice.mp3" type="audio/mpeg">
+            <source src="assets/sound/aroundtheworld_voice.ogg" type="audio/ogg">
+          </audio>
         </div>
+      </div>
+    </div>
+  </div>
 
-
+  <div class="container" id="four">
+    <div class="card mb-4">
+      <div class="card-body">
+        <audio controls="" style="padding-top:10px">
+          <source src="assets/sound/aroundtheworld_voice.mp3" type="audio/mpeg">
+          <source src="assets/sound/aroundtheworld_voice.ogg" type="audio/ogg">
+        </audio>
       </div>
     </div>
   </div>

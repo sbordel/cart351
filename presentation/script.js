@@ -13,19 +13,22 @@ let audioElement = document.querySelector('audio');
 let track = audioContext2.createMediaElementSource(audioElement);
 let playButton = document.querySelector('button');
 
-track.connect(audioContext2.destination);
-
-let recorder, gumStream;
+//variables for AUDIO RECORDER/STREAM PLAYBACK
+let recorder, voiceStream;
 let recordButton = document.getElementById("recordButton");
 recordButton.addEventListener("click", toggleRecording);
 
 
-//OSCILLATOR: song verse
+/*
+** OSCILLATOR: song verse ***
+original code taken from https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Simple_synth
+*/
 function createNoteTable() {
   let noteFreq = [];
   for (let i = 0; i < 9; i++) {
     noteFreq[i] = [];
   }
+  /* give each note its corresponding frequency  */
   noteFreq[1]["G"] = 48.999429497718661;
   noteFreq[1]["G#"] = 51.913087197493142;
   noteFreq[1]["A"] = 55.000000000000000;
@@ -52,9 +55,8 @@ function setup() {
   mainGainNode.connect(audioContext.destination);
   mainGainNode.gain.value = volumeControl.value;
 
-  // Create the keys; skip any that are sharp or flat; for
-  // our purposes we don't need them. Each octave is inserted
-  // into a <div> of class "octave".
+  // ** KEYS **
+  // each octave is insertedi nto a <div> of class "octave"
 
   noteFreq.forEach(function (keys, idx) {
     let keyList = Object.entries(keys);
@@ -69,7 +71,6 @@ function setup() {
 
     keyboard.appendChild(octaveElem);
   });
-
   for (i = 0; i < 9; i++) {
     oscList[i] = {};
   }
@@ -108,6 +109,7 @@ function playTone(freq) {
   return osc;
 }
 
+/* Mouse event triggers corresponding keys */
 function notePressed(event) {
   if (event.buttons & 1) {
     let dataset = event.target.dataset; OscillatorNode.setPeriodicWave
@@ -119,7 +121,6 @@ function notePressed(event) {
     }
   }
 }
-
 function noteReleased(event) {
   let dataset = event.target.dataset;
 
@@ -130,13 +131,15 @@ function noteReleased(event) {
     delete dataset["pressed"];
   }
 }
-
+/* gain control  */
 function changeVolume(event) {
   mainGainNode.gain.value = volumeControl.value
 }
 
+// *** AUDIO PLAYER: song chorus ***
+track.connect(audioContext2.destination);
 
-//AUDIO PLAYER: song chorus
+
 playButton.addEventListener('click', function() {
     // checks if context is in suspended state (autoplay policy)
     if (audioContext2.state === 'suspended') {
@@ -156,18 +159,18 @@ playButton.addEventListener('click', function() {
 
 
 /*
-MICROPHONE (MEDIA RECORDER): vocals 
+ *** MICROPHONE (MEDIA RECORDER): vocals ***
 original code by Octavian Naicu - taken from https://codepen.io/naicuoctavian/pen/GRgzqBg
 */
 function toggleRecording() {
     if (recorder && recorder.state == "recording") {
         recorder.stop();
-        gumStream.getAudioTracks()[0].stop();
+        voiceStream.getAudioTracks()[0].stop();
     } else {
         navigator.mediaDevices.getUserMedia({
             audio: true
         }).then(function(stream) {
-            gumStream = stream;
+            voiceStream = stream;
             recorder = new MediaRecorder(stream);
             recorder.ondataavailable = function(e) {
                 var url = URL.createObjectURL(e.data);
@@ -182,7 +185,7 @@ function toggleRecording() {
     }
 }
 
-/* 
+/*
 SOUND EFFECTS
 original code by Neil McCallion - taken from https://codepen.io/njmcode/pen/PwvgLv
 */
