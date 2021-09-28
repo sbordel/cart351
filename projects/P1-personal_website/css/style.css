@@ -15,12 +15,12 @@ html {
   src: url(../fonts/woff/Karrik-Regular.woff);
 }
 /* ***
-MAIN PAGE 
+MAIN PAGE
 *** */
 .background-overlay{
   background-image: url('../assets/background_pages.png');
   background-position: 0 0 0 0;
-  background-size: 150%;
+  background-size: 150%, cover;
   overflow: scroll;
 }
 .container{
@@ -71,30 +71,82 @@ text{
 a {
   cursor: url(../assets/hand.png), default;
 }
-/* *** 
-SECONDARY PAGE 
+/* ***
+SECONDARY PAGE
 *** */
 main img{
   position: absolute;
-  width: 15vw;
+  width: 270px;
   padding: 30px;
+  filter: blur(0px) drop-shadow(10px 15px 4px rgba(72, 92, 47, 0.75));
 }
 main img:hover{
-  filter: drop-shadow(10px 15px 4px rgba(6, 1, 83, 0.5));
+  mix-blend-mode: exclusion;
+  filter: drop-shadow(10px 15px 4px rgba(183, 163, 208, 0.75));
 }
 .presentation{
   top: 0;
   left: 0;
 }
+#s1{
+  top: 5%;
+  left: 10%;
+}
+#s2{
+  top: 45%;
+  left: 31%;
+}
 .reflection{
   top: 0;
-  right: -900px;
+  right: -50%;
+}
+#r1{
+  top: 39%;
+  right: -30%;
+}
+#r2{
+  top: 56%;
+  right: -15%;
+}
+#r3{
+  top: 7%;
+  right: -25%;
+}
+#r4{
+  top: 42%;
 }
 .project{
-  bottom: -900px;
-  right: -900px;
+  bottom: -100%;
+  right: -50%;
+}
+#p1{
+
+}
+#p2{
+
+}
+#p3{
+
+}
+#p4{
+
+}
+#p5{
+
 }
 .exercise{
-  bottom: -900px;
+  bottom: -100%;
   left: 0;
+}
+#e1{
+
+}
+#e2{
+
+}
+#e3{
+
+}
+#e4{
+
 }
