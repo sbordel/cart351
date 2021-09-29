@@ -82,6 +82,7 @@ figure{
 }
 figure a{
   font-family: 'Patty Cake';
+  font-weight: bold;
   text-decoration: none;
   color: #000000;
 }
@@ -89,44 +90,53 @@ figure a:hover{
   font-style: italic;
 }
 figcaption {
-    display: block;
-    position: relative;
-    z-index: 100;
+  display: block;
+  position: relative;
+  margin: -50px;
+  z-index: 3;
 }
 h1{
-  position: fixed;
   font-family: 'Times New Roman';
   font-weight: lighter;
   font-size: 2vw;
-  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 10px;
 }
+
+/*
+PAGE HYPERLINK POSITIONING
+*/
 #tooltip {
-  position: relative;
   display: inline-block;
 }
-#tooltip #tooltipText {
-  visibility: hidden;
-  font-family: 'Times New';
-  width: 300px;
-  filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.75));
-  color: #ffffff;
+#tooltip img{
+  width: auto;
   padding: 5px;
-  margin-left: 10px;
-  text-align: center;
+  z-index: 7;
+}
+#tooltip #tooltipText {
+  display: block;
+  visibility: hidden;
   position: absolute;
+  width: auto;
+  margin-left: 4vw;
+  font-family: 'Times New';
   font-size: 1vw;
-  z-index: 1;
+  filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.75));
+  z-index: 6;
 }
 #tooltip:hover #tooltipText {
   visibility: visible;
 }
+/*
+PAGE HYPERLINK POSITIONING
+*/
 .presentation{
   top: 0;
   left: 0;
-}
-figcaption{
-  position: relative;
-  margin: -50px;
 }
 #s1{
   top: 27%;
