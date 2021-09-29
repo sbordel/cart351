@@ -28,19 +28,6 @@ MAIN PAGE
   justify-content: center;
   align-items: center;
 }
-/*
-#title{
-  display: flex;
-  justify-content: right;
-  right: 0;
-  margin-top: 10vw;
-}
-text{
-  font-family: 'Karrik';
-  font-weight: normal;
-  font-size: 2vw;
-}
-*/
 #folder-content{
   position: absolute;
   top: 50%;
@@ -88,65 +75,101 @@ main img:hover{
   top: 0;
   left: 0;
 }
+figure{
+  position: absolute;
+  margin: 25px;
+}
+figure a{
+  text-decoration: none;  
+  color: #000000;
+}
+figure a:hover{
+  font-style: italic;
+}
+figcaption {
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+/*
+h1{
+  font-family: 'Karrik';
+  font-weight: lighter;
+  font-style: oblique;
+}*/
+.presentation{
+  top: 0;
+  left: 0;
+}
+figcaption{
+  position: relative;
+  margin: -50px;
+}
 #s1{
-  top: 5%;
-  left: 10%;
+  top: 27%;
+  left: 34%;
 }
 #s2{
-  top: 45%;
-  left: 31%;
+  top: 10%;
+  left: 8%;
+}
+#fcs1{
+  left: 15%;
+}
+#fcs2{
+  left: 200px;
 }
 .reflection{
   top: 0;
-  right: -50%;
-}
-#r1{
-  top: 39%;
   right: -30%;
 }
+#r1{
+  top: 11%;
+  right: 5%;
+}
 #r2{
-  top: 56%;
-  right: -15%;
+  top: 19%;
 }
 #r3{
-  top: 7%;
-  right: -25%;
+  top: 45%;
+  right: -11%;
 }
 #r4{
-  top: 42%;
+  top: 31%;
+  right: 11%;
+}
+#fcr2{
+  left: 50px;
+}
+#fcr3{
+  left: 200px;
+}
+#fcr4{
+  top: 100px;
 }
 .project{
-  bottom: -100%;
-  right: -50%;
+  bottom: -55%;
+  right: -30%;
 }
 #p1{
-
 }
 #p2{
-
-}
+}   
 #p3{
-
 }
 #p4{
-
 }
 #p5{
-
 }
 .exercise{
-  bottom: -100%;
+  bottom: -55%;
   left: 0;
 }
 #e1{
-
 }
 #e2{
-
 }
 #e3{
-
 }
 #e4{
-
 }

@@ -1,9 +1,10 @@
 /*
+    original code by 
+    Author: Alex B (alex-b.me)
+    License: MIT
 
     WIN95.CSS
     https://github.com/AlexBSoft/win95.css
-    Author: Alex B (alex-b.me)
-    License: MIT
 
     Version: 1.2.0
     06.12.2020
@@ -28,7 +29,6 @@ body {
     background-position: center;
     background-repeat: repeat;
 }
-
 /*
 Link color
 */
@@ -46,11 +46,8 @@ window
     margin-bottom: 2%;
     z-index: 2;
   }
-.bottomContainer{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 100px;
+.space{
+    height: 100px;
 }
 .section{
     display: inline-flex;
@@ -192,7 +189,6 @@ Scrollbar (only chrome & safari)
     height: 40px;
     background-color: silver
 }
-
 /*
     Button styles
 */
@@ -468,23 +464,6 @@ TABS
     margin: 0;
     text-align: center;
   }
-/*
-  .key {
-    cursor: pointer;
-    font: 16px "Open Sans", "Lucida Grande", "Arial", sans-serif;
-    border: 1px solid black;
-    border-radius: 5px;
-    width: 30px;
-    height: 80px;
-    text-align: center;
-    box-shadow: 2px 2px darkgray;
-    display: inline-block;
-    position: relative;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-  }*/
   .key{
     display: inline-block;
     font: 16px "Open Sans", "Lucida Grande", "Arial", sans-serif;
@@ -504,26 +483,24 @@ TABS
     -webkit-user-select: none;
     -ms-user-select: none;
   }
-
   .key div sub {
     font-size: 10px;
     pointer-events: none;
   }
-
+  .key div {
+      pointer-events: none;
+  }
   .key:hover {
     background-color: #eef;
   }
-
   .key:active {
     background-color: #424242;
     color: #fff;
   }
-
   .octave {
     display: inline-block;
     padding: 2px 6px 0 0;
   }
-
   .settingsBar {
     position: relative;
     padding-top: 8px;

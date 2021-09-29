@@ -177,6 +177,7 @@ function toggleRecording() {
                 var preview = document.createElement('audio');
                 preview.setAttribute('id', 'audioPlayer');
                 preview.controls = true;
+                preview.loop = true;
                 preview.src = url;
                 document.getElementById('three').appendChild(preview);
             };
