@@ -12,8 +12,12 @@ html {
   src: url(../fonts/pattycake-regular-webfont.ttf);
 }
 @font-face {
-  font-family: '';
-  src: url(../fonts/);
+  font-family: 'DWT Outline';
+  src: url(../fonts/dwt_Outline.ttf);
+}
+@font-face {
+  font-family: 'DWT Solid';
+  src: url(../fonts/dwt_Solid.ttf);
 }
 /* ***
 MAIN PAGE
@@ -31,13 +35,30 @@ body{
   font-family: 'Patty Cake';
 }
 h1{
-
+  font-family: 'DWT Outline';
+  font-size: 80px;
+}
+h2{
+  font-family: 'DWT Solid';
+  font-size: 30px;
+  padding-top: 5%;
+  margin-bottom: -2%;
+}
+h3{
+  font-weight: bold;
+  font-style: italic;
+}
+h4{
+  font-weight: normal;
 }
 .title{
   text-align: center;
 }
 #pdf{
-  margin-bottom: 30px;
+  margin-bottom: 5vw;
+}
+#pdf-img{
+  width: 25px;
 }
 section{
   position: relative;
@@ -48,7 +69,11 @@ section{
   width: 50%;
 }
 .paragraphe{
+  margin-top: 6%;
+}
+.slide{
   margin-top: 5%;
+  margin-bottom: 3%;
 }
 img{
   position: relative;
@@ -56,4 +81,16 @@ img{
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+}
+.ref{
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+.link-img{
+  width: 1vw;
+  margin-left:0;
+  margin: 5px;
+}
+footer{
+  height: 200px;
 }
