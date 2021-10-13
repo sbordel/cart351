@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cart351:: sam's website!</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/script.js"></script>
 </head>
 
 <body>
     <div class="container">
     <!-- INDEX -->
         <div id="folder-content">
-          <img id="smiley" src="assets/chikadee.png" alt="smiley with t-shirt 'cart351 is fun'">
+          <img draggable="true" id="draggable" src="assets/chikadee.png" alt="smiley with t-shirt 'cart351 is fun'">
           <img id="arrow" src="assets/arrow.png" alt="arrow">
-          <a href="pages.html"><img id="folder" src="assets/folder.png" alt="folder"></a>
+          <img ondragover="allowDrop(event)" ondrop="dropping(event)" src="assets/folder.png" id="droppable" alt="folder">
         </div>
       </div>
     
@@ -20,5 +22,4 @@
       <footer>
       </footer>
 </body>
-
 </html>

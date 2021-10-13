@@ -17,35 +17,35 @@ html {
 /* ***
 MAIN PAGE
 *** */
-.background-overlay{
+.background-overlay {
   background-image: url('../assets/background_pages.png');
   background-position: 0 0 0 0;
   background-size: 150%, cover;
   overflow: scroll;
 }
-.container{
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#folder-content{
+#folder-content {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   margin-right: 3%;
 }
-#smiley{
+#draggable {
   width: 22vw;
   margin: 30px;
   filter: drop-shadow(0 0 15px rgb(166, 77, 255, 0.25));
 }
-#folder {
+#droppable {
   width: 12vw;
   padding-bottom: 15px;
   margin: 30px;
   filter: blur(0px) drop-shadow(0 0 30px rgb(166, 77, 255, 0.5));
 }
-#folder:hover{
+#droppable:hover {
   filter: blur(5px) drop-shadow(0 0 30px rgb(166, 77, 255, 0.5));
 }
 #arrow {
