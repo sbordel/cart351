@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>exercise 2</title>
+  <style></style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="js/script.js"></script>
+<body>
+  <header>
+    <h1> WHAT WILL YOUR MOOD BE TODAY? </h1>
+    <br>
+    <h2>(fill in the form below to find out!!!)</h2>
+    <br>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <p>☟</p>
+    <br>
+  </header>
+
+<div class="body-wrapper">
+    <div id="form-container">
+    <form action="#">
+      <br>
+        <h3>WEATHER&nbsp;⍰ </h3>
+        <br>
+        <div class="section-wrapper">
+        <label for="sky-color">sky color ?&nbsp;&nbsp;➠&nbsp;</label>
+        <select list="sky-colors" name="sky-color" id="sky-color" placeholder="?">
+          <option value="">?</option>
+          <option value="4">grey</option>
+          <option value="2">blue</option>
+          <option value="1">sunny</option>
+          <option value="3">dark</option>
+        </select>
+        <br><br>
+      <label for="sky">weather condition ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="skies" name="sky" id="sky" placeholder="?">
+        <option value="">?</option>
+        <option value="3">fog</option>
+        <option value="4">cloudy</option>
+        <option value="1">sun</option>
+        <option value="2">clear</option>
+      </select>
+      <br><br>
+      <!--
+      <label for="morning-temp">morning temperature <span id="regular-text"> (°C)</span> ?&nbsp;&nbsp;➠&nbsp;</label>
+      <input type="number" name="morning-temp" id="" min="-25" max="35" placeholder="?">
+      <br><br>-->
+      <label for="wind">wind ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="winds" name="wind" id="wind" placeholder="?">
+        <option value="">?</option>
+        <option value="4">a fuckton</option>
+        <option value="3">yes</option>
+        <option value="2">mild</option>
+        <option value="1">no</option>
+      </select>
+      <br><br>
+      <label for="rain">rain ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="rains" name="rain" id="rain" placeholder="?">
+        <option value="">?</option>
+        <option value="4">a fuckton</option>
+        <option value="3">yes</option>
+        <option value="2">mild</option>
+        <option value="1">no</option>
+      </select>
+      </div>
+      <h3>LIFE&nbsp;⍰ </h3>
+      <br>
+      <div class="section-wrapper">
+      <label for="tired">tired ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="tiredness" name="tired" id="tired" placeholder="?">
+        <option value="">?</option>
+        <option value="3">yes</option>
+        <option value="2">no</option>
+        <option value="1">maybe</option>
+      </select>
+      <br><br>
+      <label for="cat-mood">cat mood ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="cat-moods" name="cat-mood" id="cat-mood" placeholder="?">
+        <option value="">?</option>
+        <option value="4">annoying</option>
+        <option value="3">okay</option>
+        <option value="2">calm</option>
+        <option value="1">an angel</option>
+      </select>
+      <br><br>
+      <label for="assignment-due">assignment due ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="assignments" name="assignment-due" id="assignment-due" placeholder="?">
+        <option value="">?</option>
+        <option value="3">yes</option>
+        <option value="1">no</option>
+        <option value="2">???</option>
+      </select>
+      <br><br>
+      <label for="breakfast">breakfast ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="breakfasts" name="breakfast" id="breakfast" placeholder="?">
+        <option value="">?</option>
+        <option value="1">yes</option>
+        <option value="2">no</option>
+      </select>
+      <br><br>
+      <label for="general-mood">general mood ?&nbsp;&nbsp;➠&nbsp;</label>
+      <select list="moods" name="general-mood" id="general-mood" placeholder="?">
+        <option value="">?</option>
+        <option value="1">amazing</option>
+        <option value="2">good</option>
+        <option value="3">hazy</option>
+        <option value="4">>:( or :,(</option>
+      </select>
+       <!--
+        highest total score: 32
+        lowest total score: 7
+
+        sad: 32>= 25<=
+        neutral: 24>= 14<=
+        happy: 13>= 7<=
+      -->
+    </div>
+      <input type="button" value="submit" id="submit-button">
+  
+      <br>
+    </form>
+
+    <section id="result-container">
+    </section>
+  </div>
+</div>
+
+<!--
+<div class="body-wrapper" display="hidden">
+<div id="result-container">
+<figure class="result-fig" id="yes-img"><img class="result-img" src="assets/happy.png" alt="happy" display="hidden"><figcaption>HAPPY !</figcaption></figure>
+<figure class="result-fig" id="no-img"><img class="result-img" src="assets/sad.png" alt="sad" display="hidden"><figcaption>SAD ...</figcaption></figure>
+<figure class="result-fig" id="neutral-img"><img class="result-img" src="assets/neutral.png" alt="neutral"><figcaption>(neutral)</figcaption></figure>
+</div>
+</div>-->
+
+</body>
+
+</html>

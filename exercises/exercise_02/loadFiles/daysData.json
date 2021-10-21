@@ -1,0 +1,74 @@
+{
+    "Label": "Days",
+    "SubLabel": "Things that may have affected my mood during the course of 4 days",
+    "DayElements": [
+        {
+            "Day": 1,
+            "Weather": {
+                "Sky_Color": 4,
+                "Sky": 3,
+                "Morning_Temp_Celsius": 15,
+                "Wind": 2,
+                "Rain": 4
+            },
+            "Tired": 3,
+            "Cat_Mood": 4,
+            "Assignment_Due": 3,
+            "Breakfast": 2,
+            "General_Mood": 4,
+            "Total": 29,
+            "Mood": "Sad"
+        },
+        {
+            "Day": 2,
+            "Weather": {
+                "Sky_Color": 2,
+                "Sky": 1,
+                "Morning_Temp_Celsius": 19,
+                "Wind": 2,
+                "Rain": 1
+            },
+            "Tired": 1,
+            "Cat_Mood": 2,
+            "Assignment_Due": 2,
+            "Breakfast": 1,
+            "General_Mood": 1,
+            "Total": 13,
+            "Mood": "Happy"
+        },
+        {
+            "Day": 3,
+            "Weather": {
+                "Sky_Color": 4,
+                "Sky": 2,
+                "Morning_Temp_Celsius": 10,
+                "Wind": 3,
+                "Rain": 3
+            },
+            "Tired": 3,
+            "Cat_Mood": 3,
+            "Assignment_Due": 3,
+            "Breakfast": 1,
+            "General_Mood": 2,
+            "Total": 24,
+            "Mood": "Neutral"
+        },
+        {
+            "Day": 4,
+            "Weather": {
+                "Sky_Color": 4,
+                "Sky": 1,
+                "Morning_Temp_Celsius": 7,
+                "Wind": 3,
+                "Rain": 1
+            },
+            "Tired": 3,
+            "Cat_Mood": 1,
+            "Assignment_Due": 3,
+            "Breakfast": 1,
+            "General_Mood": 3,
+            "Total": 20,
+            "Mood": "Neutral"
+        }
+    ]
+}

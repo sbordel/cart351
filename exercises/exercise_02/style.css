@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  cursor: url(assets/hand.png), default;
+}
+  @font-face {
+    font-family: 'SanFrisco';
+    src: url(assets/fonts/Sanfrisco.ttf);
+  }
+  body{
+    position: relative;
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-image: url('assets/background_e2.png');
+    background-size: cover;
+    font-family: 'SanFrisco';
+  }
+  header{
+    text-align: center; 
+  }
+  h1{
+    font-size: 30px;
+    font-weight: normal;
+  }
+  h2{
+    font-size: 20px;
+    font-weight: lighter;
+  }
+  p{
+    font-size: 25px;
+  }
+  #regular-text{
+    font-family:'Times New Roman', Times, serif;
+  }
+  option, select, input{
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .body-wrapper{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    border: solid black 1px;
+    background: #f7cfa177;
+    padding:20px;
+    margin-bottom: 5%;
+  }
+  .section-wrapper{
+    border: inset #9c9c9c 3px;
+    background: #b9b9b9;
+    padding:20px;
+    margin-bottom: 5%;
+  }
+  #submit-button{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding:2px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .result-fig{
+    text-align: center;
+  }
+  .result-img{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2%;
+  }
+  figcaption{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 2%;
+  }
