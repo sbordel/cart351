@@ -3,6 +3,13 @@
     "SubLabel": "Things that may have affected my mood during the course of 4 days",
     "DayElements": [
         {
+            "Day": "Sunday",
+            "Weather": "NaN",
+            "Cat_Mood": "NaN",
+            "Assignment_Due": "NaN",
+            "Construction": "NaN"
+        },
+        {
             "Day": "Monday",
             "Weather": "Bad",
             "Cat_Mood": "Annoying",
@@ -33,6 +40,13 @@
         {
             "Day": "Friday",
             "Weather": "Bad",
+            "Cat_Mood": "Calm",
+            "Assignment_Due": "Yes",
+            "Construction": "No"
+        },
+        {
+            "Day": "Saturday",
+            "Weather": "Good",
             "Cat_Mood": "Calm",
             "Assignment_Due": "Yes",
             "Construction": "No"

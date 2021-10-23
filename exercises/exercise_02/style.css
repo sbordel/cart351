@@ -7,6 +7,7 @@ html {
   height: 100%;
   cursor: url(assets/hand.png), default;
 }
+
   @font-face {
     font-family: 'Los Altos';
     src: url(assets/fonts/Los_Altos.ttf);
@@ -15,33 +16,52 @@ html {
     font-family: 'Valencia';
     src: url(assets/fonts/Valencia.ttf);
   }
+  @font-face {
+    font-family: 'Patty Cake';
+    src: url(assets/fonts/pattycake-regular-webfont.ttf);
+  }
   body{
     position: relative;
     display: block;
-    margin-top: 5%;
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     background-image: url('assets/background_e2.png');
     background-size: cover;
-    font-family: 'Los Altos';
+    font-family: 'Patty Cake';
   }
-a {
+  button, a {
   /* cursor */
   cursor: url(assets/hand.png), default;
 }
   header{
-    margin-top: 2%;
+    margin-top: 1%;
     text-align: center; 
   }
   p{
+    color: rgb(26, 32, 44);
     padding-top: 5px;
-    font-family: 'Los Altos';
+    font-family: 'Patty Cake';
     font-size: 30px;
   }
+  span{
+    font-style: italic;
+  }
   button{
-    padding: 5px;
+    width: 200px;
+    height: 420px;
+    padding: 20px;
     font-family: 'Courier New', Courier, monospace;
+    border: outset 7px rgb(86, 91, 102);
+    background-image: url('assets/sam.png');
+    background-size: cover;
+  }
+  button:hover{
+    background-blend-mode:hard-light;
+  }
+  button:active{
+    background-blend-mode:difference;
   }
   section{
     position: relative;
@@ -60,4 +80,21 @@ a {
   }
   #file-img{
     width: 20px;
+  }
+  #center-img{
+    width: 10%;
+  }
+  #weekend-result{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    width:100%;
+    height:100%;
+    background-image: url('assets/stars-aligned.png');
+    mix-blend-mode:color-burn;
+    opacity: 0.5;
+    z-index: -1;
   }
