@@ -4,10 +4,10 @@
     "DayElements": [
         {
             "Day": "Sunday",
-            "Weather": "NaN",
-            "Cat_Mood": "NaN",
-            "Assignment_Due": "NaN",
-            "Construction": "NaN"
+            "Weather": "",
+            "Cat_Mood": "",
+            "Assignment_Due": "",
+            "Construction": ""
         },
         {
             "Day": "Monday",
@@ -46,10 +46,10 @@
         },
         {
             "Day": "Saturday",
-            "Weather": "Good",
-            "Cat_Mood": "Calm",
-            "Assignment_Due": "Yes",
-            "Construction": "No"
+            "Weather": "",
+            "Cat_Mood": "",
+            "Assignment_Due": "",
+            "Construction": ""
         }
     ]
 }

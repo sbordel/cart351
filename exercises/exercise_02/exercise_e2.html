@@ -8,23 +8,43 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="js/script.js"></script>
+
 <body>
   <a id="file" href="exercise_02.zip"><img id="file-img" src="assets/link-icon.png" alt="download compressed files here"></a>
-  <header>
+  <header id="main-header">
     <br><br>
     <p>find out if all the elements</p>
     <p>in sam's life are synched</p>
     <p>on this <span id="todayDate"></span></p>
     <br>
     <p>↓</p>
-    <br>
     <button id="button"></button>
-    </header>
-    <section id="result-container">
-     <!--<div id="weather"></div><span>+</span><div id="cat-mood"></div><span>+</span><div id="assignment-due"></div><span>+</span><div id="construction"></div><span>=</span>-->
-     <p id="message"></p>
-    </section>
-    <div id="weekend-result" style="display:none"></div>
+  </header>
+
+  <!-- weekend result -->
+  <section id="weekend-result" style="display:none">
+    <br>
+    <h1>YES!</h1>
+    <br>
+    <img class="image-result" src="assets/sam-happy.png" alt="">
+    <div id="result-footer"></div>
+    <p id="message-one"></p>
+  </section>
+
+   <!-- weekday result -->
+   <section id="weekday-result" style="display:none">
+    <br>
+    <h1>NO...</h1>
+    <br>
+    <img class="image-result" src="assets/sam-sad.png" alt="">
+    <div id="element-result">
+    <img class="element-img" id="weather-img" src="" alt="weather">
+    <img class="element-img" id="cat-img" src="" alt="cat mood">
+    <img class="element-img" id="assign-img" src="" alt="assignment">
+    <img class="element-img" id="construct-img" src="" alt="construction">
+   </div>
+    <p id="message-two"></p>
+  </section>
 </body>
 
 </html>

@@ -37,44 +37,51 @@ $(document).ready(function () {
     dayConstruct = dayData[dayNum].Construction;
 
     //check what day of the week it is:
-    //if today is Sunday or Saturday=> display a message
+    //if today is Sunday or Saturday=> 
     if (weekday == 0 || 6) {
-      let result = "Everything is alligned on the weekend!!!";
-      document.getElementById("message").innerHTML = result;
+      let result = "Everything is aligned because its the weekend!!!";
+      document.getElementById("message-one").innerHTML = result;
+      $("#main-header").hide();
       $("#weekend-result").show();
+    }
+    //if today is a weekday=> 
+    else {
+      let result = "Some elements are not totally aligned...";
+      document.getElementById("message-two").innerHTML = result;
+      $("#main-header").hide();
+      $("#weekday-result").show();
     }
     //if today is a day between Monday and Friday=>
     //check the value of all the properties corresponding to that day's object
     //display images according to the values
     switch (dayWeather) {
       case "Bad":
-        console.log("bad");
+        $("#weather-img").attr("src","assets/cloud.png");
         break;
       case "Good":
-        console.log("good");
+        $("#weather-img").attr("src","assets/sun.png");
     };
     switch (dayCatmood) {
       case "Annoying":
-        console.log("annoying");
+        $("#cat-img").attr("src","assets/evil.png");
         break;
       case "Calm":
-        console.log("calm");
+        $("#cat-img").attr("src","assets/angel.png");
     };
     switch (dayAssign) {
       case "Yes":
-        console.log("yes");
+        $("#assign-img").attr("src","assets/assignment.png");
         break;
       case "No":
-        console.log("no");
+        $("#assign-img").attr("src","assets/noassignment.png");
     };
     switch (dayConstruct) {
       case "Yes":
-        console.log("yes");
+        $("#construct-img").attr("src","assets/noise.png");
         break;
       case "No":
-        console.log("no");
+        $("#construct-img").attr("src","assets/sleep.png");
     };
-
   }
   )
 });

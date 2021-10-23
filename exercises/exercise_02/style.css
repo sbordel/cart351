@@ -45,6 +45,14 @@ html {
     font-family: 'Patty Cake';
     font-size: 30px;
   }
+  h1{
+    margin-top: 2%;
+    margin-bottom: 1%;
+    color: rgb(26, 32, 44);
+    padding-top: 5px;
+    font-family: 'Patty Cake';
+    font-size: 60px;
+  }
   span{
     font-style: italic;
   }
@@ -63,6 +71,11 @@ html {
   button:active{
     background-blend-mode:difference;
   }
+  .image-result{
+    width: 15%;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
   section{
     position: relative;
     margin-top: 2%;
@@ -76,7 +89,7 @@ html {
     margin-right: auto; 
     padding:20px; 
     top:0;
-    margin-top: -5%;
+    margin-top: -2%;
   }
   #file-img{
     width: 20px;
@@ -84,7 +97,7 @@ html {
   #center-img{
     width: 10%;
   }
-  #weekend-result{
+  #result-footer{
     position: fixed;
     top: 0;
     left: 0;
@@ -97,4 +110,36 @@ html {
     mix-blend-mode:color-burn;
     opacity: 0.5;
     z-index: -1;
+  }
+  #element-result{
+    position: absolute;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top:0;
+    margin-top: 5%;
+    z-index: -1;
+  }
+  .element-img{
+    width: 15%;
+    filter: invert(50%);
+  }
+  #weather-img{
+    position: absolute;
+    left: 10%;
+  }
+  #cat-img{
+    position: absolute;
+    right: 10%;
+  }
+  #assign-img{
+    position: absolute;
+    right: 27%;
+    top: 200px;
+  }
+  #construct-img{
+    position: absolute;
+    left: 27%;
+    top: 200px;
   }
