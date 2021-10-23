@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  cursor: url(assets/hand.png), default;
+}
+  @font-face {
+    font-family: 'Los Altos';
+    src: url(assets/fonts/Los_Altos.ttf);
+  }
+  @font-face {
+    font-family: 'Valencia';
+    src: url(assets/fonts/Valencia.ttf);
+  }
+  body{
+    position: relative;
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-image: url('assets/background_e2.png');
+    background-size: cover;
+    font-family: 'Los Altos';
+  }
+a {
+  /* cursor */
+  cursor: url(assets/hand.png), default;
+}
+  header{
+    margin-top: 2%;
+    text-align: center; 
+  }
+  p{
+    padding-top: 5px;
+    font-family: 'Los Altos';
+    font-size: 30px;
+  }
+  button{
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  section{
+    position: relative;
+    margin-top: 2%;
+    text-align: center; 
+    /*align-self: center;*/
+  }
+  #file{
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding:20px; 
+    top:0;
+    margin-top: -5%;
+  }
+  #file-img{
+    width: 20px;
+  }
