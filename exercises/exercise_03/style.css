@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  overflow: hidden;
+  cursor: url(assets/hand.png), default;
+}
+
+  @font-face {
+    font-family: 'Los Altos';
+    src: url(assets/fonts/Los_Altos.ttf);
+  }
+  @font-face {
+    font-family: 'Valencia';
+    src: url(assets/fonts/Valencia.ttf);
+  }
+  @font-face {
+    font-family: 'Patty Cake';
+    src: url(assets/fonts/pattycake-regular-webfont.ttf);
+  }
+  body{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-image: url('assets/bg.png');
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: -5px -60px;
+    font-family: 'Patty Cake';
+  }
+  a {
+  /* cursor */
+  cursor: url(assets/hand.png), default;
+}
+  #page-logo{
+    position: relative;
+    margin: 2%;
+  }
+  #img-logo{
+    width: 11vw;
+    filter: drop-shadow(-2px 5px 5px #3535357c);
+  }
+  #modal-chat-window{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    width: 700px;
+    height:670px;
+    background-color: #ffe9b1;
+    border: solid 1px #5304f0;
+  }
+  #modal-chat-inline{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  margin-top: 10px;
+  width: 680px;
+  height:660px;
+  border: solid 1px #5304f0;
+}

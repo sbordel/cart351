@@ -6,15 +6,17 @@ let dayCatmood;
 let dayAssign;
 let dayConstruct;
 
-$.getJSON('../json/daysData.json', function (data) {
-  dataFromJSON = data;
-  for (let j = 0; j < dataFromJSON.length; j++) {
-  }
-  dayData = dataFromJSON.DayElements;
-});
-
 $(document).ready(function () {
+
+  $.getJSON('../json/daysData.json', function (data) {
+    dataFromJSON = data;
+    for (let j = 0; j < dataFromJSON.length; j++) {
+    }
+    dayData = dataFromJSON.DayElements;
+    run();
+  });
   // get today's day and display it in text
+  function run(){
   let day = new Date();
   dayNum = day.getDay()
   let weekday = new Array(7);
@@ -30,21 +32,21 @@ $(document).ready(function () {
   $("#todayDate").text(today);
 
   $("button").click(function () {
-    //get property value of every json object 
+    //get property value of every json object
     dayWeather = dayData[dayNum].Weather;
     dayCatmood = dayData[dayNum].Cat_Mood;
     dayAssign = dayData[dayNum].Assignment_Due;
     dayConstruct = dayData[dayNum].Construction;
 
     //check what day of the week it is:
-    //if today is Sunday or Saturday=> 
-    if (weekday == 0 || 6) {
+    //if today is Sunday or Saturday=>
+    if (weekday == 0 || weekday == 6) {
       let result = "Everything is aligned because its the weekend!!!";
       document.getElementById("message-one").innerHTML = result;
       $("#main-header").hide();
       $("#weekend-result").show();
     }
-    //if today is a weekday=> 
+    //if today is a weekday=>
     else {
       let result = "Some elements are not totally aligned...";
       document.getElementById("message-two").innerHTML = result;
@@ -84,6 +86,5 @@ $(document).ready(function () {
     };
   }
   )
+}
 });
-
-
