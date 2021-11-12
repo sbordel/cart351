@@ -45,12 +45,12 @@ a {
   bottom: 0;
   width: 100%;
 }
-#chat-window{
+.chat-window{
   position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 45%;
   height: 75vh;
   background-color: #ffe9b1;
   border: solid 1px #5304f0;
@@ -60,8 +60,8 @@ a {
   display: flex;
   top: 0;
   right: 0;
-  width: 1.05vw;
-  height: 1.05vw;
+  width: 0.95vw;
+  height: 0.95vw;
   background-color: #ad9b69;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1vw;
@@ -69,7 +69,7 @@ a {
   justify-content: center;
   align-items: center;
 }
-#chat-inline{
+.chat-inline{
   position: relative;
   display: block;
   margin-left: auto;
@@ -79,10 +79,11 @@ a {
   height: 75vh;
   border: solid 1px #5304f0;
 }
-#chat-box{
+.chat-box{
   
 }
-.chat-title {
+#chat-title {
+  /*shape properties*/
   position: relative;
   display: flex;
   margin-left: auto;
@@ -94,6 +95,7 @@ a {
   background-color: #ffffff;
   border-radius: 50%;
 
+  /*font properties*/
   font-family: 'Punk Nova';
   font-size: 3vh;
   letter-spacing: 0.3vw;
@@ -101,8 +103,44 @@ a {
   align-items: center;
   text-align: center;
 }
+.chat-footer{
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  margin: 50px;
+  width: 20vh;
+  height: 6vh;
+  left: 50%; /*centering button*/
+  margin-left: -100px;
+}
+a:active {
+  background-image: linear-gradient(to bottom, #d04040 0%, #810101 40%);
+  box-shadow: inset 2px 1px 5px 5px #d04040, inset 0px -5px 10px 5px #dab6b6;
+  color: #5f0d0d;
+  text-shadow: -1px 1px 1px #47000044, 1px -1px 1px #ff8080d2 ;
+}
+a{
+  display: flex;
+  color: #d00000;
+  text-shadow: 1px -1px 1px #47000044, -1px 1px 1px #ff8080d2;
+  border-radius: 50%;
+  padding: 37px;
+  justify-content: center;
+  align-items: center;
+  
+  /*button properties*/
+  background-image: linear-gradient(to bottom, #d00000 0%, #d04040 40%);
+  box-shadow: inset 0px -10px 10px 5px #d000009d, inset 2px 1px 5px 5px #dab6b6;
+  font-family: 'Los Altos';
+  font-size: 3vh;
+  letter-spacing: 0.2vw;
+  text-decoration: none;
+}
+
+
+/*responsive layout for modal*/
 @media only screen and (max-width: 700px) {
-  .chat-title {
+  #chat-title {
     position: relative;
     margin-top: 10px;
     height: 80px;
