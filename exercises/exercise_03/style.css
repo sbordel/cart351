@@ -23,10 +23,10 @@ body{
   background-position: -5px -60px;
   scrollbar-color: #5304f0 #ad9b69;
   font-family: 'Los Altos';
-  }
-  body::-webkit-scrollbar{
+}
+body::-webkit-scrollbar{
   color: #ad9b69;
-  }
+}
 a {
   /* cursor */
   cursor: url(assets/hand.png), default;
@@ -43,11 +43,32 @@ a {
   width: 11vw;
   filter: drop-shadow(-2px 5px 5px #3535357c);
 }
-.modal-chat{
+.icon-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 21vh;
+  width: 65%;
+  z-index: 2;
+}
+.icon{
+  width: 8vw;
+}
+#bot-icon{
+  align-self: flex-start;
+}
+#client-icon{
+  align-self: flex-end; 
+}
+.modal-container{
   position: fixed;
   align-content: center;
   bottom: 0;
   width: 100%;
+  z-index: 1;
 }
 .chat-window{
   position: relative;
@@ -99,7 +120,7 @@ a {
 
   /*font properties*/
   font-family: 'Punk Nova';
-  font-size: 3vh;
+  font-size: 2rem;
   letter-spacing: 0.3vw;
   justify-content: center;
   align-items: center;
@@ -112,37 +133,50 @@ a {
   margin-right: auto;
   width: 96%;
   height: 55vh;
-  padding: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
   background-color: #ffe9d8;
   border: solid 1px #5304f0;
   overflow-y: scroll;
 }
 .chat-bubble{
-  display:flex;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  margin: auto;
+  max-width: 100%;
+}
+.chat-bubble p{
+  position: relative;
+  word-wrap: break-word;
+}
+.bubble{
+  margin-top: 2%;
   border-radius: 10px;
-  margin-top: 15px;
   padding: 15px;
+  max-width: 90%;
 }
 #bot{
+  color: #ffffff;
   background-color: #804be9;
-  border: dotted 2px #0000cc;
+  border: solid 1px #0000cc;
+  align-self: flex-start;
 }
 #client{
-  position: absolute;
-  right: 0;
-  margin-right: 15px;
+  color: #000000;
   background-color: #d7c8f3;
   border: solid 1px #0000cc;
+  align-self: flex-end;
 }
 .chat-footer{
   position: relative;
   display: flex;
-  width: 100%;
   margin-top: 3%;
   height: 0;
   justify-content: center;
 }
+
 #chat-button:active {
   /*button properties*/ 
   color: #5f0d0d;
@@ -170,9 +204,12 @@ a {
   letter-spacing: 0.2vw;
   text-decoration: none;
 }
-
 /*REPONSIVE LAYOUT FOR MODAL*/
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) {
+  #chat-title {
+    font-size: 1.5rem;
+  }
+@media only screen and (max-width: 600px) {
   #chat-title {
     position: relative;
     margin-top: 10px;
