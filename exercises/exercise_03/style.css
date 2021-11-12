@@ -21,7 +21,11 @@ body{
   background-size: contain;
   background-repeat: repeat;
   background-position: -5px -60px;
-  font-family: 'Patty Cake';
+  scrollbar-color: #5304f0 #ad9b69;
+  font-family: 'Los Altos';
+  }
+  body::-webkit-scrollbar{
+  color: #ad9b69;
   }
 a {
   /* cursor */
@@ -51,7 +55,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   width: 45%;
-  height: 75vh;
+  height: 79vh;
   background-color: #ffe9b1;
   border: solid 1px #5304f0;
 }
@@ -76,11 +80,8 @@ a {
   margin-right: auto;
   margin-top: 2%;
   width: 96%;
-  height: 75vh;
+  height: 78vh;
   border: solid 1px #5304f0;
-}
-.chat-box{
-  
 }
 #chat-title {
   /*shape properties*/
@@ -88,7 +89,8 @@ a {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1.5vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   padding: 10px;
   width: 80%;
   height: 6vh;
@@ -103,42 +105,73 @@ a {
   align-items: center;
   text-align: center;
 }
-.chat-footer{
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  margin: 50px;
-  width: 20vh;
-  height: 6vh;
-  left: 50%; /*centering button*/
-  margin-left: -100px;
+.chat-box{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 96%;
+  height: 55vh;
+  padding: 15px;
+  background-color: #ffe9d8;
+  border: solid 1px #5304f0;
+  overflow-y: scroll;
 }
-a:active {
+.chat-bubble{
+  display:flex;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 15px;
+}
+#bot{
+  background-color: #804be9;
+  border: dotted 2px #0000cc;
+}
+#client{
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+  background-color: #d7c8f3;
+  border: solid 1px #0000cc;
+}
+.chat-footer{
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 3%;
+  height: 0;
+  justify-content: center;
+}
+#chat-button:active {
+  /*button properties*/ 
+  color: #5f0d0d;
   background-image: linear-gradient(to bottom, #d04040 0%, #810101 40%);
   box-shadow: inset 2px 1px 5px 5px #d04040, inset 0px -5px 10px 5px #dab6b6;
-  color: #5f0d0d;
+
+  /*text properties*/
   text-shadow: -1px 1px 1px #47000044, 1px -1px 1px #ff8080d2 ;
 }
-a{
+#chat-button{
+  /*button properties*/
   display: flex;
   color: #d00000;
-  text-shadow: 1px -1px 1px #47000044, -1px 1px 1px #ff8080d2;
+  background-image: linear-gradient(to bottom, #d00000 0%, #d04040 40%);
+  box-shadow: inset 0px -10px 10px 5px #d000009d, inset 2px 1px 5px 5px #dab6b6;
   border-radius: 50%;
-  padding: 37px;
+  padding: 30px;
   justify-content: center;
   align-items: center;
   
-  /*button properties*/
-  background-image: linear-gradient(to bottom, #d00000 0%, #d04040 40%);
-  box-shadow: inset 0px -10px 10px 5px #d000009d, inset 2px 1px 5px 5px #dab6b6;
+  /*text properties*/
+  text-shadow: 1px -1px 1px #47000044, -1px 1px 1px #ff8080d2;
   font-family: 'Los Altos';
   font-size: 3vh;
   letter-spacing: 0.2vw;
   text-decoration: none;
 }
 
-
-/*responsive layout for modal*/
+/*REPONSIVE LAYOUT FOR MODAL*/
 @media only screen and (max-width: 700px) {
   #chat-title {
     position: relative;
