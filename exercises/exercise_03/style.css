@@ -43,6 +43,18 @@ a {
   width: 11vw;
   filter: drop-shadow(-2px 5px 5px #3535357c);
 }
+#page-buttons{
+  position: absolute;
+  display: block;
+  margin: 2%;
+  right: 0;
+  top:0;
+}
+.img-buttons{
+  width: 6vw;
+  filter: drop-shadow(-2px 5px 5px #3535357c);
+  margin-bottom: 10px;
+}
 .icon-container{
   position: relative;
   display: flex;
