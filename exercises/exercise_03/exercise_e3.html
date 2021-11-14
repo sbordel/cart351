@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,31 +11,132 @@
 <body>
   <script src="js/scripts.js"></script>
   <div class="page-content">
-  <div id="page-logo"><img id="img-logo" src="assets/pp-logo-50.png" alt="pizza palooza logo"></div>
-  <div id="page-buttons"><a href="#"><img class="img-buttons" src="assets/pizza-chat.png" alt="chat with customer service"></a><br><a href="#"><img class="img-buttons" src="assets/pizza-cart.png" alt="see past orders"></a></div>
+    <!-- LOGO -->
+    <div id="page-logo"><img id="img-logo" src="assets/pp-logo-50.png" alt="pizza palooza logo"></div>
+    <!-- MODAL NAV -->
+    <nav id="page-btns">
+      <a class="pg-btn" href="#"><img class="img-btn" src="assets/pizza-chat.png" alt="chat with customer service"></a>
+      <br>
+      <a class="pg-btn" href="#"><img class="img-btn" src="assets/pizza-cart.png" alt="see past orders"></a></nav>
+
+    <!-- CHAT ICON CONTAINER -->
+    <section class="icon-container">
+      <img class="icon" id="bot-icon" src="assets/bot-icon-d.png" alt="bot icon" title="bot icon">
+      <img class="icon" id="client-icon" src="assets/bunny-icon-d.png" alt="client icon" title="client icon">
+    </section>
+
+    <!-- CHAT MODAL CONTAINER -->
+    <section class="modal-container">
+      <div class="chat-window" id="modal-one">
+        <span id="close-window">✕</span>
+        <div class="chat-inline">
+          <div id="chat-title">pizza order bunnybot</div>
+
+          <!-- chat container -->
+          <div class="chat-box">
+            <div class="chat-bubble">
+              <!-- question 1 -->
+              <div class="bubble" id="bot">
+                <p>
+                HellooO and welcome to <i>Pizza Palooza</i>! What size pizza can I get for you today?
+                </p>
+                <span>(choose one)</span>
+                <br><br>
+                <div class="options">
+                  <button name="size" value="smoll">smoll</button>
+                  <button name="size" value="medium">medium</button>
+                  <button name="size" value="big">big</button>
+                  <button name="size" value="huge">huge</button>
+                </div>
+              </div>
+              <p class="bubble" id="client">I would like a _________ pizza pls</p>
+
+              <!-- question 2 -->
+              <div class="bubble" id="bot">
+                What shape would you like your crust to be?
+                <br>
+                <span>(choose one)</span>
+                <br><br>
+                <div class="options">
+                  <button name="shape" class="othr-btn" value="circle">●</button>
+                  <button name="shape" class="othr-btn" value="heart">♥</button>
+                  <button name="shape" class="othr-btn" value="square">■</button>
+                  <button name="shape" class="othr-btn" value="triangle">▲</button>
+                </div>
+              </div>
+              <p class="bubble" id="client">_________</p>
+
+              <!-- question 3 -->
+              <div class="bubble" id="bot">
+                How much cheeze on your pizza?
+                <br>
+                <span>(choose one)</span>
+                <br><br>
+                <div class="options">
+                  <button name="cheese" value="nocheeze">no cheeze</button>
+                  <button name="cheese" value="normal">normal amount</button>
+                  <button name="cheese" value="lots">lotsa cheeze</button>
+                </div>
+              </div>
+              <p class="bubble" id="client">_________</p>
+              <!-- question 4 -->
+              <div class="bubble" id="bot">
+                What color would you like your veggie toppings to be?
+                <br>
+                <span>(choose as many as you want, then press "⏎")</span>
+                <br><br>
+                <div>
+                  <div class="options">
+                    <button name="veggies" class="othr-btn" id="red-op" value="red"></button>
+                    <button name="veggies" class="othr-btn" id="green-op" value="green"></button>
+                    <button name="veggies" class="othr-btn" id="orange-op" value="orange"></button>
+                    <button name="veggies" class="othr-btn" id="white-op" value="white"></button>
+                    <button name="veggies" class="othr-btn" id="yellow-op" value="yellow"></button>
+                    <button name="submit" class="othr-btn" type="submit" value="submit">⏎</button>
+                  </div>
+                </div>
+              </div>
+              <p class="bubble" id="client">______, ______ and _______</p>
+
+              <!-- question 5 --> 
+              <div class="bubble" id="bot">
+                Any extra saucy topping?
+                <br>
+                <span>(choose one)</span>
+                <br><br>
+                <div class="options">
+                  <button name="sauce" value="creamy">creamy sauce</button>
+                  <button name="sauce" value="hot">hot sauce</button>
+                  <button name="sauce" value="sweet">sweet & spicy sauce</button>
+                  <button name="sauce" value="ketchup">ketchup</button>
+                </div>
+              </div>
+              <p class="bubble" id="client">_______ please</p>
+              <p class="bubble" id="bot">Your pizza order is complete!! You can click on the "ORDER" button below when
+                you're ready ⬇
+              <br><br>
+              Thank you for ordering with <i>Pizza Palooza</i> ;></p>
+
+            </div>
+          </div>
+          <!-- submit button -->
+          <div class="chat-footer"><a id="chat-button" href="#">order</a></div>
+        </div>
+        </div>
+        </div>
+
+          <div class="chat-window" id="modal-two">
+            <span id="close-window">✕</span>
+            <div class="chat-inline">
+              <div id="chat-title">past orders</div>
+              <!-- chat container -->
+              <div class="chat-box">
+              </div>
+            </div>
+            </div>
+    </section>
+  </div>
 
 </body>
-<section class="icon-container">
-  <img class="icon" id="bot-icon" src="assets/bot-icon-d.png" alt="bot icon" title="bot icon">
-  <img class="icon" id="client-icon" src="assets/bunny-icon-d.png" alt="client icon" title="client icon">
-</section>
-<section class="modal-container">
-  <div class="chat-window">
-    <span id="close-window">✕</span>
-    <div class="chat-inline">
-        <div id="chat-title">pizza order bunnybot</div>
-        <div class="chat-box">
-        <div class="chat-bubble">
-          <p class="bubble" id="bot">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac lobortis leo, accumsan malesuada neque. Morbi lacinia mi vitae egestas porta. Cras non rhoncus erat, tristique maximus libero. Nulla at eros tortor.</p>
-        <p class="bubble" id="client">✧･ﾟ: *✧･ﾟ:*( ͡ꈍ ͜ʖ̫ ͡ꈍ )*:･ﾟ✧*:･ﾟ✧</p>
-        <p class="bubble" id="bot">merp</p>
-        <p class="bubble" id="client">i want the pissa</p>
-        <p class="bubble" id="bot">no >:(</p>
-        <p class="bubble" id="client">bish</p>
-        </div>
-    </div>
-    <div class="chat-footer"><a id="chat-button" href="#">order</a></div>
-  </div>
-</section>
-</div>
+
 </html>

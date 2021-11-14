@@ -31,6 +31,10 @@ a {
   /* cursor */
   cursor: url(assets/hand.png), default;
 }
+button {
+   /* cursor */
+   cursor: url(assets/hand.png), default;
+}
 .page-content{
   min-height: 100%;
 }
@@ -41,18 +45,24 @@ a {
 }
 #img-logo{
   width: 11vw;
-  filter: drop-shadow(-2px 5px 5px #3535357c);
+  filter: drop-shadow(-2px 5px 5px  #13a8a8);
 }
-#page-buttons{
+#page-btns{
   position: absolute;
   display: block;
   margin: 2%;
   right: 0;
   top:0;
+  z-index: 5;
 }
-.img-buttons{
+.pg-btn{
+  filter: drop-shadow(-2px 5px 5px #13a8a8);
+}
+.pg-btn:hover{
+  filter: drop-shadow(-2px 5px 5px #13a8a8) brightness(70%);
+}
+.img-btn{
   width: 6vw;
-  filter: drop-shadow(-2px 5px 5px #3535357c);
   margin-bottom: 10px;
 }
 .icon-container{
@@ -64,7 +74,7 @@ a {
   margin-right: auto;
   margin-bottom: 21vh;
   width: 65%;
-  z-index: 2;
+  z-index: 1;
 }
 .icon{
   width: 8vw;
@@ -80,7 +90,7 @@ a {
   align-content: center;
   bottom: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 .chat-window{
   position: relative;
@@ -91,6 +101,13 @@ a {
   height: 79vh;
   background-color: #ffe9b1;
   border: solid 1px #5304f0;
+}
+#modal-one, .icon-container{
+  display: default; /**CHANGE TO DEFAULT TO DISPLAY**/
+}
+#modal-two{
+  display: none; /**CHANGE TO BLOCK TO DISPLAY**/
+  width: 35%;
 }
 #close-window{
   position: absolute;
@@ -105,6 +122,11 @@ a {
   color: #5304f0;
   justify-content: center;
   align-items: center;
+}
+#modal-two #close-window{
+  width: 0.75vw;
+  height: 0.75vw;
+  font-size: 0.8vw;
 }
 .chat-inline{
   position: relative;
@@ -188,7 +210,6 @@ a {
   height: 0;
   justify-content: center;
 }
-
 #chat-button:active {
   /*button properties*/ 
   color: #5f0d0d;
@@ -215,6 +236,58 @@ a {
   font-size: 3vh;
   letter-spacing: 0.2vw;
   text-decoration: none;
+}
+.bubble button{
+  font-family: 'Los Altos';
+  margin-right: 10px;
+  background-color: #aaaaaa;
+  padding: 5px;
+  z-index: 5;
+}
+button:hover{
+  filter: brightness(70%);
+}
+.options{
+  display: flex;
+  justify-items: first baseline;
+}
+.othr-btn{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  font-size: 2.5vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+button:active{
+  filter: brightness(50%);
+  border: inset 2px;
+}
+#red-op{
+  background-color:#d00000;
+  border: outset 2px #d00000;
+}
+#green-op{
+  background-color: #008000;
+  border: outset 2px #008000;
+}
+#orange-op{
+  background-color: #ff4500;
+  border: outset 2px #ff4500;
+}
+#white-op{
+  background-color: #ffffff;
+  border: outset 2px #ffffff;
+}
+#yellow-op{
+  background-color: #ffff00;
+  border: outset 2px #ffff00;
+}
+.bubble span{
+  font-size: 1.3vh;
+  font-weight: lighter;
+  color: #000000;
 }
 /*REPONSIVE LAYOUT FOR MODAL*/
 @media only screen and (max-width: 1000px) {
