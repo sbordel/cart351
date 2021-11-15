@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../../Downloads/orig_php"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "exercise_03"
+	}
+}

@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  overflow: hidden;
+  cursor: crosshair;
+}
+@font-face {
+  font-family: '';
+  src: url(assets/fonts/);
+}
+body{
+  background-image: url('assets/bg-02.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+}
+.nav-button {
+    height: 50px;
+    width: 100px;
+    background-color: #555;
+    border-radius: 50%;
+}
+.page-logo{
+
+}
+#logo-one{
+  position: absolute;
+}
+#logo-two{
+  position: relative;
+  top: 40px;
+  left: 100px;
+  
+}

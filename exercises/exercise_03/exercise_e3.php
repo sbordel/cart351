@@ -1,3 +1,32 @@
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+
+  if(isset($_POST['size'])){
+
+
+   /*$animal = $_GET['fav_animal'];
+   $color = $_GET ['fav_color'];
+   $fav_num = $_GET['fav_num'];
+   //If you use fopen() on a file that does not exist, it will create it,
+   //given that the file is opened for writing (w) or appending (a).
+   $theFile = fopen("files/testInput.txt", "a") or die("Unable to open file!");
+
+  fwrite($theFile, "ANIMAL:".$animal."\n");
+  fwrite($theFile, "COLOR:".$color."\n");
+  //fwrite($theFile, $color); // no newline...
+  fwrite($theFile,  "FAVNUM:".$fav_num."\n");
+
+  fclose($theFile);*/
+  echo("WE HAVE SUCCESSFULLY read the vars AND saved to the file ... ");
+   // you must exit
+exit;
+
+}
+
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -6,7 +35,7 @@
   <title>cart351:: exercise 3</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link type="text/css" rel="stylesheet" href="/style.css">
+  <link type="text/css" rel="stylesheet" href="style.css">
   <script src="js/script.js"></script>
 </head>
 
@@ -121,7 +150,7 @@
             </div>
           </div>
           <!-- submit button -->
-          <div class="chat-footer"><a id="chat-button" href="#">order</a></div>
+          <div class="chat-footer" id = "chat-button-click"><a id="chat-button" href="#">order</a></div>
         </div>
         </div>
         </div>
