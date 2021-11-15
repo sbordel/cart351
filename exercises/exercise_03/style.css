@@ -85,7 +85,7 @@ button {
 #client-icon{
   align-self: flex-end; 
 }
-.modal-container{
+#modal-container{
   position: fixed;
   align-content: center;
   bottom: 0;
@@ -102,13 +102,6 @@ button {
   background-color: #ffe9b1;
   border: solid 1px #5304f0;
 }
-#modal-one, .icon-container{
-  display: default; /**CHANGE TO DEFAULT TO DISPLAY**/
-}
-#modal-two{
-  display: none; /**CHANGE TO BLOCK TO DISPLAY**/
-  width: 35%;
-}
 #close-window{
   position: absolute;
   display: flex;
@@ -122,6 +115,14 @@ button {
   color: #5304f0;
   justify-content: center;
   align-items: center;
+  z-index: 6;
+}
+#modal-two{
+  display: flex;
+  margin-top: default;
+  width: 35%;
+  height: 65vh;
+  margin-right: 25%;
 }
 #modal-two #close-window{
   width: 0.75vw;
@@ -174,6 +175,9 @@ button {
   border: solid 1px #5304f0;
   overflow-y: scroll;
 }
+#modal-two .chat-box{
+  height: 50vh;
+}
 .chat-bubble{
   display: flex;
   flex-direction: column;
@@ -186,6 +190,7 @@ button {
   word-wrap: break-word;
 }
 .bubble{
+  display: none;
   margin-top: 2%;
   border-radius: 10px;
   padding: 15px;
@@ -302,4 +307,4 @@ button:active{
     font-size: 20px;
     text-align: center;
   }
-}
+}}
