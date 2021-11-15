@@ -44,7 +44,7 @@
                 <span>(choose one)</span>
                 <br><br>
                 <div class="options" id="size">
-                  <button value="smoll">smoll</button>
+                  <button value="smoll">small</button>
                   <button value="medium">medium</button>
                   <button value="big">big</button>
                   <button value="huge">huge</button>
@@ -59,10 +59,10 @@
                 <span>(choose one)</span>
                 <br><br>
                 <div class="options" id="shape">
-                  <button value="circle">●</button>
-                  <button value="heart">♥</button>
-                  <button value="square">■</button>
-                  <button value="triangle">▲</button>
+                  <button class="othr-btn" value="circle">●</button>
+                  <button class="othr-btn" value="heart">♥</button>
+                  <button class="othr-btn" value="square">■</button>
+                  <button class="othr-btn" value="triangle">▲</button>
                 </div>
               </div>
               <p class="bubble shape" id="client">_________</p>
@@ -74,9 +74,9 @@
                 <span>(choose one)</span>
                 <br><br>
                 <div class="options" id="cheese">
-                  <button value="no cheeze">no cheeze</button>
+                  <button value="no cheeze">no cheese</button>
                   <button value="normal amount">normal amount</button>
-                  <button value="lots cheeze">lotsa cheeze</button>
+                  <button value="lotsa cheeze">lots of cheese</button>
                 </div>
               </div>
               <p class="bubble cheese" id="client">_________</p>
@@ -87,14 +87,15 @@
                 <span>(choose as many as you want, then press "⏎")</span>
                 <br><br>
                 <div>
-                  <div class="options" id="veggies">
+                  <div class="options" id="veggie">
                     <button class="othr-btn" id="red-op" value="red"></button>
                     <button class="othr-btn" id="green-op" value="green"></button>
                     <button class="othr-btn" id="orange-op" value="orange"></button>
                     <button class="othr-btn" id="white-op" value="white"></button>
                     <button class="othr-btn" id="yellow-op" value="yellow"></button>
-                    <button class="othr-btn" type="submit" value="submit">⏎</button>
                   </div>
+                  <br>
+                  <button class="othr-btn" id="submit">⏎</button>
                 </div>
               </div>
               <p class="bubble veggie" id="client">______, ______ and _______</p>
@@ -106,18 +107,17 @@
                 <span>(choose one)</span>
                 <br><br>
                 <div class="options" id="sauce">
-                  <button name="sauce" value="creamy">creamy sauce</button>
-                  <button name="sauce" value="hot">hot sauce</button>
-                  <button name="sauce" value="sweet">sweet & spicy sauce</button>
-                  <button name="sauce" value="ketchup">ketchup</button>
+                  <button value="creamy sauce">creamy sauce</button>
+                  <button value="hot sauce">hot sauce</button>
+                  <button value="sweet & spicy sauce">sweet & spicy sauce</button>
+                  <button value="ketchup">ketchup</button>
+                  <button value="no thanks">no thanks</button>
                 </div>
               </div>
               <p class="bubble sauce" id="client">_______ please</p>
-              <p class="bubble" id="bot">Your pizza order is complete!! You can click on the "ORDER" button below when
-                you're ready ⬇
+              <p class="bubble six" id="bot">Your pizza order is complete!! You can click on the "ORDER" button below to save your order ⬇
               <br><br>
               Thank you for ordering with <i>Pizza Palooza</i> ;></p>
-
             </div>
           </div>
           <!-- submit button -->
