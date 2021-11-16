@@ -43,14 +43,16 @@ nav{
   right: 3%;
   z-index: 2;
 }
+a{
+  text-decoration: none;
+  color: #000000;
+}
 .nav-button{
   position: relative;
   display: block;
   background-color: #A9A8A9;
   width: 150px;
   border-radius: 50%;
-  text-decoration: none;
-  color: #000000;
   text-align: center;
   padding: 15px;
   margin-top: 15px;
@@ -61,8 +63,22 @@ nav{
   background-color: #5f5f5f;
   filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
 }
-.diagram{
+.back-button{
   position: absolute;
+  display: flex;
+  bottom: 4%;
+  left: 3%;
+  border: outset 4px #A9A8A9; 
+  background-color: #A9A8A9;
+  padding: 1px;
+  padding-left: 3px;
+  padding-right: 8px;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+.diagram{
+  width: 100%;
 }
 #diagram{
   position: relative;
@@ -71,4 +87,70 @@ nav{
   margin-right: auto;
   min-width: 70%;
   z-index: -1;
+}
+.modal-container{
+  position: absolute;
+  top:0;
+  min-width: 100%;
+}
+.about-modal{
+  background-color: #A9A8A9;
+  border: solid 1px #000000;
+  width: 375px;
+  height: 400px;
+  margin: 10px;
+}
+#one{
+  position: absolute;
+  display: block;
+  top: 12vw;
+  left: 16vw;
+}
+#two{
+  position: absolute;
+  display: block; 
+  top: 3vw;
+  left: 40vw;
+}
+#three{
+  position: absolute;
+  display: block; 
+  top: 15.5vw;
+  right: 16vw;
+}
+.about-icon{
+  position: absolute;
+  margin: 10px;
+}
+.next-button{
+  position: absolute;
+  display: flex;
+  bottom: 4%;
+  right: 3%;
+  border: outset 4px #A9A8A9; 
+  background-color: #A9A8A9;
+  padding: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+#close-modal{
+  padding: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 10px;
+}
+.modal-title{
+  margin: 10px;
+  margin-top: 80px;
+}
+.about-modal p{
+  position: absolute;
+  top:0;
+  margin: 80px;
+  margin-top: 30px;
+  width: 70%;
+  overflow: hidden;
 }
