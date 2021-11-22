@@ -31,6 +31,13 @@ a {
   /* cursor */
   cursor: url(assets/hand.png), default;
 }
+#file{
+  margin: 10px;
+  z-index: 6;
+}
+#file-img{
+  padding-top:10px;
+}
 button {
    /* cursor */
    cursor: url(assets/hand.png), default;

@@ -1,31 +1,3 @@
-<?php
-if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["getAjaxOnLoad"]))
-{
-   var_dump(json_decode($size, true));
-   $shape = $_GET['shape'];
-   $cheese = $_GET['cheese'];
-   $veggie = $_GET['veggie'];
-   $sauce = $_GET['sauce'];
-
-  $theFile = fopen("files/pizzaOrders.txt", "a") or die("Unable to open file!");
-  $txt = "pizza size:";
-  fwrite($theFile, $txt.$size);
-  $txt2 = "\ncrust shape:\n";
-  fwrite($theFile, $txt2.$shape);
-  $txt3 = "\namount of cheese:\n";
-  fwrite($theFile, $txt3.$cheese);
-  $txt4 = "\nveggie toppings:\n";
-  fwrite($theFile, $txt4.$veggie);
-  $txt5 = "\nsauce:\n";
-  fwrite($theFile, $txt5.$sauce);
-
-  fclose($theFile);
-  echo("we have successfully saved the order to the file ... ");
-   // exit
-exit;
-}
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -35,11 +7,11 @@ exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link type="text/css" rel="stylesheet" href="style.css">
-  
+  <script src="js/script.js"></script>
 </head>
 
 <body>
-<a id="file" href="exercise_02.zip"><img id="file-img" src="assets/link-icon.png"
+<a id="file" href="exercise_03.zip"><img id="file-img" src="assets/link-icon.png"
       alt="download compressed files here"></a>
   <div class="page-content">
     <!-- LOGO -->
@@ -151,7 +123,7 @@ exit;
             </div>
           </div>
           <!-- submit button -->
-          <div class="chat-footer" id="chat-button-click"><a id="chat-button" href="#">order</a></div>
+          <div class="chat-footer" id = "chat-button-click"><a id="chat-button" href="#">order</a></div>
         </div>
         </div>
         </div>
@@ -168,7 +140,6 @@ exit;
       </div>
     </section>
   </div>
-  <script src="js/script.js"></script>
 </body>
 
 </html>

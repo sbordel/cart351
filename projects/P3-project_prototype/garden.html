@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>garden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link type="text/css" rel="stylesheet" href="style.css">
   <script src="js/script.js"></script>
 </head>
@@ -12,6 +13,20 @@
 <body class="garden">
 <div class="page-logo">
   <img id="logo-one" src="assets/rain.png" alt="water drops">
+</div>
+
+<nav id="garden-nav">
+  <a class="garden-button" id="gd-one"><img src="assets/square-particles.png" alt="plant"></a>
+  <a class="garden-button" id="gd-two"><img src="assets/oval-particles.png" alt="water"></a>
+  <a class="garden-button" id="gd-three"><img src="assets/wave.png" alt="fertilize"></a>
+  <a class="garden-button" id="gd-four"><img src="assets/square-particles.png" alt="liquid sunshine"></a>
+</nav>
+
+<div id="garden-tooltips">
+  <div class="tooltip-modal" id="tp-four">LIQUID SUNSHINE</div>
+  <div class="tooltip-modal" id="tp-three">FERTILIZE</div>
+  <div class="tooltip-modal" id="tp-two">WATER</div>
+  <div class="tooltip-modal" id="tp-one">PLANT</div>
 </div>
 
 <a class="back-button" href="javascript:history.back()">◅</a>

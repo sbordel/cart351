@@ -58,31 +58,31 @@ $(document).ready(function () {
     //display images according to the values
     switch (dayWeather) {
       case "Bad":
-        $("#weather-img").attr("src","assets/cloud.png");
+        $("#weather-img").attr("src","../assets/cloud.png");
         break;
       case "Good":
-        $("#weather-img").attr("src","assets/sun.png");
+        $("#weather-img").attr("src","../assets/sun.png");
     };
     switch (dayCatmood) {
       case "Annoying":
-        $("#cat-img").attr("src","assets/evil.png");
+        $("#cat-img").attr("src","../assets/evil.png");
         break;
       case "Calm":
-        $("#cat-img").attr("src","assets/angel.png");
+        $("#cat-img").attr("src","../assets/angel.png");
     };
     switch (dayAssign) {
       case "Yes":
-        $("#assign-img").attr("src","assets/assignment.png");
+        $("#assign-img").attr("src","..assets/assignment.png");
         break;
       case "No":
-        $("#assign-img").attr("src","assets/noassignment.png");
+        $("#assign-img").attr("src","../assets/noassignment.png");
     };
     switch (dayConstruct) {
       case "Yes":
-        $("#construct-img").attr("src","assets/noise.png");
+        $("#construct-img").attr("src","../assets/noise.png");
         break;
       case "No":
-        $("#construct-img").attr("src","assets/sleep.png");
+        $("#construct-img").attr("src","../assets/sleep.png");
     };
   }
   )

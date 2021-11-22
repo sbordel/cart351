@@ -5,9 +5,12 @@ $(document).ready(function () {
   let cheeseBtn = $("#cheese button");
   let veggieBtn = $("#veggie button");
   let sauceBtn = $("#sauce button");
-  let sizeBtnVal = "";
-  let shapeVal ="";
 
+  let sizeBtnVal = "";
+  let shapeBtnVal = "";
+  let cheeseBtnVal = "";
+  let veggieBtnVal = "";
+  let sauceBtnVal = "";
 
   let veggieArray = [];
   let veggieList;
@@ -27,6 +30,15 @@ $(document).ready(function () {
     $("#modal-two").show();
   });
 
+  //close modals when clicking the "x" button
+  function closeOrder() {
+    $("#modal-two").hide();
+  }; 
+  function closeChat() {
+    $("#modal-one").hide();
+    $('.icon-container').hide();
+  };
+
   // when pizza size is chosen, display next message
   sizeBtn.click(function (){
     if (sizeBtn == true);{
@@ -42,7 +54,7 @@ $(document).ready(function () {
       $(".shape").delay(1000).fadeIn(200);
       $(".shape").text("a " + $(this).attr('value') + " shaped crust");
       $(".three").delay(4000).fadeIn(200);
-      shapeVal = $(this).attr('value') ;
+      shapeBtnVal = $(this).attr('value') ;
     }
   });
   // when cheese amount is chosen, display next message
@@ -51,6 +63,7 @@ $(document).ready(function () {
       $(".cheese").delay(1000).fadeIn(200);
       $(".cheese").text($(this).attr('value'));
       $(".four").delay(4000).fadeIn(200);
+      cheeseBtnVal = $(this).attr('value'); 
     }
   });
   //when veggie buttons are selected, push its corresponding values in an array called "veggieArray"
@@ -64,15 +77,14 @@ $(document).ready(function () {
       else {
         veggieList = veggieArray.join(", ");
       };
-      console.log(veggieList);
       };
   // when user clicks the submit button, the array is then displayed as a list of color toppings, then the next question is displayed
   $("#submit").click(function (){
         $(".veggie").text(veggieList + " veggies");
-        console.log(veggieList);
         $(".veggie").delay(1000).fadeIn(200);
         $(".veggie").text($(this).attr('value'));
         $(".five").delay(4000).fadeIn(200);
+        veggieBtnVal = veggieList + " veggies"; 
       });
     });
   // when sauce button is selected, end conversation
@@ -81,38 +93,58 @@ $(document).ready(function () {
       $(".sauce").delay(1000).fadeIn(200);
       $(".sauce").text($(this).attr('value'));
       $(".six").delay(4000).fadeIn(200);
+      sauceBtnVal = $(this).attr('value'); 
     }
   });
 
-
+  
+  
   $("#chat-button-click").click(function(){
     console.log("clicked");
     event.preventDefault();
     console.log(sizeBtnVal); 
-    console.log(shapeVal);
-    //let dataArray =[];
-   // dataArray.push({"size":sizeBtnVal,"shape":shapeVal});
+    console.log(shapeBtnVal);
+    console.log(cheeseBtnVal); 
+    console.log(veggieBtnVal);
+    console.log(sauceBtnVal); 
+
    let dataFormT= new FormData();
-   //dataFormT.append("size",sizeBtnVal);
-   //dataFormT.append("shape",shapeVal);
 
+   // convert values into strings
    dataFormT.append(`size`, JSON.stringify(sizeBtnVal));
+   dataFormT.append(`shape`, JSON.stringify(shapeBtnVal));
+   dataFormT.append(`cheese`, JSON.stringify(cheeseBtnVal));
+   dataFormT.append(`veggie`, JSON.stringify(veggieBtnVal));
+   dataFormT.append(`sauce`, JSON.stringify(sauceBtnVal));
 
+   $size = dataFormT.get('size');
+   console.log($size);
 
+   $.ajax({
+    url: "exercise_e3.php",
+    type: "get", //send it through get method
+    data: {getAjaxOnLoad: "fread"}, //parameter (no form data)
+    success: function(response) {
+    console.log("responded" +response);
+    //use the JSON .parse function to convert the JSON string into a Javascript object
+   let parsedJSON = JSON.parse(response);
+    console.log(parsedJSON);
+    }
+  });
 
-    
+   // ******* AJAX 
    $.ajax({
     type: "POST",
     url: "exercise_e3.php",
     processData: false,//prevents from converting into a query string
     contentType: "application/json; charset=utf-8",
-    data:dataFormT,
+    data: dataFormT,
     contentType: false, //contentType is the type of data you're sending,i.e.application/json; charset=utf-8
     cache: false,
     timeout: 600000,
     success: function (response) {
     //response is a STRING (not a JavaScript object -> so we need to convert)
-    console.log("we had success!");
+    console.log("pizza order is successful!");
     console.log(response);
   
    },
@@ -120,16 +152,5 @@ $(document).ready(function () {
   console.log("error occurred");
   }
   });
-  
-
   }); //clicked
 });
-
-//close modals when clicking the "x" button
-function closeOrder() {
-  $("#modal-two").hide();
-}; 
-function closeChat() {
-  $("#modal-one").hide();
-  $('.icon-container').hide();
-};

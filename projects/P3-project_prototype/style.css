@@ -5,7 +5,6 @@
 }
 html {
   height: 100%;
-  overflow: hidden;
   cursor: crosshair;
 }
 @font-face {
@@ -13,16 +12,29 @@ html {
   src: url(assets/fonts/);
 }
 body{
+  overflow: hidden;
   background-image: url('assets/bg-02.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
+  background-attachment: fixed;
 }
 .garden{
   background-image: url('assets/bg-03.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
+}
+.diagram-body{
+  overflow-y: scroll;
+  background-attachment: fixed;
+}
+#data-diagram{
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 20px;
 }
 .page-logo{
   margin-top: 3%;
@@ -92,6 +104,7 @@ a{
   position: absolute;
   top:0;
   min-width: 100%;
+  display: hidden;
 }
 .about-modal{
   background-color: #A9A8A9;
@@ -102,19 +115,16 @@ a{
 }
 #one{
   position: absolute;
-  display: block;
   top: 12vw;
   left: 16vw;
 }
 #two{
   position: absolute;
-  display: block; 
   top: 3vw;
   left: 40vw;
 }
 #three{
   position: absolute;
-  display: block; 
   top: 15.5vw;
   right: 16vw;
 }
@@ -153,4 +163,114 @@ a{
   margin-top: 30px;
   width: 70%;
   overflow: hidden;
+}
+#nav-files{
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  z-index: 6;
+}
+.nav-file{
+  position: relative;
+  display:block;
+  margin-right:auto;
+  margin-left:auto;
+  text-align: center;
+}
+.nav-file:hover{
+  filter:drop-shadow(0px 0px 9px #61C475);
+}
+.nav-file p{
+  position: relative;
+  display:block;
+  margin-right:auto;
+  margin-left:auto;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100px;
+  height: auto;
+  font-size: 13px;
+  margin-top:15px;
+}
+#file-four{
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 50px;
+  height: auto;
+  font-size: 18px;
+  color: blue;
+  right: 150px;
+  bottom: -350px;
+}
+.file-icon{
+  position: relative;
+  width: 150px;
+}
+#doc-icon{
+  width: 200px;
+}
+#file-one{
+  position: absolute;
+  right: 200px;
+  top: 30px;
+}
+#file-two{
+  position: absolute;
+  left: 0px;
+  top: -80px;
+}
+#file-three{
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+#garden-nav{
+  position: absolute;
+  top:0;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+.garden-button{
+  position: relative;
+  display: flex;
+  z-index: 1;
+  border: outset 4px #A9A8A9; 
+  background-color: #A9A8A9;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  width: 65px;
+  height: 60px;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+.garden-button img{
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+.tooltip-modal{
+  position: absolute;
+  display: none;
+  top:0;
+  right:0;
+  margin-top: 4%;
+  margin-right: 6%;
+  padding: 5px;
+  background-color: #dad8da;
+  border: solid 1px #000000;
+  width: 175px;
+  height: 30px;
+  z-index: 6;
+}
+#tp-two{
+  top: 70px;
+}
+#tp-three{
+  top: 140px;
+}
+#tp-four{
+  top: 210px;
 }
