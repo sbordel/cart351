@@ -1,4 +1,15 @@
 size:smoll
-shape:heart
-size:huge
 shape:triangle
+cheese:lotsa cheeze
+veggie:white, orange, green, red veggies
+sauce:ketchup
+size:smoll
+shape:heart
+cheese:normal amount
+veggie:yellow veggies
+sauce:creamy sauce
+size:medium
+shape:square
+cheese:lotsa cheeze
+veggie:green veggies
+sauce:sweet & spicy sauce

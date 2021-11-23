@@ -1,75 +1,66 @@
 <?php
 //get data from server and send to client
 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["getAjaxOnLoad"])){
- 
-  //echo("here");
-  //get the data
-   //exit;
+   //read until end of file
    $theFile = fopen("files/pizzaOrders.txt", "r") or die("Unable to open file!");
-   //read until eof
    //$i=0;
    $outArr = array();
-   $NUM_PROPS = 2; //should be 5
-    //echo("test");
+   $NUM_ORDERS = 5; // 5 values in pizza order
+
       while(!feof($theFile)) {
         //create an object to send back
+        $packObj = new stdClass();
 
-        $packObj=new stdClass();
-
-        for($j=0;$j<$NUM_PROPS;$j++){
+        for($j=0;$j<$NUM_ORDERS;$j++){
           $str = fgets($theFile);
-         //split and return an array ...
+         //split and return an array
           $splitArr = explode(":",$str);
-          //echo(count($splitArr));
           if(count($splitArr)>1){
           $key = $splitArr[0];
           $val = $splitArr[1];
           //append the key value pair
           $packObj->$key = trim($val);
           }
-          //}
-        
         }
         $outArr[]=$packObj;
       }
-
       fclose($theFile);
-        // var_dump($outArr);
-        // Now we want to JSON encode these values to send them to $.ajax success.
+      //encode json
       $myJSONObj = json_encode($outArr);
       echo $myJSONObj;
       exit;
-
-
-
 }
-
-
-
 
 //send data from client to server and write to file
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    //var_dump(json_decode($size, true));
+  //create variables with posted data
    $shape = $_POST['shape'];
    $size = $_POST['size'];
+   $cheese = $_POST['cheese'];
+   $veggie = $_POST['veggie'];
+   $sauce = $_POST['sauce'];
    
-
+  // write values to file
   $theFile = fopen("files/pizzaOrders.txt", "a") or die("Unable to open file!");
   $txt = "size:";
   fwrite($theFile, $txt.$size."\n");
   $txt2 = "shape:";
   fwrite($theFile, $txt2.$shape."\n");
+  $txt3 = "cheese:";
+  fwrite($theFile, $txt3.$cheese."\n");
+  $txt4 = "veggie:";
+  fwrite($theFile, $txt4.$veggie."\n");
+  $txt5 = "sauce:";
+  fwrite($theFile, $txt5.$sauce."\n");
   fclose($theFile);
   echo("we have successfully saved the order to the file ... "); 
-   // exit
 exit;
 }
 ?>
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>cart351:: exercise 3</title>
@@ -191,11 +182,11 @@ exit;
               Thank you for ordering with <i>Pizza Palooza</i> ;></p>
             </div>
           </div>
-          <!-- submit button -->
-          <div class="chat-footer" id="chat-button-click"><a id="chat-button" href="#">order</a></div>
+            <!-- submit button -->
+            <div class="chat-footer" id="chat-button-click"><a id="chat-button" href="#">order</a></div>
+          </div>
         </div>
-        </div>
-        </div>
+      </div>
     </section>
     <section id="modal-container"> 
     <div class="chat-window" id="modal-two">
@@ -204,6 +195,8 @@ exit;
         <div id="chat-title">past orders</div>
         <!-- chat container -->
         <div class="chat-box">
+          <div class="order-list">
+          </div>
         </div>
       </div>
       </div>
