@@ -1,26 +1,67 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["getAjaxOnLoad"]))
+//get data from server and send to client
+if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["getAjaxOnLoad"])){
+ 
+  //echo("here");
+  //get the data
+   //exit;
+   $theFile = fopen("files/pizzaOrders.txt", "r") or die("Unable to open file!");
+   //read until eof
+   //$i=0;
+   $outArr = array();
+   $NUM_PROPS = 2; //should be 5
+    //echo("test");
+      while(!feof($theFile)) {
+        //create an object to send back
+
+        $packObj=new stdClass();
+
+        for($j=0;$j<$NUM_PROPS;$j++){
+          $str = fgets($theFile);
+         //split and return an array ...
+          $splitArr = explode(":",$str);
+          //echo(count($splitArr));
+          if(count($splitArr)>1){
+          $key = $splitArr[0];
+          $val = $splitArr[1];
+          //append the key value pair
+          $packObj->$key = trim($val);
+          }
+          //}
+        
+        }
+        $outArr[]=$packObj;
+      }
+
+      fclose($theFile);
+        // var_dump($outArr);
+        // Now we want to JSON encode these values to send them to $.ajax success.
+      $myJSONObj = json_encode($outArr);
+      echo $myJSONObj;
+      exit;
+
+
+
+}
+
+
+
+
+//send data from client to server and write to file
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-   var_dump(json_decode($size, true));
-   $shape = $_GET['shape'];
-   $cheese = $_GET['cheese'];
-   $veggie = $_GET['veggie'];
-   $sauce = $_GET['sauce'];
+    //var_dump(json_decode($size, true));
+   $shape = $_POST['shape'];
+   $size = $_POST['size'];
+   
 
   $theFile = fopen("files/pizzaOrders.txt", "a") or die("Unable to open file!");
-  $txt = "pizza size:";
-  fwrite($theFile, $txt.$size);
-  $txt2 = "\ncrust shape:\n";
-  fwrite($theFile, $txt2.$shape);
-  $txt3 = "\namount of cheese:\n";
-  fwrite($theFile, $txt3.$cheese);
-  $txt4 = "\nveggie toppings:\n";
-  fwrite($theFile, $txt4.$veggie);
-  $txt5 = "\nsauce:\n";
-  fwrite($theFile, $txt5.$sauce);
-
+  $txt = "size:";
+  fwrite($theFile, $txt.$size."\n");
+  $txt2 = "shape:";
+  fwrite($theFile, $txt2.$shape."\n");
   fclose($theFile);
-  echo("we have successfully saved the order to the file ... ");
+  echo("we have successfully saved the order to the file ... "); 
    // exit
 exit;
 }

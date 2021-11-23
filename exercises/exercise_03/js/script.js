@@ -27,7 +27,26 @@ $(document).ready(function () {
   });
 
   $("#order-btn").click(function () {
+
+     $.ajax({
+    url: "exercise_e3.php",
+    type: "get", //send it through get method
+    data: {getAjaxOnLoad: "fread"}, //parameter (no form data)
+    success: function(response) {
+    console.log("responded" +response);
+    //use the JSON .parse function to convert the JSON string into a Javascript object
+   let parsedJSONArray = JSON.parse(response);
+    console.log(parsedJSONArray);
+    //output
+    for(let i=0; i< parsedJSONArray.length-1;i++){
+      //display in modal
+      console.log(parsedJSONArray[i]);
+      //i.shape or i.size
+    }
+    }
+  }); 
     $("#modal-two").show();
+
   });
 
   //close modals when clicking the "x" button
@@ -111,26 +130,16 @@ $(document).ready(function () {
    let dataFormT= new FormData();
 
    // convert values into strings
-   dataFormT.append(`size`, JSON.stringify(sizeBtnVal));
-   dataFormT.append(`shape`, JSON.stringify(shapeBtnVal));
-   dataFormT.append(`cheese`, JSON.stringify(cheeseBtnVal));
-   dataFormT.append(`veggie`, JSON.stringify(veggieBtnVal));
-   dataFormT.append(`sauce`, JSON.stringify(sauceBtnVal));
+   dataFormT.append(`size`, sizeBtnVal);
+   dataFormT.append(`shape`, shapeBtnVal);
+   //dataFormT.append(`cheese`, JSON.stringify(cheeseBtnVal));
+   //dataFormT.append(`veggie`, JSON.stringify(veggieBtnVal));
+   //dataFormT.append(`sauce`, JSON.stringify(sauceBtnVal));
 
-   $size = dataFormT.get('size');
-   console.log($size);
+   //$size = dataFormT.get('size');
+   //console.log($size);
 
-   $.ajax({
-    url: "exercise_e3.php",
-    type: "get", //send it through get method
-    data: {getAjaxOnLoad: "fread"}, //parameter (no form data)
-    success: function(response) {
-    console.log("responded" +response);
-    //use the JSON .parse function to convert the JSON string into a Javascript object
-   let parsedJSON = JSON.parse(response);
-    console.log(parsedJSON);
-    }
-  });
+ 
 
    // ******* AJAX 
    $.ajax({
