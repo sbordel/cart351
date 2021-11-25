@@ -35,7 +35,7 @@ NONE, ONE AND TWO HAVE ALREADY BEEN COMPLETED-->
 </header>
 <div id="parent-wrapper">
   <div id = "childOne"></div>
-	<h3 id = "Ex4_title"> TEST </h3>
+	<h3 id = "Ex4_title"> hello </h3>
 </div>
 <footer>nothing yet :)</footer>
 
