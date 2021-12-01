@@ -13,28 +13,19 @@ html {
 }
 body{
   overflow: hidden;
-  background-image: url('assets/bg-02.png');
+  background: rgb(195,195,195);
+  background: -moz-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 85%, rgba(88,196,126,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 85%, rgba(88,196,126,1) 100%);
+  background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 85%, rgba(88,196,126,1) 100%); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
   background-attachment: fixed;
 }
 .garden{
-  background-image: url('assets/bg-03.png');
+  background: rgb(195,195,195);
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: fixed;
-}
-.diagram-body{
-  overflow-y: scroll;
-  background-attachment: fixed;
-}
-#data-diagram{
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin: 20px;
 }
 .page-logo{
   margin-top: 3%;
@@ -43,11 +34,6 @@ body{
 }
 #logo-one{
   position: absolute;
-}
-#logo-two{
-  position: relative;
-  top: 40px;
-  left: 80px;
 }
 nav{
   position: absolute;
@@ -90,14 +76,14 @@ a{
   text-align: center;
 }
 .diagram{
-  width: 100%;
+  position: relative;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 #diagram{
   position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 70%;
+  margin-top: 10%;
   z-index: -1;
 }
 .modal-container{
@@ -240,7 +226,7 @@ a{
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 10px;
-  width: 65px;
+  width: 60px;
   height: 60px;
   align-self: center;
   justify-content: center;
@@ -250,6 +236,7 @@ a{
   align-self: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
 }
 .tooltip-modal{
   position: absolute;
