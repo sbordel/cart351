@@ -281,6 +281,38 @@ $(document).ready(function () {
   /*****************DISPLAY THIRD REPRESENTATION :: CASE THREE ******************************/
   function displayAsThird(resultSet) {
     //reset
+      let weatherColor; // 8 different weather possibilities
+      /* stormy, raining, sunny, cloudy, clear, snowing, grey, fog */
+      let moodColor; // 10 different mood possibilities
+      /*  happy, sad, angry, neutral, calm, anxious, serene, moody, well, hurt */
+      let gradDirection; //gradient direction -- odd # = vertical; even # = horizontal;
+
+      let textMain; //Main quote
+      let textSub; //Secondary quote
+
+      /*let gradientBg = document.getElementById('parent-wrapper');
+      let w = window.innerWidth;
+      let h = window.innerHeight;
+      let gradientBg.width = w;
+      let gradientBg.height = h;*/
+
+      for (let i = 0; i < resultSet.length - 1; i++) {
+        dataPoints.push(new myDataPoint(resultSet[i].dataId,
+          resultSet[i].day,
+          resultSet[i].weather,
+          //map to the EVENT ...
+          textMain[resultSet[i].eventName],
+          textSub[resultSet[i].eventDescription],
+          //last parameter is where should this go...
+          document.getElementById("childOne"),
+          //which css style///
+          "point_two"
+          ))};
+
+    //set background of parent 
+      document.getElementById("parent-wrapper").style.background = gradientBg;
+      description.textContent = "CASE THREE";
+      description.style.color =  'rgb(0, 0, 0)';
   }
 
   /*****************DISPLAY FOURTH REPRESENTATION :: CASE FOUR ******************************/
@@ -296,5 +328,5 @@ $(document).ready(function () {
   /*****************DISPLAY SIXTH REPRESENTATION :: CASE SIX ******************************/
   function displayAsSixth(resultSet) {
     //reset
-  }
+  };
 });

@@ -4,8 +4,9 @@ $weather = array('stormy','raining','sunny','cloudy','clear', 'snowing', 'grey',
 $moods = array('happy','sad', 'angry','neutral','calm', 'anxious', 'serene','moody','well','hurt');
 
 $events = array('walking in a forest','swimming in the ocean','dining with sibling','taking a nap with a cat','watching rain fall though the window','reading a comic','baking a chocolate cake','rollerskating','reading a comic','planting roses','chomping on carrots','whistling in the wind','walking through a dark tunnel','sunbathing in the desert','visitng a parent for an afternoon','learning a new programming language','running up stairs');
+$eventDescriptions = array('a leisurely pasttime','choppy','a long time coming','is it good?','contmplative?','dark','mmmm','ahhhh','dark','red or white','crunchy','pitch','long','salty','none','none','how many');
 
-//heler ... note some can be in BOTH ... 
+//helper ... note some can be in BOTH ... 
 $positive_moods = array('happy','neutral','calm','serene','well');
 $negative_moods = array('sad','angry','neutral','calm', 'anxious','moody','hurt');
 ?>

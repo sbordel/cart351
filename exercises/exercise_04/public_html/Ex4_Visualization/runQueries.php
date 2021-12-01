@@ -44,9 +44,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["select-query"]))
 
     if($_GET["select-query"]==="three"){
       //TO IMPLEMENT:
-        $selectedQuery = "";
+      $selectedQuery="SELECT * FROM dataStuff,events WHERE dataStuff.eID = events.eventID ORDER BY eventName";
     }
-
+/*
     if($_GET["select-query"]==="four"){
       //TO IMPLEMENT:
         $selectedQuery = "";
@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["select-query"]))
     else if($_GET["select-query"]==="six"){
       //TO IMPLEMENT:
       $selectedQuery = "";
-  }
+  }*/
 
   if($selectedQuery!==""){
       $result = $file_db->query($selectedQuery);
@@ -84,6 +84,10 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["select-query"]))
       if($_GET["select-query"] =="two"){
         $outArr[]= $events;
       }
+    // if it is the third query add on events at end of outArr
+    if($_GET["select-query"] =="three"){
+      $outArr[]= $eventDescriptions;
+    }
 
       echo(json_encode($outArr));
   } //the query is not empty string

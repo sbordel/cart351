@@ -22,7 +22,7 @@ try {
     $file_db->exec("PRAGMA foreign_keys = on");
 
   $queryInsertEvents = array(
-     "INSERT INTO events(eventID, eventName,eventDescription) VALUES(1,'walking in a forest','a leisurly pasttime')",
+     "INSERT INTO events(eventID, eventName,eventDescription) VALUES(1,'walking in a forest','a leisurely pasttime')",
      "INSERT INTO events(eventID, eventName,eventDescription) VALUES(2,'swimming in the ocean','choppy')",
      "INSERT INTO events(eventID, eventName,eventDescription) VALUES(3,'dining with sibling','a long time coming')",
      "INSERT INTO events(eventID, eventName,eventDescription) VALUES(4,'taking a nap with a cat','is it good?')",
