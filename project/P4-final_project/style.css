@@ -75,15 +75,27 @@ a{
   justify-content: center;
   text-align: center;
 }
+/*
 .diagram{
   position: relative;
-  width: 70vw;
+  width: 75vw;
+  margin-left: auto;
+  margin-right: auto;
+}*/
+.diagram{
+  position: relative;
+  display: block;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 #diagram{
   position: relative;
-  margin-top: 10%;
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  top: 100px;
   z-index: -1;
 }
 .modal-container{
