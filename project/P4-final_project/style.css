@@ -379,8 +379,8 @@ tr:last-of-type {
 .garden-modal{
   position: absolute;
   width: 150px;
-  margin: 10px;
-  margin-right:0;
+  margin: 20px;
+  margin-right:10px;
   right: 10%;
 
   border: 0.5px solid #000000;
@@ -388,13 +388,16 @@ tr:last-of-type {
   filter:drop-shadow(-1px 1px 5px #61c475b4);
 }
 .garden-modal#one{
+  display: none;
   width: 400px;
   height: 400px;
 }
 .garden-modal#two{
+  display: none;
   height: 230px;
 }
 .garden-modal#three{
+  display: none;
   width: 250px;
   height: 175px;
 }
@@ -413,6 +416,8 @@ tr:last-of-type {
 .garden-modal p{
   font-family: 'Garamondt';
   font-size: 18px;
+  font-style: italic;
+  font-weight: lighter;
 }
 .garden-modal [name="sunshine"]{
   font-family:'Times New Roman', Times, serif;
@@ -453,15 +458,6 @@ tr:last-of-type {
   padding-top: 5px;
   text-align: left;
 }
-/*
-#col-3{
-  position: absolute;
-  margin-top: 5px;
-  left: 40%;
-  top: 100%;
-  transform: translateX(-40%);
-  text-align: center;
-}*/
 .garden-modal [name="fertilizer"]{
   position: relative;
   width: 35px;
@@ -483,22 +479,6 @@ tr:last-of-type {
   border: inset 4px #A9A8A9; 
   background-color: #7c7c7c;
 }
-/*
-#sun-btn{
-  position: relative;
-  height: auto;
-  text-align: center;
-  padding: 2px;
-  padding-left: 6.5px;
-  padding-right: 6.5px;
-  border-radius: 5;
-  border: outset 4px #cccccc; 
-  background: #cccccc;
-  font-family:'Times New Roman', Times, serif;
-  font-size: 16px;
-  font-style: normal;
-}*/
-
 
 /** RESPONSIVE STYLE FOR CELLPHONE VIEW **/
 @media only screen and (hover: none) and (pointer: coarse){

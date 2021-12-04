@@ -1,0 +1,29 @@
+@font-face{
+    font-family: 'Autopia';
+    src: url(fonts/Autopia-Regular.woff);
+  }
+  @font-face{
+    font-family: 'Autopia';
+    src: url(fonts/Autopia-Italic.woff);
+    font-style: italic;
+  }
+  @font-face{
+    font-family: 'Autopia';
+    src: url(fonts/AutopiaBold.woff);
+    font-weight: bold;
+  }
+  @font-face{
+    font-family: 'Autopia';
+    src: url(fonts/AutopiaBoldItalic.woff);
+    font-style: italic;
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: 'Garamondt';
+    src: url(fonts/Garamondt-Regular.woff);
+  }
+  @font-face {
+    font-family: 'Garamondt';
+    src: url(fonts/Garamondt-Italic.woff);
+    font-style: italic;
+  }
