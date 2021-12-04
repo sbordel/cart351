@@ -9,8 +9,13 @@ html {
   cursor: crosshair;
 }
 @font-face {
-  font-family: '';
-  src: url(assets/fonts/);
+  font-family: 'Garamondt';
+  src: url(fonts/Garamondt-Regular.woff);
+}
+@font-face {
+  font-family: 'Garamondt';
+  src: url(fonts/Garamondt-Italic.woff);
+  font-style: italic;
 }
 body{
   overflow: hidden;
@@ -43,20 +48,26 @@ nav{
   z-index: 2;
 }
 a{
-  text-decoration: none;
   color: #000000;
+  font-size: 18px;
+  text-decoration: none;
+}
+nav a{
+  font-style: italic;
 }
 .nav-button{
   position: relative;
   display: block;
-  background-color: #A9A8A9;
   width: 150px;
-  border-radius: 50%;
-  text-align: center;
   padding: 15px;
   margin-top: 15px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 50%;
+  text-align: center;
   z-index:3;
+
+  font-family: 'Garamondt';
+  background-color: #A9A8A9;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .nav-button:hover{
   background-color: #5f5f5f;
@@ -67,14 +78,17 @@ a{
   display: flex;
   bottom: 4%;
   left: 3%;
-  border: outset 4px #A9A8A9; 
-  background-color: #A9A8A9;
   padding: 1px;
   padding-left: 3px;
   padding-right: 8px;
   align-self: center;
   justify-content: center;
   text-align: center;
+
+  border: outset 4px #A9A8A9; 
+  background-color: #A9A8A9;
+  font-family:'Times New Roman', Times, serif;
+  font-style: normal;
 }
 .back-button:hover{
   border: outset 4px #969596; 
@@ -95,9 +109,9 @@ a{
   position: relative;
   display: block;
   width: 70%;
+  top: 8vw;
   margin-left: auto;
   margin-right: auto;
-  top: 8vw;
   z-index: -1;
 }
 .modal-container{
@@ -107,11 +121,17 @@ a{
   display: hidden;
 }
 .about-modal{
-  background-color: #A9A8A9;
-  border: solid 1px #000000;
   width: 375px;
   height: 400px;
   margin: 10px;
+
+  background-color: #A9A8A9;
+  border: solid 1px #000000;
+}
+.about-modal p{
+  font-family: 'Garamondt';
+  font-size: 18px;
+  line-height: 1.5;
 }
 .about-modal#one{
   position: absolute;
@@ -140,14 +160,16 @@ a{
   display: flex;
   bottom: 4%;
   right: 3%;
-  border: outset 4px #A9A8A9; 
-  background-color: #A9A8A9;
   padding: 1px;
   padding-left: 6px;
   padding-right: 6px;
   align-self: center;
   justify-content: center;
   text-align: center;
+
+  font-family:'Times New Roman', Times, serif;
+  border: outset 4px #A9A8A9; 
+  background-color: #A9A8A9;
 }
 .next-button:hover{
   border: outset 4px #969596; 
@@ -169,10 +191,10 @@ a{
 }
 .about-modal p{
   position: absolute;
-  top:0;
+  width: 70%;
+  top: 0;
   margin: 80px;
   margin-top: 30px;
-  width: 70%;
   overflow: hidden;
 }
 #nav-files{
@@ -193,25 +215,27 @@ a{
 }
 .nav-file p{
   position: relative;
-  display:block;
-  margin-right:auto;
-  margin-left:auto;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  display: block;
   width: 100px;
   height: auto;
-  font-size: 13px;
+  margin-right:auto;
+  margin-left:auto;
   margin-top:15px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: center;
 }
 #file-four{
   position: relative;
-  font-family: Arial, Helvetica, sans-serif;
   width: 50px;
   height: auto;
-  font-size: 18px;
-  color: blue;
   right: 150px;
   bottom: -350px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: blue;
 }
 .file-icon{
   position: relative;
@@ -237,22 +261,23 @@ a{
 }
 #garden-nav{
   position: absolute;
-  top:0;
+  top: 0;
   margin-top: 3%;
   margin-left: 3%;
 }
 .garden-button{
   position: relative;
   display: flex;
-  z-index: 1;
-  border: outset 4px #bbbbbb; 
-  background-color: #bebdbd;
   width: 100%;
   height: 100%;
   align-self: center;
   justify-content: center;
   text-align: center;
+  z-index: 1;
+
   filter:blur(0);
+  border: outset 4px #bbbbbb; 
+  background-color: #bebdbd;
 }
 .garden-button:hover{
   border: outset 4px #a8a8a8; 
@@ -275,9 +300,9 @@ a{
 }
 table {
   position: fixed;
-  top:0;
   width: 100%;
   height: 100%;
+  top: 0;
 }
 table, th, td{
   border: 1px solid black;
@@ -304,48 +329,127 @@ tr:last-of-type {
   height: 40%;
 }
 #tb-footer {
-  border: 1px solid rgba(255, 255, 255, 0); 
+  width: 80%;
   align-self: center;
   justify-content: center;
   text-align: center;
-  width: 80%;
+  border: 1px solid rgba(255, 255, 255, 0); 
 }
 #tb-footer h1 {
-  font-size: 18px;
   color: #000000;
-  font-family: ;
+  font-family: 'Garamondt';
+  font-size: 22px;
   font-weight: lighter;  
   font-style: italic;
 }
 #tb-footer p {
-  font-size: 12px;
   color: #000000;
-  font-family: ;
+  font-family: 'Garamondt';
+  font-size: 15px;
   padding-right: 5px;
   padding-left: 5px;
 }
-.garden-modal {
+.garden-modal{
   position: absolute;
-  right: 10%;
-  border: 0.5px solid #000000;
-  background: #c3c3c3;
   width: 150px;
-  height: 300px;
   margin: 10px;
   margin-right:0;
+  right: 10%;
+
+  border: 0.5px solid #000000;
+  background: #cccccc;
+  filter:drop-shadow(-1px 1px 5px #61c475b4);
+}
+.garden-modal#one{
+  width: 400px;
+  height: 400px;
+}
+.garden-modal#two{
+  height: 225px;
+}
+.garden-modal#three{
+  width: 250px;
+  height: 150px;
 }
 .garden-modal h1{
-  font-size: 18px;
-  color: #000000; 
-  background: #ffffff;
-  font-family: ;
-  font-weight: lighter;  
-  text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
+
   border-bottom: 1px solid #000000;
+  color: #000000; 
+  background: #ffffff;
+  font-family: 'Garamondt';
+  font-size: 18px;
+  font-weight: lighter;  
+  text-align: center;
 }
+.garden-modal p{
+  font-family: 'Garamondt';
+  font-size: 18px;
+}
+.garden-modal label{
+  font-family: 'Garamondt';
+  font-size: 16px;
+}
+.inline-modal{
+  position: relative;
+  margin-top: auto;
+  margin-left: auto;
+  padding: 5px;
+  text-align: center;
+}
+#row-1{
+  width: 110px;
+  border: 1px blue solid;
+}
+#row-2{
+  width: 110px;
+}
+.garden-modal button{
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  text-align: center;
+
+  border: outset 4px #cccccc; 
+  background: #cccccc;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 16px;
+  font-style: normal;
+}
+.garden-modal button:hover{
+  border: outset 4px #bbbbbb; 
+  background-color: #bbbbbb;
+}
+.garden-modal button:active{
+  border: inset 4px #A9A8A9; 
+  background-color: #7c7c7c;
+}
+
 /** RESPONSIVE STYLE FOR CELLPHONE VIEW **/
+@media only screen and (hover: none) and (pointer: coarse){
+    body {
+      display: none;
+    }
+    html::after{
+      position: fixed;
+      display: block;
+      content: "to view this website, please use a desktop or laptop computer";
+      background: -moz-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
+      background: -webkit-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
+      background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%); 
+      background-size: cover;
+      height: 100%;
+      color: #000000;
+      text-align: center;
+      padding-top: 50%;
+      padding-right: 10%;
+      padding-left: 10%;
+      overflow: visible;
+    }  
+  }
+
 @media screen and (max-width: 600px) {
   body {
     display: none;
@@ -353,17 +457,16 @@ tr:last-of-type {
   html::after{
     position: fixed;
     display: block;
-    content: "to view this website, please use a desktop computer or device with a screen larger than 600px wide";
+    content: "for functionnality purposes, please resize your window";
     background: -moz-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
     background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%); 
     background-size: cover;
+    width: 100%;
     height: 100%;
     color: #000000;
     text-align: center;
     padding-top: 50%;
-    padding-right: 10%;
-    padding-left: 10%;
     overflow: visible;
   }
 }
