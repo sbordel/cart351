@@ -113,20 +113,23 @@ a{
   height: 400px;
   margin: 10px;
 }
-#one{
+.about-modal#one{
   position: absolute;
-  top: 12vw;
+  top: 8vw;
   left: 16vw;
+  z-index: 6;
 }
-#two{
+.about-modal#two{
   position: absolute;
   top: 3vw;
-  left: 40vw;
+  left: 35vw;
+  z-index: 7;
 }
-#three{
+.about-modal#three{
   position: absolute;
-  top: 15.5vw;
-  right: 16vw;
+  top: 1vw;
+  right: 10vw;
+  z-index: 8;
 }
 .about-icon{
   position: absolute;
@@ -276,12 +279,13 @@ table {
   width: 100%;
   height: 100%;
 }
-table, th, td {
+table, th, td{
   border: 1px solid black;
 }
 /* page table */
 .page {
   width: 92%;
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 /* navigation table */
 .sub {
@@ -296,28 +300,70 @@ table, th, td {
   width: 4.85%;
   height: 13.85%;
 }
-tr:last-of-type{
+tr:last-of-type {
   height: 40%;
 }
-#tb-footer{
+#tb-footer {
   border: 1px solid rgba(255, 255, 255, 0); 
   align-self: center;
   justify-content: center;
   text-align: center;
   width: 80%;
 }
-#tb-footer h1{
+#tb-footer h1 {
   font-size: 18px;
   color: #000000;
   font-family: ;
   font-weight: lighter;  
   font-style: italic;
 }
-#tb-footer p{
+#tb-footer p {
   font-size: 12px;
   color: #000000;
   font-family: ;
-  text-align: center;
   padding-right: 5px;
   padding-left: 5px;
+}
+.garden-modal {
+  position: absolute;
+  right: 10%;
+  border: 0.5px solid #000000;
+  background: #c3c3c3;
+  width: 150px;
+  height: 300px;
+  margin: 10px;
+  margin-right:0;
+}
+.garden-modal h1{
+  font-size: 18px;
+  color: #000000; 
+  background: #ffffff;
+  font-family: ;
+  font-weight: lighter;  
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000000;
+}
+/** RESPONSIVE STYLE FOR CELLPHONE VIEW **/
+@media screen and (max-width: 600px) {
+  body {
+    display: none;
+  }
+  html::after{
+    position: fixed;
+    display: block;
+    content: "to view this website, please use a desktop computer or device with a screen larger than 600px wide";
+    background: -moz-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
+    background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%); 
+    background-size: cover;
+    height: 100%;
+    color: #000000;
+    text-align: center;
+    padding-top: 50%;
+    padding-right: 10%;
+    padding-left: 10%;
+    overflow: visible;
+  }
 }
