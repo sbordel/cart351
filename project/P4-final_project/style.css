@@ -397,13 +397,30 @@ tr:last-of-type {
   height: 400px;
 }
 .garden-modal#two{
-  /*display: none;*/
-  height: 230px;
+  display: none;
+  height: 250px;
 }
 .garden-modal#three{
   display: none;
   width: 250px;
   height: 175px;
+}
+.close-modal{
+  position: absolute;
+  color: #000000;
+  bottom: 0;
+  right: 0;
+  padding-right: 5px;
+  mix-blend-mode: darken;
+}
+.close-modal:hover{
+  color: #000000;
+  background: #bbbbbb;
+  padding-left: 5px;
+}
+.close-modal:active{
+  color: #ffffff;
+  background: #61c475b4;
 }
 .garden-modal h1{
   padding-top: 5px;

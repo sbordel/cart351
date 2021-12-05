@@ -111,5 +111,10 @@ $(document).on({
                 gardenModal.hide();
             };
         };
+
+        $(".close-modal").click(function () {
+            gardenModal.hide();
+        });
     });
+    
 });
