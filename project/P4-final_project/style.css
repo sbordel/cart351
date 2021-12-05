@@ -8,26 +8,6 @@ html {
   margin: 0%;
   cursor: crosshair;
 }
-@font-face{
-  font-family: 'Autopia';
-  src: url(fonts/Autopia-Regular.woff);
-}
-@font-face{
-  font-family: 'Autopia';
-  src: url(fonts/Autopia-Italic.woff);
-  font-style: italic;
-}
-@font-face{
-  font-family: 'Autopia';
-  src: url(fonts/AutopiaBold.woff);
-  font-weight: bold;
-}
-@font-face{
-  font-family: 'Autopia';
-  src: url(fonts/AutopiaBoldItalic.woff);
-  font-style: italic;
-  font-weight: bold;
-}
 @font-face {
   font-family: 'Garamondt';
   src: url(fonts/Garamondt-Regular.woff);
@@ -53,6 +33,29 @@ body{
   background-size: cover;
   background-position: fixed;
 }
+/* code for loading page taken from stackoverflow => http://jsfiddle.net/VpDUG/4952/ */
+/* -- starts here -- */
+.loader {
+  display:    none;
+  position:   fixed;
+  z-index:    1000;
+  top:        0;
+  left:       0;
+  height:     100%;
+  width:      100%;
+  background: #c3c3c3
+              url('assets/ajax-loader.gif') 
+              50% 50% 
+              no-repeat;
+}
+body.loading .loader {
+  overflow: hidden;   
+}
+body.loading .loader {
+  display: block;
+}
+/* -- ends here -- */
+
 .page-logo{
   margin-top: 3%;
   margin-left: 3%;
@@ -386,6 +389,7 @@ tr:last-of-type {
   border: 0.5px solid #000000;
   background: #cccccc;
   filter:drop-shadow(-1px 1px 5px #61c475b4);
+  z-index: 9;
 }
 .garden-modal#one{
   display: none;
@@ -393,7 +397,7 @@ tr:last-of-type {
   height: 400px;
 }
 .garden-modal#two{
-  display: none;
+  /*display: none;*/
   height: 230px;
 }
 .garden-modal#three{

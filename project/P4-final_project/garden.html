@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>garden ~ ~ ~</title>
@@ -9,135 +10,157 @@
   <script src="js/script.js"></script>
 </head>
 <!-- ** HTML START ** -->
+
 <body class="garden">
-<table>
-  <div class="page-logo">
-    <img id="logo-one" src="assets/drops-logo.png" alt="water drops">
-  </div>
-  <tr>
 
-<!-- ** table start ** -->
-  <td class="page">
-    <!-- GARDEN COLLAGE -->
-    <canvas></canvas>
+  <table>
+    <div class="page-logo">
+      <img id="logo-one" src="assets/drops-logo.png" alt="water drops">
+    </div>
+    <tr>
 
-    <!-- GARDEN BUTTONS ==> modals -->
-    <div class="modal-container">
+      <!-- ** table start ** -->
+      <td class="page">
+        <!-- GARDEN COLLAGE -->
+        <canvas></canvas>
 
-      <!-- garden modal: plant -->
-      <div class="garden-modal" id="one">
-        <h1>~plant~</h1>
-        <div class="inline-modal">
-          <br>
-          <p>upload image here!</p>
-        </div>
-      </div> 
+        <!-- GARDEN BUTTONS ==> modals -->
+        <div class="modal-container">
 
-      <!-- garden modal: fertilize -->
-      <div class="garden-modal" id="two">
-        <h1>~fertilizer~</h1>
-        <div class="inline-modal">
-          <div class="column" id="col-1">
-          <input type="button" name="fertilizer" value="#">
-          <input type="button" name="fertilizer" value="( )">
-          <input type="button" name="fertilizer" value="+">
-          <input type="button" name="fertilizer" value="%">
-        </div>
-        <div class="column" id="col-2">
-          <input type="button" name="fertilizer" value="@">
-          <input type="button" name="fertilizer" value="?">
-          <input type="button" name="fertilizer" value="~">
-          <input type="button" name="fertilizer" value="=">
-        </div>
-        <div class="column" id="col-2">
-          <input type="button" name="fertilizer" value="$">
-          <input type="button" name="fertilizer" value="*">
-          <input type="button" name="fertilizer" value="/">
-          <input type="button" name="fertilizer" value="^">
-      </div>
-
-     <!-- garden modal: liquid sunshine -->
-      <div class="garden-modal" id="three">
-         <h1>~liquid sunshine~</h1>
-        <div class="inline-modal">
-          <div class="column" id="col-1">
-            <input type="button" name="sunshine" value="# 8e525f">
-            <br>
-            <input type="button" name="sunshine" value="# ffce3c">
-            <br>
-            <input type="button" name="sunshine" value="# ff5c00">
-            <br>
-            <input type="button" name="sunshine" value="# f42a41">
+          <!-- garden modal: plant -->
+          <div class="garden-modal" id="one">
+            <h1>~plant~</h1>
+            <div class="inline-modal">
+              <br>
+              <p>upload image here!</p>
+            </div>
+            <span class="close-modal">☒ close</span>
           </div>
-          <div class="column" id="col-2">
-          <input type="button" name="sunshine" value="# ca50b6">
-          <br>
-          <input type="button" name="sunshine" value="# e336a8">
-          <br>
-          <input type="button" name="sunshine" value="# 3556ab">
-          <br>
-          <input type="button" name="sunshine" value="# 00b4b2">
-        </div> 
-      </div>
-  </td>
-  <td>
+
+          <!-- garden modal: fertilize -->
+          <div class="garden-modal" id="two">
+            <h1>~fertilizer~</h1>
+            <div class="inline-modal">
+              <div class="column" id="col-1">
+                <input type="button" name="fertilizer" value="#">
+                <input type="button" name="fertilizer" value="( )">
+                <input type="button" name="fertilizer" value="+">
+                <input type="button" name="fertilizer" value="%">
+              </div>
+              <div class="column" id="col-2">
+                <input type="button" name="fertilizer" value="@">
+                <input type="button" name="fertilizer" value="?">
+                <input type="button" name="fertilizer" value="~">
+                <input type="button" name="fertilizer" value="=">
+              </div>
+              <div class="column" id="col-2">
+                <input type="button" name="fertilizer" value="$">
+                <input type="button" name="fertilizer" value="*">
+                <input type="button" name="fertilizer" value="/">
+                <input type="button" name="fertilizer" value="^">
+              </div>
+            </div>
+            <span class="close-modal">☒ close</span>
+          </div>
+
+          <!-- garden modal: liquid sunshine -->
+          <div class="garden-modal" id="three">
+            <h1>~liquid sunshine~</h1>
+            <div class="inline-modal">
+              <div class="column" id="col-1">
+                <input type="button" name="sunshine" value="# 8e525f">
+                <br>
+                <input type="button" name="sunshine" value="# ffce3c">
+                <br>
+                <input type="button" name="sunshine" value="# ff5c00">
+                <br>
+                <input type="button" name="sunshine" value="# f42a41">
+              </div>
+              <div class="column" id="col-2">
+                <input type="button" name="sunshine" value="# ca50b6">
+                <br>
+                <input type="button" name="sunshine" value="# e336a8">
+                <br>
+                <input type="button" name="sunshine" value="# 3556ab">
+                <br>
+                <input type="button" name="sunshine" value="# 00b4b2">
+              </div>
+            </div>
+            <span class="close-modal">☒ close</span>
+          </div>
+
+      </td>
+      <td>
+
+        <!-- GARDEN BUTTONS ==> button side bar -->
+        <table class="sub">
+
+          <!-- garden button: plant -->
+          <tr>
+            <td><button class="garden-button" id="plant-btn">
+                <picture>
+                  <source srcset="assets/plantx1.png" media="(max-width: 1700px)">
+                  <source srcset="assets/plantx2.png">
+                  <img src="assets/plantx2.png" alt="plant" style="width:auto;">
+                </picture>
+              </button></td>
+          </tr>
+
+          <!-- garden button: fertilizer -->
+          <tr>
+            <td><button class="garden-button" id="fertilize-btn">
+                <picture>
+                  <source srcset="assets/fertilizerx1.png" media="(max-width: 1700px)">
+                  <source srcset="assets/fertilizerx2.png">
+                  <img src="assets/fertilizerx2.png" alt="fertilize" style="width:auto;">
+                </picture>
+              </button></td>
+          </tr>
+
+          <!-- garden button: water -->
+          <tr>
+            <td><button class="garden-button" id="water-btn">
+                <picture>
+                  <source srcset="assets/waterx1.png" media="(max-width: 1700px)">
+                  <source srcset="assets/waterx2.png">
+                  <img src="assets/waterx2.png" alt="water" style="width:auto;">
+                </picture>
+              </button></td>
+          </tr>
+
+          <!-- garden button: liquid sunshine -->
+          <tr>
+            <td><button class="garden-button" id="sun-btn">
+                <picture>
+                  <source srcset="assets/liquidsunx1.png" media="(max-width: 1700px)">
+                  <source srcset="assets/liquidsunx2.png">
+                  <img src="assets/liquidsunx2.png" alt="liquid sunshine" style="width:auto;">
+                </picture>
+              </button></td>
+          </tr>
+          <tr>
+
+            <!-- button side bar: action description -->
+            <td id="tb-footer">
+              <h1 class="button-name"></h1>
+              <br>
+              <p class="button-info"></p>
+          </tr>
+        </table>
+        <!-- ** table end ** -->
+
+        <!-- return button -->
+        <a class="back-button" href="javascript:history.back()">◅</a>
+      </td>
+    </tr>
+
+  </table>
+
+  <div class="loader">
+    <!-- code for loader taken from => http://jsfiddle.net/VpDUG/4952/ -->
+  </div>
   
-  <!-- GARDEN BUTTONS ==> button side bar -->
-  <table class="sub">
-
-  <!-- garden button: plant -->
-  <tr><td><button class="garden-button" id="plant-btn">
-    <picture>
-      <source srcset="assets/plantx1.png" media="(max-width: 1700px)">
-      <source srcset="assets/plantx2.png">
-      <img src="assets/plantx2.png" alt="plant" style="width:auto;">
-    </picture> 
-  </button></td></tr>
-
-  <!-- garden button: fertilizer -->
-  <tr><td><button class="garden-button" id="fertilize-btn">
-      <picture>
-        <source srcset="assets/fertilizerx1.png" media="(max-width: 1700px)">
-        <source srcset="assets/fertilizerx2.png">
-        <img src="assets/fertilizerx2.png" alt="fertilize" style="width:auto;">
-      </picture> 
-    </button></td></tr>
-
-    <!-- garden button: water -->
-  <tr><td><button class="garden-button" id="water-btn">
-    <picture>
-      <source srcset="assets/waterx1.png" media="(max-width: 1700px)">
-      <source srcset="assets/waterx2.png">
-      <img src="assets/waterx2.png" alt="water" style="width:auto;">
-    </picture> 
-  </button></td></tr>
-
-  <!-- garden button: liquid sunshine -->
-  <tr><td><button class="garden-button" id="sun-btn">
-    <picture>
-      <source srcset="assets/liquidsunx1.png" media="(max-width: 1700px)">
-      <source srcset="assets/liquidsunx2.png">
-      <img src="assets/liquidsunx2.png" alt="liquid sunshine" style="width:auto;">
-    </picture> 
-  </button></td></tr>
-  <tr>
-
-  <!-- button side bar: action description -->
-    <td id="tb-footer">
-    <h1></h1>
-    <br>
-    <p></p>
-  </tr>
-  </table>
-  <!-- ** table end ** -->
-
-  <!-- return button -->
-<a class="back-button" href="javascript:history.back()">◅</a>
-  </td>
-  </tr>
-
-  </table>
-
-<!-- ** HTML END ** -->
+  <!-- ** HTML END ** -->
 </body>
+
 </html>
