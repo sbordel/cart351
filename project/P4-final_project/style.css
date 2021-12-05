@@ -474,6 +474,11 @@ tr:last-of-type {
 #three .inline-modal{
   margin-left: 30px;
 }
+#one .inline-modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .inline-modal .column{
   flex: 50%;
   padding-top: 5px;

@@ -33,7 +33,19 @@
             <h1>~plant~</h1>
             <div class="inline-modal">
               <br>
-              <p>upload image here!</p>
+              <!--<p id="status">OpenCV.js is loading...</p>-->
+              <div>
+                <div class="inputoutput">
+                  <img id="imageSrc" alt="No Image" style="display: none;"/>
+                  <p>upload image here!</p>
+                  <br>
+                  <input type="file" id="fileInput" name="file" />
+                </div>
+                <div class="inputoutput">
+                  <canvas id="canvasOutput"></canvas>
+                  <div class="caption"></div>
+                </div>
+              </div>
             </div>
             <span class="close-modal">☒</span>
           </div>
@@ -162,6 +174,6 @@
   </div>
 
   <!-- ** HTML END ** -->
+  <script src="https://docs.opencv.org/3.4.0/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
 </body>
-
 </html>
