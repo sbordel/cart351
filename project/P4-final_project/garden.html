@@ -27,6 +27,74 @@
 </div>
   </div>
 
+  <!-- GARDEN BUTTONS ==> modals -->
+  <div class="modal-container">
+    <!-- garden modal: plant -->
+    <div class="garden-modal" id="one">
+      <h1>~plant~</h1>
+      <div class="inline-modal">
+        <div id="img-upload">
+          <br>
+          <p>drop an image below to add a new plot to the garden!</p>
+          <br>
+          </div>
+        </div>
+          <span class="close-modal">☒</span>
+      </div>
+    </div>
+
+    <!-- garden modal: fertilize -->
+    <div class="garden-modal" id="two">
+      <h1>~fertilizer~</h1>
+      <div class="inline-modal">
+        <div class="column" id="col-1">
+          <input type="button" name="fertilizer" value="#">
+          <input type="button" name="fertilizer" value="( )">
+          <input type="button" name="fertilizer" value="+">
+          <input type="button" name="fertilizer" value="%">
+        </div>
+        <div class="column" id="col-2">
+          <input type="button" name="fertilizer" value="@">
+          <input type="button" name="fertilizer" value="?">
+          <input type="button" name="fertilizer" value="~">
+          <input type="button" name="fertilizer" value="=">
+        </div>
+        <div class="column" id="col-2">
+          <input type="button" name="fertilizer" value="$">
+          <input type="button" name="fertilizer" value="*">
+          <input type="button" name="fertilizer" value="/">
+          <input type="button" name="fertilizer" value="^">
+        </div>
+      </div>
+      <span class="close-modal">☒</span>
+    </div>
+
+    <!-- garden modal: liquid sunshine -->
+    <div class="garden-modal" id="three">
+      <h1>~liquid sunshine~</h1>
+      <div class="inline-modal">
+        <div class="column" id="col-1">
+          <input type="button" name="sunshine" value="# 8e525f">
+          <br>
+          <input type="button" name="sunshine" value="# ffce3c">
+          <br>
+          <input type="button" name="sunshine" value="# ff5c00">
+          <br>
+          <input type="button" name="sunshine" value="# f42a41">
+        </div>
+        <div class="column" id="col-2">
+          <input type="button" name="sunshine" value="# ca50b6">
+          <br>
+          <input type="button" name="sunshine" value="# e336a8">
+          <br>
+          <input type="button" name="sunshine" value="# 3556ab">
+          <br>
+          <input type="button" name="sunshine" value="# 00b4b2">
+        </div>
+      </div>
+      <span class="close-modal">☒</span>
+    </div>
+
   <table>
     <div class="page-logo">
       <img id="logo-one" src="assets/drops-logo.png" alt="water drops">
@@ -35,84 +103,11 @@
 
       <!-- ** table start ** -->
       <td class="page">
-        <!-- GARDEN COLLAGE -->
-
-
-        <!-- GARDEN BUTTONS ==> modals -->
-        <div class="modal-container">
-
-          <!-- garden modal: plant -->
-          <div class="garden-modal" id="one">
-            <h1>~plant~</h1>
-            <div class="inline-modal">
-              <div id="img-upload">
-                <br>
-                <p>drop an image below to add a new plot to the garden!</p>
-                <br>
-                </div>
-              </div>
-            </div>
-            <span class="close-modal">☒</span>
-          </div>
-
-          <!-- garden modal: fertilize -->
-          <div class="garden-modal" id="two">
-            <h1>~fertilizer~</h1>
-            <div class="inline-modal">
-              <div class="column" id="col-1">
-                <input type="button" name="fertilizer" value="#">
-                <input type="button" name="fertilizer" value="( )">
-                <input type="button" name="fertilizer" value="+">
-                <input type="button" name="fertilizer" value="%">
-              </div>
-              <div class="column" id="col-2">
-                <input type="button" name="fertilizer" value="@">
-                <input type="button" name="fertilizer" value="?">
-                <input type="button" name="fertilizer" value="~">
-                <input type="button" name="fertilizer" value="=">
-              </div>
-              <div class="column" id="col-2">
-                <input type="button" name="fertilizer" value="$">
-                <input type="button" name="fertilizer" value="*">
-                <input type="button" name="fertilizer" value="/">
-                <input type="button" name="fertilizer" value="^">
-              </div>
-            </div>
-            <span class="close-modal">☒</span>
-          </div>
-
-          <!-- garden modal: liquid sunshine -->
-          <div class="garden-modal" id="three">
-            <h1>~liquid sunshine~</h1>
-            <div class="inline-modal">
-              <div class="column" id="col-1">
-                <input type="button" name="sunshine" value="# 8e525f">
-                <br>
-                <input type="button" name="sunshine" value="# ffce3c">
-                <br>
-                <input type="button" name="sunshine" value="# ff5c00">
-                <br>
-                <input type="button" name="sunshine" value="# f42a41">
-              </div>
-              <div class="column" id="col-2">
-                <input type="button" name="sunshine" value="# ca50b6">
-                <br>
-                <input type="button" name="sunshine" value="# e336a8">
-                <br>
-                <input type="button" name="sunshine" value="# 3556ab">
-                <br>
-                <input type="button" name="sunshine" value="# 00b4b2">
-              </div>
-            </div>
-            <span class="close-modal">☒</span>
-          </div>
-
       </td>
       <td>
 
         <!-- GARDEN BUTTONS ==> button side bar -->
         <table class="sub">
-
           <!-- garden button: plant -->
           <tr>
             <td><button class="garden-button" id="plant-btn">
@@ -181,7 +176,7 @@
 
   <!-- ** HTML END ** -->
   <!-- script -->
-  <script src="js/script.js"></script> 
-  <script src="js/p5-script.js"></script> 
+  <script src="js/script.js"></script>
+  <script src="js/p5-script.js"></script>
 </body>
 </html>

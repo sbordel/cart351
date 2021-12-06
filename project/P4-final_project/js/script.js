@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 $(document).on({
     ajaxStart: function() { $body.addClass("loading");    },
-    ajaxStop: function() { $body.removeClass("loading"); }    
+    ajaxStop: function() { $body.removeClass("loading"); }
 });
 /* -- ends here -- */
 
@@ -40,6 +40,8 @@ $(document).on({
     let modalPlant = $("#one.garden-modal");
     let modalFertilizer = $("#two.garden-modal");
     let modalSun = $("#three.garden-modal");
+
+    let modalBg = $(".garden .modal-container");
 
     const btnName = ["plant", "fertilize", "water", "liquid sunshine"];
     const btnInfo = ["upload an image to the server and expand the garden", "supply the garden with nutrients", "rehydrate the garden", "provide the garden with light to help it stay bright and healthy"];
@@ -77,6 +79,9 @@ $(document).on({
 
     $(".garden-button").click(function () {
         $(".garden-button").off("mouseleave");
+        modalBg.css("background-color","rgba(169,169,169, 1)");
+        $("#garden-canvas").css("opacity","0.5");
+
 
         for (let i = 0; i < btnNum; i++) {
             if ($(this).attr('id') == "plant-btn") {
@@ -97,6 +102,8 @@ $(document).on({
                 $(".button-name").text(btnName[2]);
                 $(".button-info").text(btnInfo[2]);
                 gardenModal.hide();
+                modalBg.css("background-color","rgba(169,169,169, 0)");
+                $("#garden-canvas").css("opacity","1");
             }
             else if ($(this).attr('id') == "sun-btn") {
                 console.log(modalSun);
@@ -109,12 +116,15 @@ $(document).on({
             else {
                 $(".garden-button").mouseleave();
                 gardenModal.hide();
+                modalBg.css("background-color","rgba(169,169,169, 0)");
+                $("#garden-canvas").css("opacity","1");
             };
         };
 
         $(".close-modal").click(function () {
             gardenModal.hide();
+            modalBg.css("background-color","rgba(169,169,169, 0)");
+            $("#garden-canvas").css("opacity","1");
         });
     });
 });
-

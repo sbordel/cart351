@@ -22,7 +22,7 @@ body{
   background: #c3c3c3;
   background: -moz-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
   background: -webkit-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
-  background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%); 
+  background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: fixed;
@@ -44,12 +44,12 @@ body{
   height:     100%;
   width:      100%;
   background: #c3c3c3
-              url('assets/ajax-loader.gif') 
-              50% 50% 
+              url('assets/ajax-loader.gif')
+              50% 50%
               no-repeat;
 }
 body.loading .loader {
-  overflow: hidden;   
+  overflow: hidden;
 }
 body.loading .loader {
   display: block;
@@ -109,17 +109,17 @@ nav a{
   justify-content: center;
   text-align: center;
 
-  border: outset 4px #A9A8A9; 
+  border: outset 4px #A9A8A9;
   background-color: #A9A8A9;
   font-family:'Times New Roman', Times, serif;
   font-style: normal;
 }
 .back-button:hover{
-  border: outset 4px #969596; 
+  border: outset 4px #969596;
   background-color: #969596;
 }
 .back-button:active{
-  border: inset 4px #A9A8A9; 
+  border: inset 4px #A9A8A9;
   background-color: #7c7c7c;
 }
 .diagram{
@@ -192,15 +192,15 @@ nav a{
   text-align: center;
 
   font-family:'Times New Roman', Times, serif;
-  border: outset 4px #A9A8A9; 
+  border: outset 4px #A9A8A9;
   background-color: #A9A8A9;
 }
 .next-button:hover{
-  border: outset 4px #969596; 
+  border: outset 4px #969596;
   background-color: #969596;
 }
 .next-button:active{
-  border: inset 4px #A9A8A9; 
+  border: inset 4px #A9A8A9;
   background-color: #7c7c7c;
 }
 #close-modal{
@@ -307,15 +307,15 @@ nav a{
   z-index: 1;
 
   filter:blur(0);
-  border: outset 4px #bbbbbb; 
+  border: outset 4px #bbbbbb;
   background-color: #bebdbd;
 }
 .garden-button:hover{
-  border: outset 4px #a8a8a8; 
+  border: outset 4px #a8a8a8;
   background-color: #a8a8a8;
 }
 .garden-button:active{
-  border: inset 4px #bbbbbb; 
+  border: inset 4px #bbbbbb;
   background-color: #9c9c9c;
   filter:blur(1px);
 }
@@ -364,13 +364,13 @@ tr:last-of-type {
   align-self: center;
   justify-content: center;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0); 
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 #tb-footer h1 {
   color: #000000;
   font-family: 'Garamondt';
   font-size: 22px;
-  font-weight: lighter;  
+  font-weight: lighter;
   font-style: italic;
 }
 #tb-footer p {
@@ -383,51 +383,69 @@ tr:last-of-type {
 /* p5 canvas */
 #garden-canvas{
   position: absolute;
-  top:0;
-  margin-left: auto;
+  top:3px;
+  bottom:3px;
+  margin-left: 3px;
   margin-right: auto;
-  width: 90%;
-  height: 100%;
-  border: 2px blue solid;
-  overflow: visible;
+  width: 91.5%;
+  z-index: 1;
+  opacity: 1;
+  border: 1px solid black;
 }
 #garden-imgs{
   width: 100%;
   height: 100%;
   text-align: center;
-  overflow-x: scroll;
   overflow-y: scroll;
+  scrollbar-color: #c3c3c3 #c3c3c3;
+  scrollbar-width: thin;
+}
+/* hide scrollbar for chrome, safari and opera */
+#garden-imgs::-webkit-scrollbar {
+ background: #c3c3c3;
+ opacity: 0;
+ outline: 1px solid #c3c3c3;
+}
+#garden-imgs::-webkit-scrollbar-track{
+ background: #c3c3c3;
 }
 #garden-imgs img{
   width: 500px;
 }
 /* garden modal interface */
+.garden .modal-container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background: none;
+  /* background turns grey when modal appears
+  background:rgba(169,169,169, 0.75);*/
+}
 .garden-modal{
   position: absolute;
-  /*top: 0;
-  right: 10%;*/
-  margin: 20px;
-  margin-right:10px;
-
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border: 0.5px solid #000000;
   background: #cccccc;
   filter:drop-shadow(-1px 1px 5px #61c475b4);
+  z-index: 3;
 }
 .garden-modal#one{
   display: none;
-  /*top: 2vh;*/
   width: 400px;
   height: 400px;
 }
 .garden-modal#two{
   display: none;
-  /*top: 17vh;*/
   width: 150px;
   height: 250px;
 }
 .garden-modal#three{
   display: none;
- /* top: 47vh;*/
   width: 250px;
   height: 175px;
 }
@@ -448,22 +466,17 @@ tr:last-of-type {
   color: #ffffff;
   background: #61c475b4;
 }
-#img-upload{
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-}
 /* garden modal font+color */
 .garden-modal h1{
   padding-top: 5px;
   padding-bottom: 5px;
 
   border-bottom: 1px solid #000000;
-  color: #000000; 
+  color: #000000;
   background: #ffffff;
   font-family: 'Garamondt';
   font-size: 18px;
-  font-weight: lighter;  
+  font-weight: lighter;
   text-align: center;
 }
 .garden-modal p{
@@ -523,18 +536,18 @@ tr:last-of-type {
   margin: 5px;
   text-align: center;
 
-  border: outset 4px #cccccc; 
+  border: outset 4px #cccccc;
   background: #cccccc;
   font-family:'Times New Roman', Times, serif;
   font-size: 16px;
   font-style: normal;
 }
 .garden-modal [name="fertilizer"]:hover{
-  border: outset 4px #bbbbbb; 
+  border: outset 4px #bbbbbb;
   background-color: #bbbbbb;
 }
 .garden-modal [name="fertilizer"]:active{
-  border: inset 4px #A9A8A9; 
+  border: inset 4px #A9A8A9;
   background-color: #7c7c7c;
 }
 /** RESPONSIVE STYLE FOR CELLPHONE VIEW **/
@@ -548,7 +561,7 @@ tr:last-of-type {
       content: "to view this website, please use a desktop or laptop computer";
       background: -moz-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
       background: -webkit-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
-      background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%); 
+      background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
       background-size: cover;
       height: 100%;
       color: #000000;
@@ -557,7 +570,7 @@ tr:last-of-type {
       padding-right: 10%;
       padding-left: 10%;
       overflow: visible;
-    }  
+    }
   }
 
 @media screen and (max-width: 600px) {
@@ -570,7 +583,7 @@ tr:last-of-type {
     content: "for functionnality purposes, please resize your window";
     background: -moz-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
     background: -webkit-linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
-    background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%); 
+    background: linear-gradient(0deg, rgba(195,195,195,1) 15%, rgba(159,195,172,1) 65%, rgba(88,196,126,1) 100%);
     background-size: cover;
     width: 100%;
     height: 100%;
