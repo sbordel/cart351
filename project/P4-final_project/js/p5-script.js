@@ -3,12 +3,10 @@
 let img;
 
 function setup() {    
-let winW = windowWidth;
-let winH = windowHeight;
 
+    /*
 let gardenCnv = createElement('div');
-//createCanvas(winW, winH);
-gardenCnv.id('garden-canvas');
+gardenCnv.id('garden-canvas'); */
 
 let modalCnv = createCanvas(300, 300);
 modalCnv.parent('img-upload');
