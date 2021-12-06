@@ -1,0 +1,2 @@
+https://p5js.org/examples/advanced-data-load-saved-json.html
+https://p5js.org/reference/#/p5/tint

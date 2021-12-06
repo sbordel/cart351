@@ -2,7 +2,10 @@
 
 let img;
 
-function setup() {    
+function preload() {
+}
+
+function setup() {
 
     /*
 let gardenCnv = createElement('div');
@@ -27,4 +30,13 @@ if (img) {
 
 function gotFile(file) {
 img = createImg(file.data, '').hide();
+
+let imgSrc = file.data;
+
+let plot = {}; // new  JSON Object
+
+plot.id = 0;
+plot.src = imgSrc ;
+
+saveJSON(plot, '../json/garden-img.json');
 }
