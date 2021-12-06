@@ -379,12 +379,13 @@ tr:last-of-type {
   padding-right: 5px;
   padding-left: 5px;
 }
+/* garden modal interface */
 .garden-modal{
   position: absolute;
-  width: 150px;
+  top: 0;
+  right: 10%;
   margin: 20px;
   margin-right:10px;
-  right: 10%;
 
   border: 0.5px solid #000000;
   background: #cccccc;
@@ -393,15 +394,19 @@ tr:last-of-type {
 }
 .garden-modal#one{
   display: none;
+  top: 2vh;
   width: 400px;
   height: 400px;
 }
 .garden-modal#two{
   display: none;
+  top: 17vh;
+  width: 150px;
   height: 250px;
 }
 .garden-modal#three{
   display: none;
+  top: 47vh;
   width: 250px;
   height: 175px;
 }
@@ -422,6 +427,12 @@ tr:last-of-type {
   color: #ffffff;
   background: #61c475b4;
 }
+#img-upload{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* garden modal font+color */
 .garden-modal h1{
   padding-top: 5px;
   padding-bottom: 5px;
@@ -505,7 +516,13 @@ tr:last-of-type {
   border: inset 4px #A9A8A9; 
   background-color: #7c7c7c;
 }
-
+#garden-canvas{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 /** RESPONSIVE STYLE FOR CELLPHONE VIEW **/
 @media only screen and (hover: none) and (pointer: coarse){
     body {
