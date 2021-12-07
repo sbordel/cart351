@@ -108,7 +108,8 @@ $(document).on({
                 $("#garden-canvas").css("opacity","1");
 
                 // garden effect => WATER
-                gardenImgs.css('filter', 'saturate(0)');
+                gardenImgs.css('filter', 'grayscale(5%)');
+                // make the grayscale effect be incremental (+5% per click event?)
             }
             else if ($(this).attr('id') == "sun-btn") {
                 $(".button-name").text(btnName[3]);
