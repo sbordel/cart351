@@ -10,6 +10,19 @@ $(document).on({
 });
 /* -- ends here -- */
 
+    let sunFilters;
+    let sunObj;
+
+    //load JSON file
+    $.getJSON('../json/colors.json', function (data) {
+        dataFromJSON = data;
+        for (let j = 0; j < dataFromJSON.length; j++) {
+        }
+        sunFilters = dataFromJSON.filterElt;
+        run();
+      });
+
+      function run() {
     // INDEX
     let modalOne = $("#one.about-modal");
     let modalTwo = $("#two.about-modal");
@@ -140,59 +153,45 @@ $(document).on({
             };
         };
 
+        // LIQUID SUNSHINE => modal click events
         let sunSelection = $("[name='sunshine']");
-        //gardenImgs.css("background-color", "rgb("+sc_r+","+sc_g+","+sc_b+")");
+        
             $(sunSelection).click(function () {
-                $("filter").css('display','block');
-                let valueSun = $(this).attr('value');
-  
-                if (valueSun == "# 8e525f") {
-                    $("rect").css('filter','url(#sun-filter)');
-                    console.log("yiha");
+
+            let valueSun = $(this).attr('value');
+              //  sunObj = sunFilters.length;
+            for (let i = 0; i < sunFilters.length; i++) {
+
+                // hex color
+                let sunHex = sunFilters[i].Hex;
+
+                // filter properties
+                let sunInv = sunFilters[i].Invert;
+                let sunSepia = sunFilters[i].Sepia;
+                let sunSat = sunFilters[i].Saturate;
+                let sunHue = sunFilters[i].Hue;
+                let sunBright = sunFilters[i].Brightness;
+                let sunCon = sunFilters[i].Contrast;
+
+                if (valueSun == sunHex) {
+                
+                gardenImgs.css("filter", "invert(" + sunInv + ") sepia(" + sunSepia + ") saturate(" + sunSat + ") hue-rotate(" + sunHue + ") brightness(" + sunBright + ") contrast(" + sunCon + ")" );
                 }
+            }
+        
+
+ /*
+                $("filter").css('display','block');
+                */
+            
             });
 
-        $(".close-modal").click(function () {
-            gardenModal.hide();
-            modalBg.css("background-color","rgba(169,169,169, 0)");
-            $("#garden-canvas").css("opacity","1");
+            $(".close-modal").click(function () {
+                gardenModal.hide();
+                modalBg.css("background-color","rgba(169,169,169, 0)");
+                $("#garden-canvas").css("opacity","1");
+            });
+
         });
-
-    });
-
-
-    //FERTILIZER
-    /*
-    1- #
-    2- @
-    3- $
-
-    4- ()
-    5- ?
-    6- *
-
-    7- +
-    8- ~
-    9- /
-
-    10- %
-    11- =
-    12- ^
-
-    //LIQUID SUNSHINE
-
-    changes hue
-
-    1- #8e525f = tint(142, 82, 95)
-    2- #ffce3c = tint(255, 206, 60)
-    3- #ff5c00 = tint(255, 92, 0)
-    4- #f42a41 = tint(244, 42, 65)
-    5- #ca50b6 = tint(202, 80, 182) 
-    6- #e336a8 = tint(227, 54, 168)
-    7- #3556ab = tint(53, 86, 171)
-    8- #00b4b2 = tint(0, 180, 178)
-
-    */
-
-
+    }
 });

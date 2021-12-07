@@ -1,0 +1,87 @@
+{
+    "Label": "colors",
+    "SubLabel": "liquid sunshine colors based on fertilizer dye pigments",
+    "Source": "http://www.chromatechcolors.com/industries/agricultural-compounds-fertilizer-dyes/",
+    "filterElt": [
+        {
+            "Name": "D11025X Chromatint® Yellow GS Liquid+",
+            "Hex": "#f4ed09",
+            "Invert": "97%",
+            "Sepia": "33%",
+            "Saturate": "6015%",
+            "Hue": "354deg",
+            "Brightness": "98%",
+            "Contrast": "95%"
+        },
+        {
+            "Name": "D12005 Chromatint® Orange 0092 Liquid",
+            "Hex": "#f89a1e",
+            "Invert": "57%",
+            "Sepia": "70%",
+            "Saturate": "559%",
+            "Hue": "351deg",
+            "Brightness": "103%",
+            "Contrast": "94%"
+        },
+        {
+            "Name": "D93287X Chromatint® Red 1887 Liquid+",
+            "Hex": "#ef5090",
+            "Invert": "45%",
+            "Sepia": "23%",
+            "Saturate": "2971%",
+            "Hue": "300deg",
+            "Brightness": "98%",
+            "Contrast": "91%"
+        },
+        {
+            "Name": "D15003 Chromatint® Blue AZ 50% Liquid+",
+            "Hex": "#00bde5",
+            "Invert": "60%",
+            "Sepia": "32%",
+            "Saturate": "4763%",
+            "Hue": "151deg",
+            "Brightness": "97%",
+            "Contrast": "106%"
+        },
+        {
+            "Name": "M96001 Chromatint® Green 0262 Liquid+",
+            "Hex": "#00a25f",
+            "Invert": "38%",
+            "Sepia": "89%",
+            "Saturate": "1022%",
+            "Hue": "124deg",
+            "Brightness": "92%",
+            "Contrast": "101%"
+        },
+        {
+            "Name": "D96022 Chromatint® Green 0454 Liquid",
+            "Hex": "#50b847",
+            "Invert": "62%",
+            "Sepia": "19%",
+            "Saturate": "1391%",
+            "Hue": "68deg",
+            "Brightness": "95%",
+            "Contrast": "89%"
+        },
+        {
+            "Name": "M93055 Chromatint® Red 1064 Liquid",
+            "Hex": "#ee144e",
+            "Invert": "18%",
+            "Sepia": "88%",
+            "Saturate": "5835%",
+            "Hue": "337deg",
+            "Brightness": "96%",
+            "Contrast": "94%"
+        },
+        {
+            "Name": "D959013 Chromatint® Blue 3404 Liquid",
+            "Hex": "#005fab",
+            "Invert": "19%",
+            "Sepia": "99%",
+            "Saturate": "2450%",
+            "Hue": "192deg",
+            "Brightness": "94%",
+            "Contrast": "101%"
+        }
+        ]
+    }
