@@ -43,6 +43,8 @@ $(document).on({
 
     let modalBg = $(".garden .modal-container");
 
+    let gardenImgs = $("#garden-imgs");
+
     const btnName = ["plant", "fertilize", "water", "liquid sunshine"];
     const btnInfo = ["upload an image to the server and expand the garden", "supply the garden with nutrients", "rehydrate the garden", "provide the garden with light to help it stay bright and healthy"];
     let btnNum = btnName.length;
@@ -104,9 +106,11 @@ $(document).on({
                 gardenModal.hide();
                 modalBg.css("background-color","rgba(169,169,169, 0)");
                 $("#garden-canvas").css("opacity","1");
+
+                // garden effect => WATER
+                gardenImgs.css('filter', 'saturate(0)');
             }
             else if ($(this).attr('id') == "sun-btn") {
-                console.log(modalSun);
                 $(".button-name").text(btnName[3]);
                 $(".button-info").text(btnInfo[3]);
                 modalSun.show();
@@ -126,5 +130,42 @@ $(document).on({
             modalBg.css("background-color","rgba(169,169,169, 0)");
             $("#garden-canvas").css("opacity","1");
         });
+
     });
+
+
+    //FERTILIZER
+    /*
+    1- #
+    2- @
+    3- $
+
+    4- ()
+    5- ?
+    6- *
+
+    7- +
+    8- ~
+    9- /
+
+    10- %
+    11- =
+    12- ^
+
+    //LIQUID SUNSHINE
+
+    changes hue
+
+    1- #8e525f = tint(142, 82, 95, 50)
+    2- #ffce3c = tint(255, 206, 60)
+    3- #ff5c00 = tint(255, 92, 0)
+    4- #f42a41 = tint(244, 42, 65)
+    5- #ca50b6 = tint(202, 80, 182) 
+    6- #e336a8 = tint(227, 54, 168)
+    7- #3556ab = tint(53, 86, 171)
+    8- #00b4b2 = tint(0, 180, 178)
+
+    */
+
+
 });

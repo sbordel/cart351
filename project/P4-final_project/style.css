@@ -400,6 +400,7 @@ tr:last-of-type {
   /* hide scrollbar  */
   scrollbar-color: #c3c3c3 #c3c3c3;
   scrollbar-width: thin;
+  filter: saturate(100%);
 }
 /* hide scrollbar  */
 #garden-imgs::-webkit-scrollbar {
