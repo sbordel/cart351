@@ -12,4 +12,13 @@ size:medium
 shape:square
 cheese:lotsa cheeze
 veggie:green veggies
+sauce:sweet & spicy saucesize:big
+shape:triangle
+cheese:normal amount
+veggie:green, white, yellow veggies
+sauce:sweet & spicy sauce
+size:big
+shape:triangle
+cheese:normal amount
+veggie:green, white, yellow veggies
 sauce:sweet & spicy sauce

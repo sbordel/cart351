@@ -380,7 +380,7 @@ tr:last-of-type {
   padding-right: 5px;
   padding-left: 5px;
 }
-/* p5 canvas */
+/* p5 canvas -> GARDEN CANVAS */
 #garden-canvas{
   position: absolute;
   top:3px;
@@ -392,6 +392,20 @@ tr:last-of-type {
   opacity: 1;
   border: 1px solid black;
 }
+/* svg filter */
+svg {
+  position: absolute;
+  margin: 0 0;
+  top: 0;
+  width: 100%;
+  height: 200%;
+}
+filter{
+}
+#garden-canvas img{
+  filter: url('#sun-filter');
+}
+/* garden images */
 #garden-imgs{
   width: 100%;
   height: 100%;
@@ -414,7 +428,7 @@ tr:last-of-type {
 #garden-imgs img{
   height: 130%;
 }
-/* garden modal interface */
+/* GARDEN MODAL INTERFACE */
 .garden .modal-container{
   position: absolute;
   width: 100%;

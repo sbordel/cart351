@@ -52,19 +52,19 @@ $(document).on({
 
     $(".garden-button").mouseenter(function () {
         for (let i = 0; i < btnNum; i++) {
-            if ($(this).attr('id') == "plant-btn") {
+            if ($(this).attr("id") == "plant-btn") {
                 $(".button-name").text(btnName[0]);
                 $(".button-info").text(btnInfo[0]);
             }
-            else if ($(this).attr('id') == "fertilize-btn") {
+            else if ($(this).attr("id") == "fertilize-btn") {
                 $(".button-name").text(btnName[1]);
                 $(".button-info").text(btnInfo[1]);
             }
-            else if ($(this).attr('id') == "water-btn") {
+            else if ($(this).attr("id") == "water-btn") {
                 $(".button-name").text(btnName[2]);
                 $(".button-info").text(btnInfo[2]);
             }
-            else if ($(this).attr('id') == "sun-btn") {
+            else if ($(this).attr("id") == "sun-btn") {
                 $(".button-name").text(btnName[3]);
                 $(".button-info").text(btnInfo[3]);
             }
@@ -86,21 +86,21 @@ $(document).on({
 
 
         for (let i = 0; i < btnNum; i++) {
-            if ($(this).attr('id') == "plant-btn") {
+            if ($(this).attr("id") == "plant-btn") {
                 $(".button-name").text(btnName[0]);
                 $(".button-info").text(btnInfo[0]);
                 modalPlant.show();
                 modalFertilizer.hide();
                 modalSun.hide();
             }
-            else if ($(this).attr('id') == "fertilize-btn") {
+            else if ($(this).attr("id") == "fertilize-btn") {
                 $(".button-name").text(btnName[1]);
                 $(".button-info").text(btnInfo[1]);
                 modalFertilizer.show();
                 modalPlant.hide();
                 modalSun.hide();
             }
-            else if ($(this).attr('id') == "water-btn") {
+            else if ($(this).attr("id") == "water-btn") {
                 $(".button-name").text(btnName[2]);
                 $(".button-info").text(btnInfo[2]);
                 gardenModal.hide();
@@ -108,15 +108,29 @@ $(document).on({
                 $("#garden-canvas").css("opacity","1");
 
                 // garden effect => WATER
-                gardenImgs.css('filter', 'grayscale(5%)');
+                gardenImgs.css("filter", "grayscale(50%)");
                 // make the grayscale effect be incremental (+5% per click event?)
             }
-            else if ($(this).attr('id') == "sun-btn") {
+            else if ($(this).attr("id") == "sun-btn") {
                 $(".button-name").text(btnName[3]);
                 $(".button-info").text(btnInfo[3]);
                 modalSun.show();
                 modalFertilizer.hide();
                 modalPlant.hide();
+                
+            //LIQUID SUNSHINE
+
+        /* changes hue
+
+            1- #8e525f = rgb(142, 82, 95)
+            2- #ffce3c = rgb(255, 206, 60)
+            3- #ff5c00 = rgb(255, 92, 0)
+            4- #f42a41 = rgb(244, 42, 65)
+            5- #ca50b6 = rgb(202, 80, 182) 
+            6- #e336a8 = rgb(227, 54, 168)
+            7- #3556ab = rgb(53, 86, 171)
+            8- #00b4b2 = rgb(0, 180, 178) */
+
             }
             else {
                 $(".garden-button").mouseleave();
@@ -125,6 +139,18 @@ $(document).on({
                 $("#garden-canvas").css("opacity","1");
             };
         };
+
+        let sunSelection = $("[name='sunshine']");
+        //gardenImgs.css("background-color", "rgb("+sc_r+","+sc_g+","+sc_b+")");
+            $(sunSelection).click(function () {
+                $("filter").css('display','block');
+                let valueSun = $(this).attr('value');
+  
+                if (valueSun == "# 8e525f") {
+                    $("rect").css('filter','url(#sun-filter)');
+                    console.log("yiha");
+                }
+            });
 
         $(".close-modal").click(function () {
             gardenModal.hide();
@@ -157,7 +183,7 @@ $(document).on({
 
     changes hue
 
-    1- #8e525f = tint(142, 82, 95, 50)
+    1- #8e525f = tint(142, 82, 95)
     2- #ffce3c = tint(255, 206, 60)
     3- #ff5c00 = tint(255, 92, 0)
     4- #f42a41 = tint(244, 42, 65)
