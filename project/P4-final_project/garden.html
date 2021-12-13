@@ -7,30 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- librairies -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+  <!--<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>-->
+  <script src="libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
+  <!--<script src="js/p5-script.js"></script>-->
+  <script src="js/caman.js"></script>
   <!-- styling -->
   <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 <!-- ** HTML START ** -->
 
 <body class="garden">
-  <!--  ~ test garden for filters ~  -->
+
+<!-- watering gif -->
+
+  <!--  ~ static garden ~  -->
   <div id="garden-canvas">
+   <img id="water-anim" src="assets/watering.gif" alt="">
     <div id="garden-imgs">
-
-       <!-- liquid sunshine filter 
-        testing svg filter
-      <svg>
-        <filter id="sunOne">
-          <feFlood flood-color="#8e525f" flood-opacity="0.3" result="flood"/>
-    <feBlend in="flood" in2="SourceGraphic"/>
-        </filter>
-        <image href="assets/ex/garden-placeholder.png" filter="url(#sunOne)" alt=""/>
-      </svg>-->
-
-         <!-- liquid sunshine filter -->
-      <img src="assets/ex/garden-placeholder.png" alt="">
-</div>
+      <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="">
+    </div>
   </div>
 
   <!-- GARDEN BUTTONS ==> modals -->
@@ -185,6 +180,5 @@
   <!-- ** HTML END ** -->
   <!-- script -->
   <script src="js/script.js"></script>
-  <script src="js/p5-script.js"></script>
 </body>
 </html>

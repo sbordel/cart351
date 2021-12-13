@@ -56,6 +56,18 @@ body.loading .loader {
 }
 /* -- ends here -- */
 
+#water-anim{
+  position: absolute;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 10%;
+  text-align: center;
+  z-index: 7;
+}
+
 .page-logo{
   margin-top: 3%;
   margin-left: 3%;
@@ -418,6 +430,7 @@ tr:last-of-type {
  }
 /* garden images */
 #garden-imgs img{
+  width: 120%;
   height: 120%;
   filter: invert(auto) sepia(auto) saturate(auto) hue-rotate(auto) brightness(auto) contrast(auto);
 }
