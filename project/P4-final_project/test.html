@@ -12,12 +12,27 @@
   <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="">
 </body>
 <script>
-  Caman("#garden-img", function () {
-    this.sepia(10)
-    this.contrast(5);
-    this.clip(5);
-    this.render();
-});
+
+/*
+Caman("#garden-img", function () {
+this.newLayer(function () {
+   //threshold layer
+   this.setBlendingMode("exclusion");
+   this.opacity(80);
+
+   // copy of parent's contents
+   this.copyParent();
+
+   // layer filter -- threshold ranges between 0 and 255.
+   // the lower the number, the bigger the white areas
+   this.filter.heavyRadialBlur(5);
+   this.filter.emboss(255);
+   this.filter.greyscale(200);
+  
+   //this.filter.gaussianBlur(100);
+ });
+ this.render();
+});*/
 
   // -- inverting filter 
   /*  Caman("#garden-img", function () {
