@@ -123,11 +123,11 @@ $(document).ready(function () {
 
                     // garden effect => WATER
                     $("#water-anim").fadeIn(1000, function() {
-                        $("#water-anim").delay(4000).fadeOut(1000);
                         Caman("#garden-img", function () {
-                        this.brightness(-5).render();
-                        //highest brightness value is 100
-                      });
+                            this.brightness(-5).render();
+                            //highest brightness value is 100
+                          });
+                        $("#water-anim").delay(1000).fadeOut(2000);
                     });
                 }
                 else if ($(this).attr("id") == "sun-btn") {

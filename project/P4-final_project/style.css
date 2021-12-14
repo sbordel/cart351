@@ -8,6 +8,26 @@ html {
   margin: 0%;
   cursor: crosshair;
 }
+@font-face{
+  font-family: 'Autopia';
+  src: url(fonts/Autopia-Regular.woff);
+}
+@font-face{
+  font-family: 'Autopia';
+  src: url(fonts/Autopia-Italic.woff);
+  font-style: italic;
+}
+@font-face{
+  font-family: 'Autopia';
+  src: url(fonts/AutopiaBold.woff);
+  font-weight: bold;
+}
+@font-face{
+  font-family: 'Autopia';
+  src: url(fonts/AutopiaBoldItalic.woff);
+  font-style: italic;
+  font-weight: bold;
+}
 @font-face {
   font-family: 'Garamondt';
   src: url(fonts/Garamondt-Regular.woff);
@@ -184,6 +204,7 @@ nav a{
 }
 .about-modal#three{
   position: absolute;
+  height: 550px;
   top: 1vw;
   right: 10vw;
   z-index: 8;
@@ -393,7 +414,27 @@ tr:last-of-type {
   padding-right: 5px;
   padding-left: 5px;
 }
-/* p5 canvas -> GARDEN CANVAS */
+#date-info{
+  position: absolute;
+  border: solid 1px black;
+  padding: 4px;
+  margin: 10px;
+  bottom: 0;
+  right:0;
+  width: 7.3%;
+  text-align: center;
+
+  color: #353535;
+  font-family: 'Garamondt';
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+}
+#date-info span:last-child{
+  font-family: 'Autopia';
+  font-size: 14px;
+}
+/* GARDEN CANVAS */
 #garden-canvas{
   position: absolute;
   top:3px;

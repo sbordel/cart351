@@ -7,25 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- librairies -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!--<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>-->
   <script src="libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
-  <!--<script src="js/p5-script.js"></script>-->
+  <!-- script -->
   <script src="js/caman.js"></script>
-  <!-- styling -->
+  <script src="js/date.js"></script>
+  <!-- css -->
   <link type="text/css" rel="stylesheet" href="style.css">
 </head>
+
 <!-- ** HTML START ** -->
-
 <body class="garden">
-
-<!-- watering gif -->
 
   <!--  ~ static garden ~  -->
   <div id="garden-canvas">
-   <img id="water-anim" src="assets/watering.gif" alt="">
+
+   <img id="water-anim" src="assets/watering.gif" alt="watering can pouring water on the garden">
+
     <div id="garden-imgs">
-      <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="">
+      <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="garden made out of flower collage">
     </div>
+
   </div>
 
   <!-- GARDEN BUTTONS ==> modals -->
@@ -111,7 +112,6 @@
       <td class="page">
       </td>
       <td>
-
         <!-- GARDEN BUTTONS ==> button side bar -->
         <table class="sub">
           <!-- garden button: plant -->
@@ -168,14 +168,9 @@
         </table>
         <!-- ** table end ** -->
       </td>
+      <h2 id="date-info"><span></span><span> → </span><span>~</span></h2>
     </tr>
-
   </table>
-
-
-  <div class="loader">
-    <!-- code for loader taken from => http://jsfiddle.net/VpDUG/4952/ -->
-  </div>
 
   <!-- ** HTML END ** -->
   <!-- script -->

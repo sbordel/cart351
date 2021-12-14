@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Purple Rain</title>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.min.js"></script>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/addons/p5.sound.min.js"></script>
-    <script src="js/rain.js"></script>
-    <script src="js/drop.js"></script>
-  </head>
-  <body>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>testing</title>
+  <script src="libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
+  <script src="js/caman.js"></script>
+</head>
+
+<body>
+  <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="">
+</body>
+<script>
+  Caman("#garden-img", function () {
+    this.sepia(10)
+    this.contrast(5);
+    this.clip(5);
+    this.render();
+});
+
+  // -- inverting filter 
+  /*  Caman("#garden-img", function () {
+    this.exposure(-10);
+
+  // Create the layer
+  this.newLayer(function () {
+    // Change the blending mode
+    this.setBlendingMode("exclusion");
+
+    // Change the opacity of this layer
+    this.opacity(100);
+
+    //copy the contents of the parent
+    // layer to this one.
+    this.copyParent();
+
+    // Now, we can call any filter function though the
+    // filter object.
+    this.filter.brightness(10);
+    this.filter.contrast(60);
+  })
+  this.render();
+ 
+  });*/ 
+
+
+
+
+</script>
+
 </html>
