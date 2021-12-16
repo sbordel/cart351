@@ -10,31 +10,31 @@ html {
 }
 @font-face{
   font-family: 'Autopia';
-  src: url(fonts/Autopia-Regular.woff);
+  src: url(../assets/fonts/Autopia-Regular.woff);
 }
 @font-face{
   font-family: 'Autopia';
-  src: url(fonts/Autopia-Italic.woff);
+  src: url(../assets/fonts/Autopia-Italic.woff);
   font-style: italic;
 }
 @font-face{
   font-family: 'Autopia';
-  src: url(fonts/AutopiaBold.woff);
+  src: url(../assets/fonts/AutopiaBold.woff);
   font-weight: bold;
 }
 @font-face{
   font-family: 'Autopia';
-  src: url(fonts/AutopiaBoldItalic.woff);
+  src: url(../assets/fonts/AutopiaBoldItalic.woff);
   font-style: italic;
   font-weight: bold;
 }
 @font-face {
   font-family: 'Garamondt';
-  src: url(fonts/Garamondt-Regular.woff);
+  src: url(../assets/fonts/Garamondt-Regular.woff);
 }
 @font-face {
   font-family: 'Garamondt';
-  src: url(fonts/Garamondt-Italic.woff);
+  src: url(../assets/fonts/Garamondt-Italic.woff);
   font-style: italic;
 }
 body{
@@ -64,7 +64,7 @@ body{
   height:     100%;
   width:      100%;
   background: #c3c3c3
-              url('assets/ajax-loader.gif')
+              url('../assets/ajax-loader.gif')
               50% 50%
               no-repeat;
 }
@@ -417,11 +417,12 @@ tr:last-of-type {
 #date-info{
   position: absolute;
   border: solid 1px black;
+  background: #bbbbbb;
   padding: 4px;
-  margin: 10px;
+  margin: 0.75vw;
   bottom: 0;
   right:0;
-  width: 7.3%;
+  width: 7vw;
   text-align: center;
 
   color: #353535;
@@ -429,6 +430,7 @@ tr:last-of-type {
   font-size: 16px;
   font-weight: normal;
   font-style: italic;
+  z-index: 4;
 }
 #date-info span:last-child{
   font-family: 'Autopia';
@@ -445,7 +447,6 @@ tr:last-of-type {
   z-index: 1;
   opacity: 1;
   border: 1px solid black;
-
 }
 /* garden image container */
 #garden-imgs{
@@ -635,7 +636,31 @@ tr:last-of-type {
       overflow: visible;
     }
   }
-
+  @media screen and (max-width: 1500px) {
+    /*#tb-footer {
+      width: 80%;
+      align-self: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0);
+    }*/
+    #tb-footer h1 {
+      font-size: 18px;
+    }
+    #tb-footer p {
+      font-size: 14px;
+    }
+    #date-info{
+      padding: 4px;
+      margin: 0.75vw;
+      width: 7vw;
+      font-size: 13px;
+    }
+    #date-info span:last-child{
+      font-family: 'Autopia';
+      font-size: 14px;
+    }
+  }
 @media screen and (max-width: 600px) {
   body {
     display: none;

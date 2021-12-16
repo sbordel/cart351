@@ -4,16 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <title>testing</title>
-  <script src="libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
+  <script src="js/libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
   <script src="js/caman.js"></script>
 </head>
 
 <body>
+  <button id="displaytime">!!!!!!!!!!!!</button>
   <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="">
 </body>
 <script>
+// original code taken from => https://stackoverflow.com/a/52912248 
+window.onload = () => {
+    let hour = 0;
+    let minute = 0;
+    let seconds = 0;
+    let totalSeconds = 0;
+    let oneDay = (seconds * 60); 
+  
+    let intervalId = null;
+  
+    intervalId = setInterval(startTimer, 1000);
+    function startTimer() {
+      ++totalSeconds;
+      hour = Math.floor(totalSeconds / 3600);
+      minute = Math.floor((totalSeconds - hour * 3600) / 60);
+      seconds = totalSeconds - (hour * 3600 + minute * 60);
 
-/*
+    }
+  
+    document.getElementById('displaytime').addEventListener('click', () => {
+      if (totalSeconds >= 15){
+        console.log("a day has passed");
+        Caman("#garden-img", function () {
+        this.gamma(0.6);
+        this.sharpen(100);
+        this.render();
+        });
+      }
+      else {
+        console.log(minute + "minutes" + seconds + "seconds");
+      }
+      reset();
+    });
+
+    function reset() {
+      totalSeconds = 0;
+
+    }
+  }
+</script>
+</html>
+
+<!--
+
+  /*
 Caman("#garden-img", function () {
 this.newLayer(function () {
    //threshold layer
@@ -59,9 +103,4 @@ this.newLayer(function () {
  
   });*/ 
 
-
-
-
-</script>
-
-</html>
+-->

@@ -11,7 +11,6 @@ $(document).ready(function () {
     /* -- ends here -- */
 
     let sunFilters;
-    let sunObj;
 
     //load JSON file
     $.getJSON('../json/colors.json', function (data) {
@@ -144,10 +143,7 @@ $(document).ready(function () {
                     $("#garden-canvas").css("opacity", "1");
                 };
             };
-
-    
             
-
             // LIQUID SUNSHINE => modal click events
             let sunSelection = $("[name='sunshine']");
 
@@ -182,3 +178,5 @@ $(document).ready(function () {
         });
     }
 });
+
+
