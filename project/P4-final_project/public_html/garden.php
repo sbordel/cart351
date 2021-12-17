@@ -1,3 +1,20 @@
+<?php
+//send data from client to server and write to file
+if($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+  //create variables with posted data
+   $pageDate = $_POST['pageDate'];
+
+  // write values to file
+  $theFile = fopen("files/timestamps.txt", "a") or die("Unable to open file!");
+  //$txt = "current date:";
+  //fwrite($theFile, $txt.$pageDate."\n");
+  fwrite($theFile, $pageDate."\n");
+  fclose($theFile);
+  echo("sucess"); 
+exit;
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -7,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- librairies -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
+  <script src="js/libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
   <!-- script -->
   <script src="js/caman.js"></script>
   <script src="js/date.js"></script>

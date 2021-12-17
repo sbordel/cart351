@@ -3,6 +3,8 @@ $(document).ready(function () {
     const d = new Date();
     let month = d.getMonth() + 1;
     let day = d.getDate();
+
+    let currentDate = day + "/" + month ;
     getSeason();
 
     //get season according to month
@@ -23,37 +25,38 @@ $(document).ready(function () {
     //display month & season 
     $("#date-info span:first-child").text(month + "/12");
     $("#date-info span:last-child").text(getSeason());
+
+
+  //display month & season 
+  console.log(day + " " + month);
+
+  //event.preventDefault();
+
+  let dataFormT = new FormData();
+
+  // append pizza order values to data form
+  dataFormT.append(`pageDate`, currentDate);
+
+  // ******* AJAX 
+  $.ajax({
+    type: "POST",
+    url: "../garden.php",
+    processData: false,//prevents from converting into a query string
+    contentType: "application/json; charset=utf-8",
+    data: dataFormT,
+    contentType: false,
+    cache: false,
+    timeout: 600000,
+    success: function (response) {
+      console.log("success");
+    },
+    error: function () {
+      console.log("error occurred");
+    }
+    
+  });
 });
 
-// original code taken from => https://stackoverflow.com/a/52912248 
-window.onload = () => {
-    let hour = 0;
-    let minute = 0;
-    let seconds = 0;
-    let totalSeconds = 0;
-  
-    let intervalId = null;
-  
-    intervalId = setInterval(startTimer, 1000);
-    function startTimer() {
-      ++totalSeconds;
-      hour = Math.floor(totalSeconds / 3600);
-      minute = Math.floor((totalSeconds - hour * 3600) / 60);
-      seconds = totalSeconds - (hour * 3600 + minute * 60);
-    }
-  
-    document.getElementById('Displaytimetaken').addEventListener('click', () => {
-      if (totalSeconds >= 15){
-        console.log("a day has passed");
-      }
-      else {
-        console.log(minute + "minutes" + seconds + "seconds");
-      }
-      reset();
-    });
 
-    function reset() {
-      totalSeconds = 0;
 
-    }
-  }
+

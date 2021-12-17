@@ -1,15 +1,5 @@
 $(document).ready(function () {
 
-    /* code for loading page taken from stackoverflow => http://jsfiddle.net/VpDUG/4952/ */
-    /* -- starts here -- */
-    $body = $("body");
-
-    $(document).on({
-        ajaxStart: function () { $body.addClass("loading"); },
-        ajaxStop: function () { $body.removeClass("loading"); }
-    });
-    /* -- ends here -- */
-
     let sunFilters;
 
     //load JSON file
