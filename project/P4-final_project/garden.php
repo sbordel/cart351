@@ -1,20 +1,42 @@
 <?php
-//send data from client to server and write to file
-if($_SERVER['REQUEST_METHOD'] == 'POST')
-{
+  //send data from client to server and write to file
+  if($_SERVER['REQUEST_METHOD'] == 'POST')
+  {
   //create variables with posted data
-   $pageDate = $_POST['pageDate'];
+  $pageDate = $_POST['pageDate'];
+
+  //read first
+  $theFile = fopen("files/timestamps.txt", "r") or die("Unable to open file!");
+  $str = fgets($theFile);
+  //split and return an array
+  $splitArr = explode("/",$str);
+ 
+  $prevDay = $splitArr[0];
+  $prevMonth = $splitArr[1];
+  fclose($theFile);
 
   // write values to file
-  $theFile = fopen("files/timestamps.txt", "a") or die("Unable to open file!");
-  //$txt = "current date:";
-  //fwrite($theFile, $txt.$pageDate."\n");
+  $theFile = fopen("files/timestamps.txt", "w") or die("Unable to open file!");
   fwrite($theFile, $pageDate."\n");
   fclose($theFile);
-  echo("sucess"); 
-exit;
+
+  //create an object to send back
+  $packObj = new stdClass();
+  $monthKey = "month";
+  $dayKey = "day";
+  $outArr = array();
+  $packObj->$dayKey = trim($prevDay);
+  $packObj->$monthKey = trim($prevMonth);
+   
+  $outArr[]=$packObj;
+
+  $myJSONObj = json_encode($outArr);
+  echo $myJSONObj;
+
+ exit;
 }
 ?>
+<!-- ** HTML START ** -->
 <!doctype html>
 <html lang="en">
 
@@ -26,13 +48,12 @@ exit;
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
   <!-- script -->
+  <script src="js/script.js"></script>
   <script src="js/caman.js"></script>
-  <script src="js/date.js"></script>
-  <!-- css -->
+  <!-- style -->
   <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
-<!-- ** HTML START ** -->
 <body class="garden">
 
   <!--  ~ static garden ~  -->
@@ -43,7 +64,6 @@ exit;
     <div id="garden-imgs">
       <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="garden made out of flower collage">
     </div>
-
   </div>
 
   <!-- GARDEN BUTTONS ==> modals -->
@@ -189,8 +209,5 @@ exit;
     </tr>
   </table>
 
-  <!-- ** HTML END ** -->
-  <!-- script -->
-  <script src="js/script.js"></script>
 </body>
 </html>

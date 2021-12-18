@@ -2,17 +2,81 @@ $(document).ready(function () {
 
     let sunFilters;
 
-    //load JSON file
-    $.getJSON('../json/colors.json', function (data) {
-        dataFromJSON = data;
-        for (let j = 0; j < dataFromJSON.length; j++) {
+    //get date, then month 
+    const d = new Date();
+    let month = d.getMonth() + 1;
+    let day = d.getDate();
+
+    let currentDate = day + "/" + month;
+    getSeason();
+
+    //display month & season 
+    $("#date-info span:first-child").text(month + "/12");
+    $("#date-info span:last-child").text(getSeason());
+
+    //display month & season 
+    console.log(day + " " + month);
+
+    let dataFormT = new FormData();
+
+    dataFormT.append(`pageDate`, currentDate);
+
+    // ******* AJAX 
+    $.ajax({
+        type: "POST",
+        url: "./garden.php",
+        processData: false,//prevents from converting into a query string
+        contentType: "application/json; charset=utf-8",
+        data: dataFormT,
+        contentType: false,
+        cache: false,
+        timeout: 600000,
+        success: function (response) {
+            console.log(response);
+
+            let parsedResponse = JSON.parse(response);
+            getComparison(parsedResponse[0], day, month);
+
+            // once time stamp is saved
+            //load JSON file
+            $.getJSON('json/colors.json', function (data) {
+                dataFromJSON = data;
+                for (let j = 0; j < dataFromJSON.length; j++) {
+                }
+                sunFilters = dataFromJSON.filterElt;
+                run();
+            });
+        },
+        error: function () {
+            console.log("error occurred");
         }
-        sunFilters = dataFromJSON.filterElt;
-        run();
+
     });
+
+    //get season according to month
+    function getSeason() {
+        if (month <= 5 && 3 <= month) {
+            return 'spring';
+        } else if (month <= 8 && 6 <= month) {
+            return 'summer';
+        } else if (month <= 11 && 9 <= month) {
+            return 'fall';
+        } else {
+            return 'winter';
+        }
+    };
+
+    function getComparison(dataFromPHP, currentDay, currentMonth) {
+        console.log(dataFromPHP);
+        console.log(currentDay);
+        console.log(currentMonth);
+
+    }
 
     function run() {
         // INDEX
+
+        //about modal functions
         let modalOne = $("#one.about-modal");
         let modalTwo = $("#two.about-modal");
         let modalThree = $("#three.about-modal");
@@ -38,19 +102,21 @@ $(document).ready(function () {
 
         //  GARDEN
 
+        //garden modal functions
         let gardenModal = $(".garden-modal");
         let modalPlant = $("#one.garden-modal");
         let modalFertilizer = $("#two.garden-modal");
         let modalSun = $("#three.garden-modal");
-
         let modalBg = $(".garden .modal-container");
 
         let gardenImgs = $("#garden-imgs");
 
+        //arrays containing modal text
         const btnName = ["plant", "fertilize", "water", "liquid sunshine"];
         const btnInfo = ["upload an image to the server and expand the garden", "supply the garden with nutrients", "rehydrate the garden", "provide the garden with light to help it stay bright and healthy"];
+        //make corresponding name + description appear if hovered
+        //and remain if clicked
         let btnNum = btnName.length;
-        //make corresponding name + description appear if hovered, and remain if clicked
 
         // -- GARDEN BUTTON ==> hover event
         $(".garden-button").mouseenter(function () {
@@ -111,11 +177,11 @@ $(document).ready(function () {
                     $("#garden-canvas").css("opacity", "1");
 
                     // garden effect => WATER
-                    $("#water-anim").fadeIn(1000, function() {
+                    $("#water-anim").fadeIn(1000, function () {
                         Caman("#garden-img", function () {
                             this.brightness(-5).render();
                             //highest brightness value is 100
-                          });
+                        });
                         $("#water-anim").delay(1000).fadeOut(2000);
                     });
                 }
@@ -133,7 +199,7 @@ $(document).ready(function () {
                     $("#garden-canvas").css("opacity", "1");
                 };
             };
-            
+
             // LIQUID SUNSHINE => modal click events
             let sunSelection = $("[name='sunshine']");
 
