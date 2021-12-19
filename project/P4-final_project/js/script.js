@@ -23,7 +23,6 @@ $(document).ready(function () {
     let dataFormT = new FormData();
 
     dataFormT.append(`pageDate`, currentDate);
-
     // ******* AJAX 
     $.ajax({
         type: "POST",

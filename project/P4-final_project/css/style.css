@@ -344,6 +344,10 @@ nav a{
   border: outset 4px #bbbbbb;
   background-color: #bebdbd;
 }
+.garden-button#plant-btn, .garden-button#fertilize-btn{
+  border: solid 4px #808080;
+  background-color: #808080;
+}
 .garden-button:hover{
   border: outset 4px #a8a8a8;
   background-color: #a8a8a8;
