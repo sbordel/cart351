@@ -68,18 +68,19 @@ $(document).ready(function () {
 
     //determine if the current month has 30, 31 or 28 days (excluding the possibility of a bissextile year for simplicity)
     //odd number function adapted from this --> https://stackoverflow.com/a/5016327
-    function isOdd(currentMonth) { 
+    function isOdd(currentMonth) {
         let Num = currentMonth % 2;
 
-       if (Num == 1){
-          numDaysinMonth = 30;
-       } else if (currentMonth == 2){
-          numDaysinMonth = 28;
-       } else {
-          numDaysinMonth = 31;
-       }
-      };
+        if (Num == 1) {
+            numDaysinMonth = 30;
+        } else if (currentMonth == 2) {
+            numDaysinMonth = 28;
+        } else {
+            numDaysinMonth = 31;
+        }
+    };
 
+    //then compare compare current day and month to previous day and month 
     function getComparison(dataFromPHP, currentDay, currentMonth) {
         let prevDay = dataFromPHP.day;
         let prevMonth = dataFromPHP.month;
@@ -89,27 +90,128 @@ $(document).ready(function () {
         console.log("current date: " + currentDay + "/" + currentMonth);
 
         let dayDiff;
-        let monthDiff;
 
+        //determine day difference
         if (currentDay > prevDay) {
-            dayDiff = currentDay - prevDay; 
+            dayDiff = currentDay - prevDay;
         } else if (currentDay < prevDay) {
             dayDiff = (numDaysinMonth - prevDay) + currentDay;
         } else {
             dayDiff = 0;
         }
 
-        if (currentMonth < prevMonth){
-            monthDiff = (prevMonth - 12) + 1;
-        } else if ((currentMonth > prevMonth) && (currentDay > prevDay)){
-            dayDiff = (((currentMonth - prevMonth)*30)+1) + dayDiff;
+        if ((currentMonth < prevMonth) && (currentDay > prevDay)) {
+            dayDiff = ((((12 - prevMonth) + 1) * 30) + 1) + dayDiff;
+            //substract prevMonth to 12, add one month (to reset month cycle) then multiply average num days in a month. 
+        }
+        else if ((currentMonth < prevMonth) && (currentDay < prevDay)) {
+            dayDiff = (((12 - prevMonth) * 30) + 1) + dayDiff;
+            //substract prevMonth to 12, then multiply by average num days in a month. Then add to the currentDay and prevDay difference
+        }
+        else if ((currentMonth > prevMonth) && (currentDay > prevDay)) {
+            dayDiff = (((currentMonth - prevMonth) * 30) + 1) + dayDiff;
+            // multiply the currentMonth and prevMonth difference by 30 (average num days in a month) + 1 
+        } else if ((currentMonth > prevMonth) && (currentDay < prevDay)) {
+            dayDiff = ((((currentMonth - prevMonth) - 1) * 30) + 1) + dayDiff;
+            // substract the currentMonth and prevMonth, then substract 1 month from the total. then multiply by 30.
         } else {
-            monthDiff = 0;
+            dayDiff = 0 + dayDiff;
         }
 
-        let totalDiff = dayDiff + " day(s)" + " " + monthDiff + " month(s)";
+        let totalDiff = dayDiff + " day(s)";
 
         console.log(totalDiff + " (considering the current month has " + numDaysinMonth + " days)");
+
+        switch (season) {
+            case "winter":
+                if (totalDiff >= 3) {
+                    //WILTING:: sepia + contrast 
+                    Caman("#garden-img", function () {
+                        this.sepia(10)
+                        this.contrast(5);
+                        this.clip(5);
+                        this.render();
+                    });
+                } else if (totalDiff >= 7) {
+                    //BROWNING:: brown tint 
+                    Caman("#garden-img", function () {
+                        this.newLayer(function () {
+                            //browning layer
+                            this.setBlendingMode("addition");
+                            this.opacity(100);
+
+                            //color fill
+                            this.fillColor('#986960');
+                        });
+                        this.saturation(100);
+                        this.brightness(-10);
+                        this.render();
+                    });
+                    console.log("your garden is wilting");
+                } else if (totalDiff >= 14) {
+                    //DRY SOIL:: sharpening 
+                    Caman("#garden-img", function () {
+                        this.gamma(0.6);
+                        this.sharpen(100);
+                        this.render();
+                    });
+                console.log("your garden's soil is drying");
+                } else if (totalDiff >= 21) {
+                    //DEFOLIATION:: thresholding
+                    Caman("#garden-img", function () {
+                        this.newLayer(function () {
+                            //threshold layer
+                            this.setBlendingMode("addition");
+                            this.opacity(80);
+
+                            // copy of parent's contents
+                            this.copyParent();
+
+                            // layer filter -- threshold ranges between 0 and 255.
+                            // the lower the number, the bigger the white areas
+                            this.filter.threshold(255);
+                        });
+                        this.render();
+                    });
+                    console.log("your garden is experiencing defoliation");
+                } else if (totalDiff > 28) {
+                    //DISEASE:: White Spotting 
+                    Caman("#garden-img", function () {
+                        this.newLayer(function () {
+                            //disease layer
+                            this.setBlendingMode("addition");
+                            this.opacity(30);
+
+                            // copy of parent's contents
+                            this.copyParent();
+
+                            // blur image to prevent artifact edges from being too defined
+                            this.filter.heavyRadialBlur(50);
+                            // then launch edge detection
+                            this.filter.edgeDetect(1);
+                            // blur image for a second pass
+                            this.filter.heavyRadialBlur(50);
+                            this.filter.greyscale(20);
+                        });
+                        this.contrast(5);
+                        this.render();
+                    });
+                    console.log("your garden is infected :-(");
+                } else {
+                    console.log("garden has been processed");
+                };
+                break;
+            case "spring":
+                springFunc();
+                break;
+            case "summer":
+                summerFunc();
+                break;
+            case "fall":
+                fallFunc();
+                break;
+        }
+
     }
 
     function run() {
