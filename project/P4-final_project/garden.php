@@ -62,7 +62,7 @@
    <img id="water-anim" src="assets/watering.gif" alt="watering can pouring water on the garden">
 
     <div id="garden-imgs">
-      <img id="garden-img" src="assets/ex/garden-placeholder.png" alt="garden made out of flower collage">
+      <img id="garden-img" src="assets/gardencollage2.png" alt="garden made out of flower collage">
     </div>
   </div>
 

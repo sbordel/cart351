@@ -1,21 +1,52 @@
 $(document).ready(function () {
 
+    aboutModals();
+
+    function aboutModals() {
+        // INDEX
+
+        //about modal functions
+        let modalOne = $("#one.about-modal");
+        let modalTwo = $("#two.about-modal");
+        let modalThree = $("#three.about-modal");
+
+        modalOne.hide();
+        modalTwo.hide();
+        modalThree.hide();
+
+        $("#a.nav-button").click(function () {
+            modalOne.show();
+        });
+        $("#b.next-button").click(function () {
+            modalOne.hide();
+            modalTwo.show();
+        });
+        $("#c.next-button").click(function () {
+            modalTwo.hide();
+            modalThree.show();
+        });
+        $("#close-modal").click(function () {
+            modalThree.hide();
+        });
+    };
+
     let sunFilters;
 
     //get date, then month 
     const d = new Date();
     let month = d.getMonth() + 1;
     let day = d.getDate();
+    let numDaysinMonth;
 
     let currentDate = day + "/" + month;
     getSeason();
+    isOdd();
+
+    let season = getSeason();
 
     //display month & season 
     $("#date-info span:first-child").text(month + "/12");
-    $("#date-info span:last-child").text(getSeason());
-
-    //display month & season 
-    console.log(day + " " + month);
+    $("#date-info span:last-child").text(season);
 
     let dataFormT = new FormData();
 
@@ -66,40 +97,53 @@ $(document).ready(function () {
         }
     };
 
-    function getComparison(dataFromPHP, currentDay, currentMonth) {
-        console.log(dataFromPHP);
-        console.log(currentDay);
-        console.log(currentMonth);
+    //determine if the current month has 30, 31 or 28 days (excluding the possibility of a bissextile year for simplicity)
+    //odd number function adapted from this --> https://stackoverflow.com/a/5016327
+    function isOdd(currentMonth) { 
+        let Num = currentMonth % 2;
 
+       if (Num == 1){
+          numDaysinMonth = 30;
+       } else if (currentMonth == 2){
+          numDaysinMonth = 28;
+       } else {
+          numDaysinMonth = 31;
+       }
+      };
+
+    function getComparison(dataFromPHP, currentDay, currentMonth) {
+        let prevDay = dataFromPHP.day;
+        let prevMonth = dataFromPHP.month;
+
+        //display previous and current date
+        console.log("previous date: " + prevDay + "/" + prevMonth);
+        console.log("current date: " + currentDay + "/" + currentMonth);
+
+        let dayDiff;
+        let monthDiff;
+
+        if (currentDay > prevDay) {
+            dayDiff = currentDay - prevDay; 
+        } else if (currentDay < prevDay) {
+            dayDiff = (numDaysinMonth - prevDay) + currentDay;
+        } else {
+            dayDiff = 0;
+        }
+
+        if (currentMonth < prevMonth){
+            monthDiff = (prevMonth - 12) + 1;
+        } else if ((currentMonth > prevMonth) && (currentDay > prevDay)){
+            dayDiff = (((currentMonth - prevMonth)*30)+1) + dayDiff;
+        } else {
+            monthDiff = 0;
+        }
+
+        let totalDiff = dayDiff + " day(s)" + " " + monthDiff + " month(s)";
+
+        console.log(totalDiff + " (considering the current month has " + numDaysinMonth + " days)");
     }
 
     function run() {
-        // INDEX
-
-        //about modal functions
-        let modalOne = $("#one.about-modal");
-        let modalTwo = $("#two.about-modal");
-        let modalThree = $("#three.about-modal");
-
-        modalOne.hide();
-        modalTwo.hide();
-        modalThree.hide();
-
-        $("#a.nav-button").click(function () {
-            modalOne.show();
-        });
-        $("#b.next-button").click(function () {
-            modalOne.hide();
-            modalTwo.show();
-        });
-        $("#c.next-button").click(function () {
-            modalTwo.hide();
-            modalThree.show();
-        });
-        $("#close-modal").click(function () {
-            modalThree.hide();
-        });
-
         //  GARDEN
 
         //garden modal functions
