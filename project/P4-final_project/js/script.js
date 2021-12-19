@@ -12,6 +12,9 @@ $(document).ready(function () {
     isOdd();
 
     let season = getSeason();
+    let totalDiff;
+    let numOne;
+    let numTwo;
 
     //display month & season 
     $("#date-info span:first-child").text(month + "/12");
@@ -118,105 +121,255 @@ $(document).ready(function () {
             dayDiff = 0 + dayDiff;
         }
 
-        let totalDiff = dayDiff + " day(s)";
+        totalDiff = dayDiff;
 
         console.log(totalDiff + " (considering the current month has " + numDaysinMonth + " days)");
 
-        switch (season) {
-            case "winter":
-                if (totalDiff >= 3) {
-                    //WILTING:: sepia + contrast 
-                    Caman("#garden-img", function () {
-                        this.sepia(10)
-                        this.contrast(5);
-                        this.clip(5);
-                        this.render();
-                    });
-                } else if (totalDiff >= 7) {
-                    //BROWNING:: brown tint 
-                    Caman("#garden-img", function () {
-                        this.newLayer(function () {
-                            //browning layer
-                            this.setBlendingMode("addition");
-                            this.opacity(100);
-
-                            //color fill
-                            this.fillColor('#986960');
-                        });
-                        this.saturation(100);
-                        this.brightness(-10);
-                        this.render();
-                    });
-                    console.log("your garden is wilting");
-                } else if (totalDiff >= 14) {
-                    //DRY SOIL:: sharpening 
-                    Caman("#garden-img", function () {
-                        this.gamma(0.6);
-                        this.sharpen(100);
-                        this.render();
-                    });
-                console.log("your garden's soil is drying");
-                } else if (totalDiff >= 21) {
-                    //DEFOLIATION:: thresholding
-                    Caman("#garden-img", function () {
-                        this.newLayer(function () {
-                            //threshold layer
-                            this.setBlendingMode("addition");
-                            this.opacity(80);
-
-                            // copy of parent's contents
-                            this.copyParent();
-
-                            // layer filter -- threshold ranges between 0 and 255.
-                            // the lower the number, the bigger the white areas
-                            this.filter.threshold(255);
-                        });
-                        this.render();
-                    });
-                    console.log("your garden is experiencing defoliation");
-                } else if (totalDiff > 28) {
-                    //DISEASE:: White Spotting 
-                    Caman("#garden-img", function () {
-                        this.newLayer(function () {
-                            //disease layer
-                            this.setBlendingMode("addition");
-                            this.opacity(30);
-
-                            // copy of parent's contents
-                            this.copyParent();
-
-                            // blur image to prevent artifact edges from being too defined
-                            this.filter.heavyRadialBlur(50);
-                            // then launch edge detection
-                            this.filter.edgeDetect(1);
-                            // blur image for a second pass
-                            this.filter.heavyRadialBlur(50);
-                            this.filter.greyscale(20);
-                        });
-                        this.contrast(5);
-                        this.render();
-                    });
-                    console.log("your garden is infected :-(");
-                } else {
-                    console.log("garden has been processed");
-                };
-                break;
-            case "spring":
-                springFunc();
-                break;
-            case "summer":
-                summerFunc();
-                break;
-            case "fall":
-                fallFunc();
-                break;
+        //create 2 range functions
+        function scale (number, inMin, inMax, outMin, outMax) {
+            return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
         }
+        //range 1: between 0 and 50
+        numOne = parseInt(scale(totalDiff, 1, 31, 0, 50));
+        console.log(numOne);
+        //range 2: between 0 and 1
+        numTwo = scale(totalDiff, 1, 31, 0, 1);
+        console.log(numTwo);
 
+        gardenState(totalDiff, numOne, numTwo);
+    }
+
+    function gardenState() {
+        if (season == "winter") {
+            //callback when caman filters are done rendering
+            Caman.Event.listen("renderFinished", function (job) {
+                $("#garden-img").css('opacity','100');
+              });
+            if (13 >= totalDiff && totalDiff >= 3) {
+                //WILTING:: sepia + contrast 
+                Caman("#garden-img", function () {
+                    this.sepia(numOne*2);
+                    this.contrast(numOne);
+                    this.clip(5);
+                    this.render();
+                });
+                alert("your garden is wilting");
+            };
+            if (20 >= totalDiff && totalDiff >= 14) {
+                //DRY SOIL:: sharpening 
+                Caman("#garden-img", function () {
+                    this.gamma(numTwo);
+                    this.sharpen(100);
+                    this.render();
+                });
+                alert("your garden's soil is drying");
+            };
+            if (27 >= totalDiff && totalDiff >= 21) {
+                //DEFOLIATION:: thresholding
+                Caman("#garden-img", function () {
+                    this.newLayer(function () {
+                        this.setBlendingMode("addition");
+                        this.opacity(80);
+                        this.copyParent();
+                        // layer filter -- threshold ranges between 0 and 255.
+                        // the lower the number, the bigger the white areas
+                        this.filter.threshold(255);
+                    });
+                    this.render();
+                });
+                alert("your garden is experiencing defoliation");
+            };
+            if (totalDiff > 28) {
+                //DISEASE:: white Spotting 
+                Caman("#garden-img", function () {
+                    this.newLayer(function () {
+                        this.setBlendingMode("addition");
+                        this.opacity(30)
+                        this.copyParent();
+                        // blur image to prevent artifact edges from being too defined
+                        this.filter.heavyRadialBlur(50);
+                        this.filter.edgeDetect(1);
+                        // blur image for a second pass
+                        this.filter.heavyRadialBlur(50);
+                        this.filter.greyscale(20);
+                    });
+                    this.contrast(5);
+                    this.render();
+                });
+                alert("your garden is infected :-(");
+            } else {
+                $("#garden-img").css('opacity','100');
+                alert("your garden is looking healthy :-)");
+            }
+        };
+
+        if (season == "spring") {
+            //callback when caman filters are done rendering
+            Caman.Event.listen("renderFinished", function (job) {
+                $("#garden-img").css('opacity','100');
+              });
+            if (13 >= totalDiff && totalDiff >= 7) {
+                //WILTING:: sepia + contrast 
+                Caman("#garden-img", function () {
+                    this.sepia(numOne*2);
+                    this.contrast(numOne);
+                    this.clip(5);
+                    this.render();
+                });
+                alert("your garden is wilting");
+            };
+            if (21 >= totalDiff && totalDiff >= 14) {
+                //BROWNING:: brown tint 
+                Caman("#garden-img", function () {
+                    this.saturation(20);
+                    this.sepia(numOne*4)
+                    this.newLayer(function () {
+                        //browning layer
+                        this.setBlendingMode("normal");
+                        this.opacity(45);
+                        this.fillColor('#5e3d36');
+                    });
+                    this.contrast(numOne);
+                    this.brightness(-10);
+                    this.render();
+                });
+                $("#garden-img").css('opacity','100');
+                alert("your garden is turning brown");
+            };
+            if (totalDiff > 22) {
+                //FERTILIZER CRUST:: embossing
+                Caman("#garden-img", function () {
+                    this.newLayer(function () {
+                        //embossing layer
+                        this.setBlendingMode("normal");
+                        this.opacity(30);
+                        this.copyParent();
+                        this.filter.emboss(10);
+                        this.filter.grayscale(30);
+                    });
+                    this.render();
+                });
+                alert("your garden is oversaturated in fertilizer!");
+            } else {
+                alert("garden is looking healthy :--)");
+            }
+        };
+
+        if (season == "summer") {
+            //callback when caman filters are done rendering
+            Caman.Event.listen("renderFinished", function (job) {
+                $("#garden-img").css('opacity','100');
+              });
+            if (20 >= totalDiff && totalDiff >= 7) {
+                //YELLOWING:: yellow tint
+                Caman("#garden-img", function yellowing() {
+                    this.brightness(5);
+                    this.contrast(numOne/3);
+                    this.colorize("#FFFF00", 5);
+                    this.render();
+                });
+                alert("your garden is turning yellow");
+            };
+            if (27 >= totalDiff && totalDiff >= 21) {
+                //BROWNING:: brown tint 
+                Caman("#garden-img", function () {
+                    this.saturation(20);
+                    this.sepia(numOne*4)
+                    this.newLayer(function () {
+                        //browning layer
+                        this.setBlendingMode("normal");
+                        this.opacity(45);
+                        this.fillColor('#5e3d36');
+                    });
+                    this.contrast(numOne);
+                    this.brightness(-10);
+                    this.render();
+                });
+                alert("your garden is turning brown");
+            };
+            if (totalDiff > 28) {
+                //DRY SOIL:: sharpening 
+                Caman("#garden-img", function () {
+                    this.gamma(numTwo);
+                    this.sharpen(100);
+                    this.render();
+                });
+                alert("your garden's soil is drying");
+            } else {
+                $("#garden-img").css('opacity','100');
+                alert("garden is looking healthy :--)");
+            }
+        };
+
+        if (season == "fall") {
+            //callback when caman filters are done rendering
+            Caman.Event.listen("renderFinished", function (job) {
+                $("#garden-img").css('opacity','100');
+              });
+            if (6 >= totalDiff && totalDiff >= 3) {
+                //YELLOWING:: yellow tint
+                Caman("#garden-img", function yellowing() {
+                    this.brightness(5);
+                    this.contrast(numOne/2);
+                    this.colorize("#FFFF00", 5);
+                    this.render();
+                });
+                alert("your garden is turning yellow");
+            };
+            if (13 >= totalDiff && totalDiff >= 7) {
+                //WILTING:: sepia + contrast 
+                Caman("#garden-img", function () {
+                    this.sepia(numOne*3);
+                    this.contrast(numOne);
+                    this.clip(5);
+                    this.render();
+                });
+                alert("your garden is wilting");
+            }; 
+            if (20 >= totalDiff && totalDiff >= 14) {
+                 //BROWNING:: brown tint 
+                 Caman("#garden-img", function () {
+                    this.saturation(20);
+                    this.sepia(numOne*4)
+                    this.newLayer(function () {
+                        //browning layer
+                        this.setBlendingMode("normal");
+                        this.opacity(45);
+                        this.fillColor('#5e3d36');
+                    });
+                    this.contrast(numOne);
+                    this.brightness(-10);
+                    this.render();
+                });
+                alert("your garden is turning brown");
+            };
+            if (totalDiff > 21) {
+                //DISEASE:: white Spotting 
+                Caman("#garden-img", function () {
+                    this.newLayer(function () {
+                        this.setBlendingMode("addition");
+                        this.opacity(30)
+                        this.copyParent();
+                        // blur image to prevent artifact edges from being too defined
+                        this.filter.heavyRadialBlur(50);
+                        this.filter.edgeDetect(1);
+                        // blur image for a second pass
+                        this.filter.heavyRadialBlur(50);
+                        this.filter.greyscale(20);
+                    });
+                    this.contrast(5);
+                    this.render();
+                });
+                alert("your garden is infected :-(");
+            } else {
+                $("#garden-img").css('opacity','100');
+                alert("garden is looking healthy :--)");
+            }
+        };
     }
 
     function run() {
         //  GARDEN
-
         //garden modal functions
         let gardenModal = $(".garden-modal");
         let modalPlant = $("#one.garden-modal");

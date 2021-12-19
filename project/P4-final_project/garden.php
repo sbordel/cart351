@@ -49,7 +49,6 @@
   <script src="js/libs/CamanJS-4.1.1/dist/caman.full.min.js"></script>
   <!-- script -->
   <script src="js/script.js"></script>
-  <!--<script src="js/caman.js"></script>-->
   <!-- style -->
   <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>

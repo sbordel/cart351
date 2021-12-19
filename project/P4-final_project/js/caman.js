@@ -1,15 +1,4 @@
-/*
-if (totalDiff >= 7){
-
-} else if (totalDiff >= 14){
-
-} else if (totalDiff >= 21){
-    
-} else if (totalDiff > 28){
-
-} else {
-  console.log("garden is looking healthy :--)");
-}*/
+//list of all the caman.js effects used for the garden
 
 //YELLOWING:: yellow tint
 Caman("#garden-img", function yellowing() {

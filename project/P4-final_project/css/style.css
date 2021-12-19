@@ -469,6 +469,9 @@ tr:last-of-type {
 #garden-imgs::-webkit-scrollbar-corner{
   background: #000000;
  }
+ #garden-img{
+  opacity:0;
+ }
 /* garden images */
 #garden-imgs img{
   filter: invert(auto) sepia(auto) saturate(auto) hue-rotate(auto) brightness(auto) contrast(auto);
