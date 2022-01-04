@@ -172,7 +172,7 @@ $(document).ready(function () {
                         this.copyParent();
                         // layer filter -- threshold ranges between 0 and 255.
                         // the lower the number, the bigger the white areas
-                        this.filter.threshold(255);
+                        this.filter.threshold(100);
                     });
                     this.render();
                 });
@@ -196,10 +196,10 @@ $(document).ready(function () {
                     this.render();
                 });
                 alert("your garden is infected :-(");
-            } else {
+            } /*else {
                 $("#garden-img").css('opacity','100');
                 alert("your garden is looking healthy :-)");
-            }
+            }*/
         };
 
         if (season == "spring") {
